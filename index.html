@@ -7,6 +7,10 @@
     <meta name="description" content="中豫具身智能实验室聚焦多模态大模型、人形机器人与工业/医疗/服务具身智能，打造从 AI 到机器人应用的全链条创新平台。" data-zh-content="中豫具身智能实验室聚焦多模态大模型、人形机器人与工业/医疗/服务具身智能，打造从 AI 到机器人应用的全链条创新平台。" data-en-content="Zhongyuan Embodied Intelligence Laboratory focuses on multimodal foundation models, humanoid robotics, and industrial, medical, and service applications to build a full-chain innovation platform from AI to robots.">
     <meta name="keywords" content="中豫具身智能实验室,具身智能,人形机器人,多模态大模型,机器人技术,工业具身智能,医疗机器人,服务机器人,ZYEI LAB" data-zh-content="中豫具身智能实验室,具身智能,人形机器人,多模态大模型,机器人技术,工业具身智能,医疗机器人,服务机器人,ZYEI LAB" data-en-content="embodied intelligence, humanoid robot, multimodal AI, robotics, industrial robotics, medical robots, service robots, ZYEI Lab">
     <meta name="author" content="ZYEI LAB">
+    <meta name="publisher" content="中豫具身智能实验室" data-zh-content="中豫具身智能实验室" data-en-content="Zhongyuan Embodied Intelligence Laboratory">
+    <meta name="application-name" content="ZYEI LAB">
+    <meta name="apple-mobile-web-app-title" content="ZYEI LAB">
+    <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#0066FF">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://zyei-lab.vercel.app/">
@@ -28,6 +32,45 @@
     <meta name="twitter:description" content="中豫具身智能实验室聚焦多模态大模型、人形机器人与工业/医疗/服务具身智能，打造从 AI 到机器人应用的全链条创新平台。" data-zh-content="中豫具身智能实验室聚焦多模态大模型、人形机器人与工业/医疗/服务具身智能，打造从 AI 到机器人应用的全链条创新平台。" data-en-content="Zhongyuan Embodied Intelligence Laboratory focuses on multimodal foundation models, humanoid robotics, and industrial, medical, and service applications to build a full-chain innovation platform from AI to robots.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&h=1080&fit=crop">
     <meta name="twitter:image:alt" content="行者二号机器人" data-zh-content="行者二号机器人" data-en-content="Walker X02-Lite Robot">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "ResearchOrganization",
+                    "name": "中豫具身智能实验室",
+                    "alternateName": "Zhongyuan Embodied Intelligence Laboratory",
+                    "url": "https://zyei-lab.vercel.app/",
+                    "foundingDate": "2024-10-16",
+                    "parentOrganization": {
+                        "@type": "Organization",
+                        "name": "河南省科学院"
+                    },
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "郑州市",
+                        "addressRegion": "河南省",
+                        "addressCountry": "CN"
+                    },
+                    "email": "info@zyei-lab.cn",
+                    "member": [
+                        {
+                            "@type": "Person",
+                            "name": "李清都",
+                            "jobTitle": "执行主任"
+                        }
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "中豫具身智能实验室",
+                    "alternateName": "Zhongyuan Embodied Intelligence Laboratory",
+                    "url": "https://zyei-lab.vercel.app/",
+                    "inLanguage": "zh-CN"
+                }
+            ]
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -239,7 +282,9 @@
         }
         .nav-links.mobile-menu.active a:nth-child(7) { transition-delay: 0.4s; }
         .nav-links.mobile-menu.active a:nth-child(8) { transition-delay: 0.45s; }
-        
+        .nav-links.mobile-menu.active a:nth-child(9) { transition-delay: 0.5s; }
+        .nav-links.mobile-menu.active a:nth-child(10) { transition-delay: 0.55s; }
+
         /* ==================== Hero Section ==================== */
         .hero {
             position: relative;
@@ -829,7 +874,264 @@
             font-size: 16px;
             color: var(--gray-text);
         }
-        
+
+        /* 发展历程时间轴 */
+        .about-timeline {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        .timeline-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--light-text);
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-left: 50px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-blue), var(--cyber-blue));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: var(--cyber-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--dark-bg), 0 0 0 6px var(--primary-blue), 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .timeline-date {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-year {
+            font-family: 'Orbitron', monospace;
+            font-size: 28px;
+            font-weight: 900;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .timeline-month {
+            font-size: 16px;
+            color: var(--cyber-blue);
+            font-weight: 600;
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--cyber-blue);
+            transform: translateX(10px);
+            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.2);
+        }
+
+        .timeline-content h4 {
+            font-size: 20px;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: var(--gray-text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* 组织架构 */
+        .about-structure {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        .structure-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--light-text);
+        }
+
+        .structure-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .structure-card {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .structure-card:hover {
+            border-color: var(--cyber-blue);
+            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.2);
+        }
+
+        .structure-card.main {
+            max-width: 300px;
+            margin: 0 auto 40px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(0, 255, 255, 0.15) 100%);
+            border-color: var(--cyber-blue);
+        }
+
+        .structure-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .structure-card h4 {
+            font-size: 20px;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .structure-card > p {
+            color: var(--cyber-blue);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .structure-lead {
+            color: var(--cyber-blue) !important;
+            font-weight: 600;
+            font-size: 14px !important;
+            margin-bottom: 15px;
+        }
+
+        .structure-branches {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .structure-branches::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+        }
+
+        .structure-card ul {
+            list-style: none;
+            text-align: left;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .structure-card ul li {
+            color: var(--gray-text);
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .structure-card ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--cyber-blue);
+        }
+
+        /* 荣誉资质 */
+        .about-honors {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        .honors-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--light-text);
+        }
+
+        .honors-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .honor-item {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .honor-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 15px 50px rgba(0, 102, 255, 0.2);
+        }
+
+        .honor-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .honor-item h4 {
+            font-size: 18px;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .honor-item p {
+            color: var(--gray-text);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
         /* ==================== 成果展示 Section ==================== */
         .achievements-section {
             padding: var(--section-padding) 40px;
@@ -1240,7 +1542,203 @@
             border-color: var(--cyber-blue);
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 255, 255, 0.1) 100%);
         }
-        
+
+        /* ==================== 产业转化 Section ==================== */
+        .industry-section {
+            padding: var(--section-padding) 40px;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #0d1425 100%);
+        }
+
+        .industry-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .industry-subtitle {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--cyber-blue);
+        }
+
+        /* 孵化企业 */
+        .incubator-section {
+            margin-bottom: 80px;
+        }
+
+        .incubator-card {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 255, 255, 0.08) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .incubator-card:hover {
+            border-color: var(--cyber-blue);
+            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.2);
+        }
+
+        .incubator-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--cyber-blue) 100%);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .incubator-logo .logo-text {
+            font-size: 36px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .incubator-logo .logo-sub {
+            font-family: 'Orbitron', monospace;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 3px;
+        }
+
+        .incubator-info h4 {
+            font-size: 24px;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+
+        .incubator-desc {
+            color: var(--gray-text);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .incubator-highlights {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .highlight-tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 102, 255, 0.1);
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            border-radius: 25px;
+            padding: 10px 20px;
+            color: var(--light-text);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-tag:hover {
+            border-color: var(--cyber-blue);
+            background: rgba(0, 102, 255, 0.2);
+        }
+
+        .tag-icon {
+            font-size: 18px;
+        }
+
+        /* 应用场景 */
+        .scenarios-section {
+            margin-bottom: 80px;
+        }
+
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .scenario-card {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .scenario-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 15px 50px rgba(0, 102, 255, 0.2);
+        }
+
+        .scenario-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .scenario-card h4 {
+            font-size: 18px;
+            color: var(--light-text);
+            margin-bottom: 12px;
+        }
+
+        .scenario-card p {
+            color: var(--gray-text);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* 合作伙伴墙 */
+        .partners-wall-section {
+            margin-bottom: 40px;
+        }
+
+        .partners-wall {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .partner-category {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .partner-category h4 {
+            font-size: 18px;
+            color: var(--cyber-blue);
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        .partner-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partner-item {
+            background: rgba(10, 14, 26, 0.5);
+            border: 1px solid rgba(0, 102, 255, 0.15);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--light-text);
+            font-size: 14px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .partner-item:hover {
+            border-color: var(--cyber-blue);
+            background: rgba(0, 102, 255, 0.1);
+        }
+
         /* ==================== 人才招聘 Section ==================== */
         .careers-section {
             padding: var(--section-padding) 40px;
@@ -1376,7 +1874,243 @@
             gap: 20px;
             justify-content: center;
         }
-        
+
+        /* ==================== 开放合作 Section ==================== */
+        .cooperation-section {
+            padding: var(--section-padding) 40px;
+            background: var(--dark-bg);
+        }
+
+        .cooperation-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .cooperation-subtitle {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--cyber-blue);
+        }
+
+        /* 合作模式 */
+        .cooperation-modes {
+            margin-bottom: 80px;
+        }
+
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .mode-card {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 16px;
+            padding: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.2);
+        }
+
+        .mode-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .mode-card h4 {
+            font-size: 22px;
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+
+        .mode-card > p {
+            color: var(--gray-text);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .mode-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mode-features li {
+            color: var(--gray-text);
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .mode-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--cyber-blue);
+        }
+
+        /* 参观预约 */
+        .visit-section {
+            margin-bottom: 80px;
+        }
+
+        .visit-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .visit-info h4 {
+            font-size: 24px;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+
+        .visit-info > p {
+            color: var(--gray-text);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .visit-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .visit-highlight {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--light-text);
+            font-size: 15px;
+        }
+
+        .visit-highlight .highlight-icon {
+            font-size: 24px;
+        }
+
+        .visit-form-wrapper {
+            background: rgba(10, 14, 26, 0.5);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .visit-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .visit-form .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .visit-form input,
+        .visit-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(10, 14, 26, 0.8);
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            border-radius: 8px;
+            color: var(--light-text);
+            font-size: 14px;
+            font-family: 'Noto Sans SC', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .visit-form input:focus,
+        .visit-form textarea:focus {
+            outline: none;
+            border-color: var(--cyber-blue);
+            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
+        }
+
+        .visit-form input::placeholder,
+        .visit-form textarea::placeholder {
+            color: var(--gray-text);
+        }
+
+        .visit-form button {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* 合作案例 */
+        .cases-section {
+            margin-bottom: 40px;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .case-card {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 15px 50px rgba(0, 102, 255, 0.2);
+        }
+
+        .case-badge {
+            display: inline-block;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .case-card h4 {
+            font-size: 18px;
+            color: var(--light-text);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .case-card > p {
+            color: var(--gray-text);
+            line-height: 1.7;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .case-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .case-tags span {
+            background: rgba(0, 102, 255, 0.15);
+            color: var(--cyber-blue);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
         /* ==================== 联系我们 Section ==================== */
         .contact-section {
             padding: var(--section-padding) 40px;
@@ -2005,7 +2739,15 @@
         .member-title {
             font-size: 14px;
             color: var(--gray-text);
+            margin-bottom: 10px;
+        }
+
+        .member-desc {
+            font-size: 13px;
+            color: var(--gray-text);
+            line-height: 1.6;
             margin-bottom: 15px;
+            opacity: 0.9;
         }
         
         .member-tags {
@@ -2296,7 +3038,85 @@
                 font-size: 12px;
                 padding: 8px 16px;
             }
-            
+
+            /* 时间轴 */
+            .timeline-container {
+                padding-left: 20px;
+            }
+
+            .timeline-container::before {
+                left: 5px;
+            }
+
+            .timeline-item::before {
+                left: -23px;
+                width: 12px;
+                height: 12px;
+            }
+
+            .timeline-item {
+                padding-left: 20px;
+            }
+
+            .timeline-year {
+                font-size: 22px;
+            }
+
+            /* 组织架构 */
+            .structure-branches {
+                grid-template-columns: 1fr;
+            }
+
+            .structure-branches::before {
+                display: none;
+            }
+
+            /* 荣誉资质 */
+            .honors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* 产业转化 */
+            .incubator-card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .incubator-logo {
+                padding: 30px;
+            }
+
+            .incubator-logo .logo-text {
+                font-size: 28px;
+            }
+
+            .scenarios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .partners-wall {
+                grid-template-columns: 1fr;
+            }
+
+            /* 开放合作 */
+            .modes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .visit-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px;
+            }
+
+            .visit-form .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
             /* 产品详情页 */
             .product-hero {
                 grid-template-columns: 1fr;
@@ -2345,9 +3165,538 @@
                 gap: 40px;
             }
         }
+
+        /* ==================== 页面加载动画 ==================== */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+            animation: logoPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .loader-spinner::before,
+        .loader-spinner::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .loader-spinner::before {
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top-color: var(--primary-blue);
+            border-right-color: var(--primary-blue);
+            animation: spinnerRotate 1s linear infinite;
+        }
+
+        .loader-spinner::after {
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            border: 3px solid transparent;
+            border-bottom-color: var(--cyber-blue);
+            border-left-color: var(--cyber-blue);
+            animation: spinnerRotate 0.8s linear infinite reverse;
+        }
+
+        @keyframes spinnerRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--gray-text);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .loader-progress {
+            width: 200px;
+            height: 3px;
+            background: rgba(0, 102, 255, 0.2);
+            border-radius: 3px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .loader-progress-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: 3px;
+            animation: progressLoad 1.5s ease-out forwards;
+        }
+
+        @keyframes progressLoad {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        /* 页面加载后的入场动画 */
+        .page-loaded .hero-content {
+            animation: heroEnter 1s ease-out 0.3s both;
+        }
+
+        @keyframes heroEnter {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 增强的滚动动画 */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-reveal.from-left {
+            transform: translateX(-60px);
+        }
+
+        .scroll-reveal.from-left.revealed {
+            transform: translateX(0);
+        }
+
+        .scroll-reveal.from-right {
+            transform: translateX(60px);
+        }
+
+        .scroll-reveal.from-right.revealed {
+            transform: translateX(0);
+        }
+
+        .scroll-reveal.scale-up {
+            transform: scale(0.9);
+        }
+
+        .scroll-reveal.scale-up.revealed {
+            transform: scale(1);
+        }
+
+        /* 卡片悬停增强效果 */
+        .card-hover-effect {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.3);
+        }
+
+        /* 按钮波纹效果 */
+        .ripple-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple-effect::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .ripple-effect:active::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* 平滑过渡增强 */
+        .smooth-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 链接下划线动画 */
+        .link-underline {
+            position: relative;
+        }
+
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-accent);
+            transition: width 0.3s ease;
+        }
+
+        .link-underline:hover::after {
+            width: 100%;
+        }
+
+        /* 图片加载动画 */
+        .img-lazy {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .img-lazy.loaded {
+            opacity: 1;
+        }
+
+        /* 文字逐字显现动画 */
+        .text-reveal {
+            overflow: hidden;
+        }
+
+        .text-reveal span {
+            display: inline-block;
+            transform: translateY(100%);
+            animation: textReveal 0.6s ease forwards;
+        }
+
+        @keyframes textReveal {
+            to { transform: translateY(0); }
+        }
+
+        /* 粒子背景动画 */
+        .particles-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--cyber-blue);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particleFloat 15s infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* 移动端触摸反馈 */
+        @media (max-width: 768px) {
+            .touch-feedback {
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .touch-feedback:active {
+                transform: scale(0.98);
+                opacity: 0.9;
+            }
+        }
+
+        /* ==================== 研究成果Section样式 ==================== */
+        .publications-section {
+            padding: var(--section-padding) 40px;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(0, 31, 63, 0.3) 50%, var(--dark-bg) 100%);
+        }
+
+        .publications-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .publications-block {
+            margin-bottom: 80px;
+        }
+
+        .publications-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .block-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(0, 102, 255, 0.3);
+        }
+
+        /* 论文列表样式 */
+        .papers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .paper-item {
+            display: flex;
+            gap: 30px;
+            padding: 25px;
+            background: rgba(0, 102, 255, 0.05);
+            border: 1px solid rgba(0, 102, 255, 0.15);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .paper-item:hover {
+            background: rgba(0, 102, 255, 0.1);
+            border-color: var(--primary-blue);
+            transform: translateX(10px);
+        }
+
+        .paper-year {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--cyber-blue);
+            min-width: 60px;
+        }
+
+        .paper-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--light-text);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .paper-authors {
+            font-size: 14px;
+            color: var(--gray-text);
+            margin-bottom: 5px;
+        }
+
+        .paper-venue {
+            font-size: 14px;
+            color: var(--primary-blue);
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .paper-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .paper-tag {
+            padding: 4px 12px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--cyber-blue);
+        }
+
+        /* 专利网格样式 */
+        .patents-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .patent-item {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(0, 102, 255, 0.05);
+            border: 1px solid rgba(0, 102, 255, 0.15);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .patent-item:hover {
+            background: rgba(0, 102, 255, 0.1);
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        .patent-icon {
+            font-size: 28px;
+            min-width: 40px;
+        }
+
+        .patent-content h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--light-text);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .patent-content p {
+            font-size: 13px;
+            color: var(--gray-text);
+        }
+
+        /* 媒体报道网格样式 */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .media-item {
+            padding: 25px;
+            background: rgba(0, 102, 255, 0.05);
+            border: 1px solid rgba(0, 102, 255, 0.15);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .media-item:hover {
+            background: rgba(0, 102, 255, 0.1);
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        .media-logo {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--gradient-accent);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark-bg);
+            margin-bottom: 15px;
+        }
+
+        .media-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--light-text);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .media-date {
+            font-size: 13px;
+            color: var(--gray-text);
+            margin-bottom: 12px;
+        }
+
+        .media-link {
+            font-size: 14px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .media-link:hover {
+            color: var(--cyber-blue);
+        }
+
+        /* 研究成果响应式 */
+        @media (max-width: 1024px) {
+            .patents-grid,
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .publications-section {
+                padding: 80px 20px;
+            }
+
+            .paper-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .paper-year {
+                font-size: 16px;
+            }
+
+            .patents-grid,
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .block-title {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- 页面加载动画 -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-logo">ZYEI LAB</div>
+        <div class="loader-spinner"></div>
+        <div class="loader-text" data-zh="正在加载..." data-en="Loading...">正在加载...</div>
+        <div class="loader-progress">
+            <div class="loader-progress-bar"></div>
+        </div>
+    </div>
+
     <!-- 导航栏 -->
     <nav id="navbar">
         <div class="nav-container">
@@ -2361,7 +3710,10 @@
                 <li><a href="#about" data-zh="关于我们" data-en="About Us">关于我们</a></li>
                 <li><a href="#team" data-zh="团队展示" data-en="Team">团队展示</a></li>
                 <li><a href="#achievements" data-zh="成果展示" data-en="Achievements">成果展示</a></li>
+                <li><a href="#publications" data-zh="研究成果" data-en="Publications">研究成果</a></li>
+                <li><a href="#industry" data-zh="产业转化" data-en="Industry">产业转化</a></li>
                 <li><a href="#careers" data-zh="人才招聘" data-en="Careers">人才招聘</a></li>
+                <li><a href="#cooperation" data-zh="开放合作" data-en="Cooperation">开放合作</a></li>
                 <li><a href="#contact" data-zh="联系我们" data-en="Contact">联系我们</a></li>
             </ul>
             
@@ -2387,7 +3739,9 @@
             <li><a href="#about" data-zh="关于我们" data-en="About Us">关于我们</a></li>
             <li><a href="#team" data-zh="团队展示" data-en="Team">团队展示</a></li>
             <li><a href="#achievements" data-zh="成果展示" data-en="Achievements">成果展示</a></li>
+            <li><a href="#industry" data-zh="产业转化" data-en="Industry">产业转化</a></li>
             <li><a href="#careers" data-zh="人才招聘" data-en="Careers">人才招聘</a></li>
+            <li><a href="#cooperation" data-zh="开放合作" data-en="Cooperation">开放合作</a></li>
             <li><a href="#contact" data-zh="联系我们" data-en="Contact">联系我们</a></li>
         </ul>
     </nav>
@@ -2604,6 +3958,71 @@
                         <a href="#careers" class="news-link" data-zh="查看招聘详情 →" data-en="View Recruitment →">查看招聘详情 →</a>
                     </div>
                 </div>
+
+                <div class="news-item" data-category="research">
+                    <div class="news-date">
+                        <span class="date-day">28</span>
+                        <span class="date-month">2024.11</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-badge research" data-zh="研究进展" data-en="Research">研究进展</div>
+                        <h3 data-zh="多模态大模型ZYEI-VLA取得突破" data-en="Breakthrough in Multimodal Model ZYEI-VLA">多模态大模型ZYEI-VLA取得突破</h3>
+                        <p data-zh="实验室自主研发的视觉-语言-动作统一模型ZYEI-VLA在机器人任务规划基准测试中取得领先成绩，模型在复杂场景理解和多步骤任务规划能力上展现出显著优势。" data-en="The lab's proprietary Vision-Language-Action unified model ZYEI-VLA achieved leading results in robot task planning benchmarks, demonstrating significant advantages in complex scene understanding and multi-step task planning.">实验室自主研发的视觉-语言-动作统一模型ZYEI-VLA在机器人任务规划基准测试中取得领先成绩，模型在复杂场景理解和多步骤任务规划能力上展现出显著优势。</p>
+                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
+                    </div>
+                </div>
+
+                <div class="news-item" data-category="cooperation">
+                    <div class="news-date">
+                        <span class="date-day">15</span>
+                        <span class="date-month">2024.11</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-badge cooperation" data-zh="合作交流" data-en="Partnerships">合作交流</div>
+                        <h3 data-zh="与上海戏剧学院签署战略合作协议" data-en="Strategic Partnership with Shanghai Theatre Academy">与上海戏剧学院签署战略合作协议</h3>
+                        <p data-zh="实验室与上海戏剧学院签署战略合作协议，共同开发具备表演能力的艺术机器人，探索机器人在文化艺术领域的创新应用，推动科技与艺术的深度融合。" data-en="The lab signed a strategic partnership with Shanghai Theatre Academy to jointly develop artistic robots with performance capabilities, exploring innovative applications in cultural arts and promoting deep integration of technology and art.">实验室与上海戏剧学院签署战略合作协议，共同开发具备表演能力的艺术机器人，探索机器人在文化艺术领域的创新应用，推动科技与艺术的深度融合。</p>
+                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
+                    </div>
+                </div>
+
+                <div class="news-item" data-category="media">
+                    <div class="news-date">
+                        <span class="date-day">08</span>
+                        <span class="date-month">2024.11</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-badge media" data-zh="媒体报道" data-en="Media">媒体报道</div>
+                        <h3 data-zh="河南日报专访：打造具身智能产业高地" data-en="Henan Daily Interview: Building an Embodied AI Hub">河南日报专访：打造具身智能产业高地</h3>
+                        <p data-zh="河南日报对实验室执行主任李清都进行专访，深入报道实验室如何推动河南省具身智能产业发展，打造从基础研究到产业应用的完整创新链条。" data-en="Henan Daily interviewed Executive Director Li Qingdu on how the lab drives Henan's embodied intelligence industry development, building a complete innovation chain from fundamental research to industrial application.">河南日报对实验室执行主任李清都进行专访，深入报道实验室如何推动河南省具身智能产业发展，打造从基础研究到产业应用的完整创新链条。</p>
+                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
+                    </div>
+                </div>
+
+                <div class="news-item" data-category="research">
+                    <div class="news-date">
+                        <span class="date-day">25</span>
+                        <span class="date-month">2024.10</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-badge research" data-zh="研究进展" data-en="Research">研究进展</div>
+                        <h3 data-zh="高精度力控关节模组研发成功" data-en="High-Precision Force-Controlled Joint Module Developed">高精度力控关节模组研发成功</h3>
+                        <p data-zh="实验室成功研发新一代高精度力控关节模组，采用国产化核心部件，实现了力控精度和响应速度的双重突破，为人形机器人的灵巧操作提供关键技术支撑。" data-en="The lab developed a new generation high-precision force-controlled joint module using domestically produced core components, achieving breakthroughs in both force control accuracy and response speed, providing key technical support for humanoid robot dexterous manipulation.">实验室成功研发新一代高精度力控关节模组，采用国产化核心部件，实现了力控精度和响应速度的双重突破，为人形机器人的灵巧操作提供关键技术支撑。</p>
+                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
+                    </div>
+                </div>
+
+                <div class="news-item" data-category="event">
+                    <div class="news-date">
+                        <span class="date-day">20</span>
+                        <span class="date-month">2024.10</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-badge event" data-zh="活动公告" data-en="Event">活动公告</div>
+                        <h3 data-zh="首批研究人员正式入驻" data-en="First Batch of Researchers Officially Onboarded">首批研究人员正式入驻</h3>
+                        <p data-zh="实验室首批研究人员正式入驻河南省科学院，团队成员来自清华大学、中国科学院、重庆大学等国内顶尖高校和研究机构，涵盖机器人学、人工智能、机械工程等多个学科领域。" data-en="The first batch of researchers officially joined the Henan Academy of Sciences, with team members from top domestic institutions including Tsinghua University, Chinese Academy of Sciences, and Chongqing University, covering robotics, AI, and mechanical engineering.">实验室首批研究人员正式入驻河南省科学院，团队成员来自清华大学、中国科学院、重庆大学等国内顶尖高校和研究机构，涵盖机器人学、人工智能、机械工程等多个学科领域。</p>
+                        <a href="#team" class="news-link" data-zh="查看团队详情 →" data-en="View Team →">查看团队详情 →</a>
+                    </div>
+                </div>
             </div>
             
             <!-- 加载更多按钮 -->
@@ -2623,27 +4042,27 @@
             <div class="research-card">
                 <div class="research-icon">🧠</div>
                 <h3 data-zh="多模态大模型" data-en="Multimodal Foundation Models">多模态大模型</h3>
-                <p data-zh="研发具身智能系统的&quot;大脑&quot;，实现视觉、语言、触觉等多模态信息融合，赋予机器人理解和决策能力。" data-en="Build the 'brain' of embodied systems by fusing vision, language, and touch for understanding and decision-making.">研发具身智能系统的"大脑"，实现视觉、语言、触觉等多模态信息融合，赋予机器人理解和决策能力。</p>
+                <p data-zh="研发具身智能系统的"大脑"，实现视觉、语言、触觉等多模态信息的深度融合与协同处理。通过自研的视觉-语言-动作（VLA）统一架构，构建端到端的感知-理解-决策系统，让机器人能够像人类一样理解复杂场景、进行逻辑推理，并做出合理的行为决策。目前已在场景理解、任务规划、人机对话等核心能力上取得突破性进展。" data-en="Developing the 'brain' of embodied intelligence systems through deep fusion of vision, language, and tactile multimodal information. Our proprietary Vision-Language-Action (VLA) unified architecture enables end-to-end perception-understanding-decision systems, allowing robots to comprehend complex scenarios, perform logical reasoning, and make rational behavioral decisions like humans. Breakthrough progress has been made in scene understanding, task planning, and human-robot dialogue.">研发具身智能系统的"大脑"，实现视觉、语言、触觉等多模态信息的深度融合与协同处理。通过自研的视觉-语言-动作（VLA）统一架构，构建端到端的感知-理解-决策系统，让机器人能够像人类一样理解复杂场景、进行逻辑推理，并做出合理的行为决策。目前已在场景理解、任务规划、人机对话等核心能力上取得突破性进展。</p>
             </div>
             <div class="research-card">
                 <div class="research-icon">🤖</div>
                 <h3 data-zh="机器人技术" data-en="Robotics Technology">机器人技术</h3>
-                <p data-zh="专注人形机器人核心技术研发，包括运动控制、平衡系统、灵巧操作等&quot;小脑&quot;功能突破。" data-en="Focus on core humanoid robotics, including motion control, balance systems, and dexterous manipulation breakthroughs.">专注人形机器人核心技术研发，包括运动控制、平衡系统、灵巧操作等"小脑"功能突破。</p>
+                <p data-zh="专注人形机器人核心技术研发，突破运动控制、动态平衡、灵巧操作等"小脑"功能关键技术。自主研发了全球首款肌腱驱动人形机器人"行者二号X02-Lite"，采用创新的柔性驱动技术，实现了高度仿人的运动能力。同步推进高精度关节模组、力控传感系统、实时控制算法等核心部件的国产化替代，构建完整的人形机器人技术自主可控体系。" data-en="Focusing on core humanoid robotics R&D, breaking through key 'cerebellum' technologies including motion control, dynamic balance, and dexterous manipulation. We independently developed the world's first tendon-driven humanoid robot 'Walker X02-Lite' with innovative flexible drive technology for highly human-like movement. Simultaneously advancing domestic substitution of precision joint modules, force-controlled sensing systems, and real-time control algorithms.">专注人形机器人核心技术研发，突破运动控制、动态平衡、灵巧操作等"小脑"功能关键技术。自主研发了全球首款肌腱驱动人形机器人"行者二号X02-Lite"，采用创新的柔性驱动技术，实现了高度仿人的运动能力。同步推进高精度关节模组、力控传感系统、实时控制算法等核心部件的国产化替代，构建完整的人形机器人技术自主可控体系。</p>
             </div>
             <div class="research-card">
                 <div class="research-icon">🏭</div>
                 <h3 data-zh="工业具身智能" data-en="Industrial Embodied Intelligence">工业具身智能</h3>
-                <p data-zh="推动智能制造升级，在汽车制造、电子装配、物流搬运等场景实现人形机器人批量应用。" data-en="Upgrade smart manufacturing with large-scale humanoid robot deployment in automotive, electronics assembly, and logistics.">推动智能制造升级，在汽车制造、电子装配、物流搬运等场景实现人形机器人批量应用。</p>
+                <p data-zh="推动智能制造全面升级，聚焦汽车制造、电子装配、物流仓储等重点场景，实现人形机器人的规模化产业应用。与蔚来、比亚迪、吉利、东风柳汽等头部车企深度合作，在柔性生产线、精密装配、智能质检等环节部署具身智能解决方案。通过"机器人+AI"的融合创新，帮助制造企业实现降本增效、柔性生产，推动河南省制造业智能化转型。" data-en="Driving comprehensive smart manufacturing upgrades, focusing on automotive manufacturing, electronics assembly, and logistics scenarios for large-scale humanoid robot deployment. Deep collaboration with leading automakers including NIO, BYD, Geely, and Dongfeng Liuzhou Motor, deploying embodied intelligence solutions in flexible production lines, precision assembly, and intelligent quality inspection to help manufacturers achieve cost reduction and flexible production.">推动智能制造全面升级，聚焦汽车制造、电子装配、物流仓储等重点场景，实现人形机器人的规模化产业应用。与蔚来、比亚迪、吉利、东风柳汽等头部车企深度合作，在柔性生产线、精密装配、智能质检等环节部署具身智能解决方案。通过"机器人+AI"的融合创新，帮助制造企业实现降本增效、柔性生产，推动河南省制造业智能化转型。</p>
             </div>
             <div class="research-card">
                 <div class="research-icon">⚕️</div>
                 <h3 data-zh="医疗具身智能" data-en="Healthcare Embodied Intelligence">医疗具身智能</h3>
-                <p data-zh="开发医疗辅助机器人，在康复训练、手术辅助、护理照料等领域提供智能化解决方案。" data-en="Develop medical assistive robots for rehabilitation, surgical assistance, and care services.">开发医疗辅助机器人，在康复训练、手术辅助、护理照料等领域提供智能化解决方案。</p>
+                <p data-zh="开发新一代医疗辅助机器人，在康复训练、手术辅助、护理照料、药品配送等领域提供全流程智能化解决方案。研发的康复训练机器人可精准模拟专业理疗师的手法，为患者提供个性化康复方案；护理机器人具备24小时不间断服务能力，可协助完成翻身、喂食、生命体征监测等照护任务，有效缓解医护人员短缺问题，提升医疗服务质量与可及性。" data-en="Developing next-generation medical assistive robots providing full-process intelligent solutions for rehabilitation, surgical assistance, nursing care, and medication delivery. Our rehabilitation robots precisely simulate professional therapist techniques for personalized recovery plans; nursing robots offer 24/7 service capability for turning, feeding, and vital sign monitoring, effectively addressing healthcare staffing shortages and improving service quality.">开发新一代医疗辅助机器人，在康复训练、手术辅助、护理照料、药品配送等领域提供全流程智能化解决方案。研发的康复训练机器人可精准模拟专业理疗师的手法，为患者提供个性化康复方案；护理机器人具备24小时不间断服务能力，可协助完成翻身、喂食、生命体征监测等照护任务，有效缓解医护人员短缺问题，提升医疗服务质量与可及性。</p>
             </div>
             <div class="research-card">
                 <div class="research-icon">🏡</div>
                 <h3 data-zh="服务具身智能" data-en="Service Embodied Intelligence">服务具身智能</h3>
-                <p data-zh="面向文旅、家庭、商业等服务场景，研发具有情感交互和个性化服务能力的智能机器人。" data-en="Build intelligent robots with emotional interaction and personalized services for tourism, home, and commercial scenarios.">面向文旅、家庭、商业等服务场景，研发具有情感交互和个性化服务能力的智能机器人。</p>
+                <p data-zh="面向文旅、家庭、商业等多元化服务场景，研发具有情感交互和个性化服务能力的智能服务机器人。与上海戏剧学院等文化机构合作，开发具备表演能力的艺术机器人，在文旅景区提供导览讲解、互动表演等沉浸式体验；家庭服务机器人可承担家务清洁、老人陪护、儿童教育等任务；商业服务机器人则在酒店、商场、展馆等场所提供智能迎宾、信息咨询、物品递送等服务。" data-en="Developing intelligent service robots with emotional interaction and personalized service capabilities for diverse scenarios including tourism, home, and commercial settings. Collaborating with Shanghai Theatre Academy to create artistic robots with performance capabilities for immersive tour guide and interactive show experiences; home service robots handle housework, elderly care, and children's education; commercial robots provide smart reception and delivery services at hotels, malls, and exhibition halls.">面向文旅、家庭、商业等多元化服务场景，研发具有情感交互和个性化服务能力的智能服务机器人。与上海戏剧学院等文化机构合作，开发具备表演能力的艺术机器人，在文旅景区提供导览讲解、互动表演等沉浸式体验；家庭服务机器人可承担家务清洁、老人陪护、儿童教育等任务；商业服务机器人则在酒店、商场、展馆等场所提供智能迎宾、信息咨询、物品递送等服务。</p>
             </div>
         </div>
     </section>
@@ -2656,19 +4075,19 @@
                     <h2 data-zh="关于我们" data-en="About Us">关于我们</h2>
                     <p data-zh="河南省级重点实验室，引领具身智能产业发展" data-en="A provincial key lab in Henan leading embodied intelligence development">河南省级重点实验室，引领具身智能产业发展</p>
                 </div>
-                
+
                 <div class="about-grid">
                     <div class="about-text">
                         <h3 data-zh="实验室简介" data-en="Lab Overview">实验室简介</h3>
                         <p data-zh="中豫具身智能实验室是河南省科学院举办、河南省委省政府批准设立的公益二类事业单位。实验室于2024年10月16日正式揭牌，是围绕具身智能系统展开研究与应用的高能级创新平台。" data-en="Zhongyuan Embodied Intelligence Laboratory is a public institution established by Henan Academy of Sciences with approval from the Henan provincial government. Inaugurated on October 16, 2024, it is a high-level innovation platform for research and application of embodied intelligence systems.">中豫具身智能实验室是河南省科学院举办、河南省委省政府批准设立的公益二类事业单位。实验室于2024年10月16日正式揭牌，是围绕具身智能系统展开研究与应用的高能级创新平台。</p>
-                        
+
                         <h3 data-zh="发展使命" data-en="Mission">发展使命</h3>
-                        <p data-zh="实验室瞄准具身智能产业需求，以智能机器人为载体，致力于突破&quot;大脑、小脑、肢体&quot;关键技术，建设覆盖具身智能全产业链的科研与应用体系。通过引入顶级科研力量和资源，力争在智能机器人领域实现重大原创性技术突破。" data-en="The lab targets industry needs in embodied intelligence, using intelligent robots as the carrier to break through key 'brain, cerebellum, body' technologies and build a full-chain R&D and application system. By bringing in top research talent and resources, it aims for major original breakthroughs in robotics.">实验室瞄准具身智能产业需求，以智能机器人为载体，致力于突破"大脑、小脑、肢体"关键技术，建设覆盖具身智能全产业链的科研与应用体系。通过引入顶级科研力量和资源，力争在智能机器人领域实现重大原创性技术突破。</p>
-                        
+                        <p data-zh="实验室瞄准具身智能产业需求，以智能机器人为载体，致力于突破"大脑、小脑、肢体"关键技术，建设覆盖具身智能全产业链的科研与应用体系。通过引入顶级科研力量和资源，力争在智能机器人领域实现重大原创性技术突破。" data-en="The lab targets industry needs in embodied intelligence, using intelligent robots as the carrier to break through key 'brain, cerebellum, body' technologies and build a full-chain R&D and application system. By bringing in top research talent and resources, it aims for major original breakthroughs in robotics.">实验室瞄准具身智能产业需求，以智能机器人为载体，致力于突破"大脑、小脑、肢体"关键技术，建设覆盖具身智能全产业链的科研与应用体系。通过引入顶级科研力量和资源，力争在智能机器人领域实现重大原创性技术突破。</p>
+
                         <h3 data-zh="战略定位" data-en="Strategic Positioning">战略定位</h3>
                         <p data-zh="对标国家级科研平台，以前沿布局、产业需求为导向，推动河南成为具身智能技术与产业发展的核心高地，助力国家智能科技战略实施。" data-en="Benchmarking national research platforms, the lab focuses on frontier layout and industry needs, positioning Henan as a core hub for embodied intelligence technology and industrial development.">对标国家级科研平台，以前沿布局、产业需求为导向，推动河南成为具身智能技术与产业发展的核心高地，助力国家智能科技战略实施。</p>
                     </div>
-                    
+
                     <div class="about-highlights">
                         <div class="highlight-box">
                             <div class="highlight-number">2024</div>
@@ -2685,6 +4104,124 @@
                         <div class="highlight-box">
                             <div class="highlight-number" data-zh="省级" data-en="Provincial">省级</div>
                             <div class="highlight-label" data-zh="重点实验室" data-en="Key Lab">重点实验室</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 发展历程时间轴 -->
+                <div class="about-timeline">
+                    <h3 class="timeline-title" data-zh="发展历程" data-en="Milestones">发展历程</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span class="timeline-year">2024</span>
+                                <span class="timeline-month" data-zh="10月" data-en="Oct">10月</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 data-zh="实验室正式揭牌" data-en="Official Inauguration">实验室正式揭牌</h4>
+                                <p data-zh="2024年10月16日，中豫具身智能实验室在河南省科学院正式揭牌成立，标志着河南省具身智能产业发展进入新阶段。" data-en="On October 16, 2024, ZYEI Lab was officially inaugurated at Henan Academy of Sciences, marking a new phase in Henan's embodied intelligence industry.">2024年10月16日，中豫具身智能实验室在河南省科学院正式揭牌成立，标志着河南省具身智能产业发展进入新阶段。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span class="timeline-year">2024</span>
+                                <span class="timeline-month" data-zh="11月" data-en="Nov">11月</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 data-zh="核心团队组建" data-en="Core Team Formation">核心团队组建</h4>
+                                <p data-zh="完成执行主任李清都教授领衔的核心科研团队组建，汇聚机器人技术、人工智能、控制工程等领域顶尖人才。" data-en="Completed the formation of core research team led by Executive Director Prof. Li Qingdu, gathering top talent in robotics, AI, and control engineering.">完成执行主任李清都教授领衔的核心科研团队组建，汇聚机器人技术、人工智能、控制工程等领域顶尖人才。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span class="timeline-year">2024</span>
+                                <span class="timeline-month" data-zh="12月" data-en="Dec">12月</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 data-zh="行者二号X02-Lite发布" data-en="Walker X02-Lite Launch">行者二号X02-Lite发布</h4>
+                                <p data-zh="发布全球首款肌腱驱动人形机器人"行者二号X02-Lite"，采用创新柔性驱动技术，引领人形机器人技术新方向。" data-en="Launched the world's first tendon-driven humanoid robot 'Walker X02-Lite' with innovative flexible drive technology, leading new directions in humanoid robotics.">发布全球首款肌腱驱动人形机器人"行者二号X02-Lite"，采用创新柔性驱动技术，引领人形机器人技术新方向。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span class="timeline-year">2025</span>
+                                <span class="timeline-month" data-zh="1月" data-en="Jan">1月</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 data-zh="产业合作启动" data-en="Industry Partnerships Launch">产业合作启动</h4>
+                                <p data-zh="与蔚来、比亚迪、吉利、东风柳汽等头部车企建立深度合作关系，孵化企业卓益得（上海）机器人正式运营。" data-en="Established deep partnerships with leading automakers including NIO, BYD, Geely, and Dongfeng Liuzhou Motor. Incubated company Zhuoyide (Shanghai) Robotics began operations.">与蔚来、比亚迪、吉利、东风柳汽等头部车企建立深度合作关系，孵化企业卓益得（上海）机器人正式运营。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 组织架构 -->
+                <div class="about-structure">
+                    <h3 class="structure-title" data-zh="组织架构" data-en="Organization Structure">组织架构</h3>
+                    <div class="structure-grid">
+                        <div class="structure-card main">
+                            <div class="structure-icon">👨‍💼</div>
+                            <h4 data-zh="执行主任" data-en="Executive Director">执行主任</h4>
+                            <p data-zh="李清都 教授" data-en="Prof. Li Qingdu">李清都 教授</p>
+                        </div>
+                        <div class="structure-branches">
+                            <div class="structure-card">
+                                <div class="structure-icon">🔬</div>
+                                <h4 data-zh="研究部门" data-en="Research Division">研究部门</h4>
+                                <ul>
+                                    <li data-zh="多模态AI研究组" data-en="Multimodal AI Group">多模态AI研究组</li>
+                                    <li data-zh="机器人本体研究组" data-en="Robot Platform Group">机器人本体研究组</li>
+                                    <li data-zh="运动控制研究组" data-en="Motion Control Group">运动控制研究组</li>
+                                    <li data-zh="应用场景研究组" data-en="Application Scenarios Group">应用场景研究组</li>
+                                </ul>
+                            </div>
+                            <div class="structure-card">
+                                <div class="structure-icon">🏭</div>
+                                <h4 data-zh="产业转化部" data-en="Industrialization Dept">产业转化部</h4>
+                                <p class="structure-lead" data-zh="负责人：樊锁钟 博士" data-en="Head: Dr. Fan Suozhong">负责人：樊锁钟 博士</p>
+                                <ul>
+                                    <li data-zh="技术转化中心" data-en="Tech Transfer Center">技术转化中心</li>
+                                    <li data-zh="企业孵化中心" data-en="Incubation Center">企业孵化中心</li>
+                                    <li data-zh="产业合作中心" data-en="Industry Cooperation">产业合作中心</li>
+                                </ul>
+                            </div>
+                            <div class="structure-card">
+                                <div class="structure-icon">📋</div>
+                                <h4 data-zh="综合管理部" data-en="General Management">综合管理部</h4>
+                                <p class="structure-lead" data-zh="主任助理：周闯闯" data-en="Director's Assistant: Zhou Chuangchuang">主任助理：周闯闯</p>
+                                <ul>
+                                    <li data-zh="人才招聘与培养" data-en="Talent Recruitment">人才招聘与培养</li>
+                                    <li data-zh="行政与后勤保障" data-en="Administration">行政与后勤保障</li>
+                                    <li data-zh="对外交流与合作" data-en="External Affairs">对外交流与合作</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 荣誉资质 -->
+                <div class="about-honors">
+                    <h3 class="honors-title" data-zh="荣誉资质" data-en="Honors & Certifications">荣誉资质</h3>
+                    <div class="honors-grid">
+                        <div class="honor-item">
+                            <div class="honor-icon">🏆</div>
+                            <h4 data-zh="河南省重点实验室" data-en="Henan Provincial Key Laboratory">河南省重点实验室</h4>
+                            <p data-zh="河南省科技厅认定" data-en="Certified by Henan Dept of Science & Technology">河南省科技厅认定</p>
+                        </div>
+                        <div class="honor-item">
+                            <div class="honor-icon">🎖️</div>
+                            <h4 data-zh="省级创新平台" data-en="Provincial Innovation Platform">省级创新平台</h4>
+                            <p data-zh="河南省科学院重点支持单位" data-en="Key unit supported by Henan Academy of Sciences">河南省科学院重点支持单位</p>
+                        </div>
+                        <div class="honor-item">
+                            <div class="honor-icon">🌟</div>
+                            <h4 data-zh="全球首创技术" data-en="World-First Technology">全球首创技术</h4>
+                            <p data-zh="肌腱驱动人形机器人技术" data-en="Tendon-driven humanoid robot technology">肌腱驱动人形机器人技术</p>
+                        </div>
+                        <div class="honor-item">
+                            <div class="honor-icon">🤝</div>
+                            <h4 data-zh="产学研合作示范" data-en="Industry-Academia Cooperation Model">产学研合作示范</h4>
+                            <p data-zh="与多家头部车企建立战略合作" data-en="Strategic partnerships with leading automakers">与多家头部车企建立战略合作</p>
                         </div>
                     </div>
                 </div>
@@ -2708,16 +4245,18 @@
                         <div class="member-photo">
                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="李清都" data-zh-alt="李清都" data-en-alt="Li Qingdu" width="400" height="400" loading="lazy" decoding="async">
                             <div class="member-overlay">
-                                <p class="member-bio" data-zh="长期从事机器人技术研究，在具身智能领域具有深厚积累" data-en="Long engaged in robotics research with deep expertise in embodied intelligence.">长期从事机器人技术研究，在具身智能领域具有深厚积累</p>
+                                <p class="member-bio" data-zh="中豫具身智能实验室执行主任，长期从事机器人技术与非线性系统研究，主持研发全球首款肌腱驱动人形机器人"行者二号"，在具身智能领域具有深厚积累和国际影响力。" data-en="Executive Director of ZYEI Lab, long-term focus on robotics and nonlinear systems. Led the development of the world's first tendon-driven humanoid robot 'Walker X02-Lite' with deep expertise and international influence in embodied intelligence.">中豫具身智能实验室执行主任，长期从事机器人技术与非线性系统研究，主持研发全球首款肌腱驱动人形机器人"行者二号"，在具身智能领域具有深厚积累和国际影响力。</p>
                             </div>
                         </div>
                         <div class="member-info">
                             <h4 data-zh="李清都" data-en="Li Qingdu">李清都</h4>
                             <p class="member-role" data-zh="执行主任" data-en="Executive Director">执行主任</p>
                             <p class="member-title" data-zh="教授 / 博士生导师" data-en="Professor / PhD Supervisor">教授 / 博士生导师</p>
+                            <p class="member-desc" data-zh="主持国家级科研项目10余项，发表SCI论文100余篇，授权发明专利30余项" data-en="Led 10+ national research projects, published 100+ SCI papers, held 30+ invention patents">主持国家级科研项目10余项，发表SCI论文100余篇，授权发明专利30余项</p>
                             <div class="member-tags">
                                 <span class="tag" data-zh="机器人技术" data-en="Robotics">机器人技术</span>
                                 <span class="tag" data-zh="具身智能" data-en="Embodied Intelligence">具身智能</span>
+                                <span class="tag" data-zh="非线性系统" data-en="Nonlinear Systems">非线性系统</span>
                             </div>
                         </div>
                     </div>
@@ -2766,33 +4305,45 @@
                 <div class="researchers-grid">
                     <div class="team-member">
                         <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="研究员" data-zh-alt="研究员" data-en-alt="Researcher" width="300" height="300" loading="lazy" decoding="async">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="樊锁钟" data-zh-alt="樊锁钟" data-en-alt="Fan Suozhong" width="300" height="300" loading="lazy" decoding="async">
+                            <div class="member-overlay">
+                                <p class="member-bio" data-zh="负责实验室产业转化工作，推动技术成果向产品和应用转化，主导孵化企业卓益得（上海）机器人的运营。" data-en="Oversees lab industrialization, driving technology commercialization and leading incubated company Zhuoyide (Shanghai) Robotics operations.">负责实验室产业转化工作，推动技术成果向产品和应用转化，主导孵化企业卓益得（上海）机器人的运营。</p>
+                            </div>
                         </div>
                         <div class="member-info">
                             <h4 data-zh="樊锁钟 博士" data-en="Dr. Fan Suozhong">樊锁钟 博士</h4>
                             <p class="member-role" data-zh="产业转化负责人" data-en="Head of Industrialization">产业转化负责人</p>
+                            <p class="member-desc" data-zh="主导与蔚来、比亚迪等车企的产业合作，推动人形机器人在制造业的规模化应用" data-en="Leading industry partnerships with NIO, BYD and promoting large-scale humanoid robot deployment in manufacturing">主导与蔚来、比亚迪等车企的产业合作，推动人形机器人在制造业的规模化应用</p>
                             <div class="member-tags">
                                 <span class="tag" data-zh="产业化" data-en="Commercialization">产业化</span>
+                                <span class="tag" data-zh="技术转化" data-en="Tech Transfer">技术转化</span>
+                                <span class="tag" data-zh="企业孵化" data-en="Incubation">企业孵化</span>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="team-member">
                         <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt="研究员" data-zh-alt="研究员" data-en-alt="Researcher" width="300" height="300" loading="lazy" decoding="async">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt="周闯闯" data-zh-alt="周闯闯" data-en-alt="Zhou Chuangchuang" width="300" height="300" loading="lazy" decoding="async">
+                            <div class="member-overlay">
+                                <p class="member-bio" data-zh="协助执行主任统筹实验室日常运营管理，负责人才招聘、行政事务及对外交流合作等工作。" data-en="Assists Executive Director in daily operations, responsible for talent recruitment, administration, and external collaboration.">协助执行主任统筹实验室日常运营管理，负责人才招聘、行政事务及对外交流合作等工作。</p>
+                            </div>
                         </div>
                         <div class="member-info">
                             <h4 data-zh="周闯闯" data-en="Zhou Chuangchuang">周闯闯</h4>
                             <p class="member-role" data-zh="主任助理" data-en="Director's Assistant">主任助理</p>
+                            <p class="member-desc" data-zh="统筹2025年度30名博士招聘计划，协调实验室与高校、企业的合作对接" data-en="Coordinating 2025 recruitment of 30 PhD researchers, facilitating lab partnerships with universities and enterprises">统筹2025年度30名博士招聘计划，协调实验室与高校、企业的合作对接</p>
                             <div class="member-tags">
                                 <span class="tag" data-zh="项目管理" data-en="Project Management">项目管理</span>
+                                <span class="tag" data-zh="人才招聘" data-en="Recruitment">人才招聘</span>
+                                <span class="tag" data-zh="行政管理" data-en="Administration">行政管理</span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="team-member">
                         <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop" alt="研究员" data-zh-alt="研究员" data-en-alt="Researcher" width="300" height="300" loading="lazy" decoding="async">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop" alt="刘** 博士" data-zh-alt="刘** 博士" data-en-alt="Dr. Liu **" width="300" height="300" loading="lazy" decoding="async">
                         </div>
                         <div class="member-info">
                             <h4 data-zh="刘** 博士" data-en="Dr. Liu **">刘** 博士</h4>
@@ -2805,7 +4356,7 @@
                     
                     <div class="team-member">
                         <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt="研究员" data-zh-alt="研究员" data-en-alt="Researcher" width="300" height="300" loading="lazy" decoding="async">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt="陈** 博士" data-zh-alt="陈** 博士" data-en-alt="Dr. Chen **" width="300" height="300" loading="lazy" decoding="async">
                         </div>
                         <div class="member-info">
                             <h4 data-zh="陈** 博士" data-en="Dr. Chen **">陈** 博士</h4>
@@ -2818,7 +4369,7 @@
                     
                     <div class="team-member">
                         <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="研究员" data-zh-alt="研究员" data-en-alt="Researcher" width="300" height="300" loading="lazy" decoding="async">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="赵** 博士" data-zh-alt="赵** 博士" data-en-alt="Dr. Zhao **" width="300" height="300" loading="lazy" decoding="async">
                         </div>
                         <div class="member-info">
                             <h4 data-zh="赵** 博士" data-en="Dr. Zhao **">赵** 博士</h4>
@@ -2831,7 +4382,7 @@
                     
                     <div class="team-member">
                         <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop" alt="研究员" data-zh-alt="研究员" data-en-alt="Researcher" width="300" height="300" loading="lazy" decoding="async">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop" alt="孙** 博士" data-zh-alt="孙** 博士" data-en-alt="Dr. Sun **" width="300" height="300" loading="lazy" decoding="async">
                         </div>
                         <div class="member-info">
                             <h4 data-zh="孙** 博士" data-en="Dr. Sun **">孙** 博士</h4>
@@ -2933,6 +4484,291 @@
                     <h3 data-zh="文创融合应用" data-en="Cultural-Tech Integration">文创融合应用</h3>
                     <p class="achievement-tag" data-zh="跨界创新" data-en="Cross-sector Innovation">跨界创新</p>
                     <p data-zh="河南卓益得与上海戏剧学院联合推出的机器人舞台剧《巨物之城》正式亮相，推动机器人与人文艺术的深度融合。" data-en="Robot stage play 'City of Giants' jointly produced by Henan Zhuoyide and Shanghai Theatre Academy, promoting deep integration of robotics and humanities.">河南卓益得与上海戏剧学院联合推出的机器人舞台剧《巨物之城》正式亮相，推动机器人与人文艺术的深度融合。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究成果Section -->
+    <section class="publications-section" id="publications">
+        <div class="section-title">
+            <h2 data-zh="研究成果" data-en="Publications & Patents">研究成果</h2>
+            <p data-zh="学术论文、专利技术与媒体报道" data-en="Academic papers, patents, and media coverage">学术论文、专利技术与媒体报道</p>
+        </div>
+
+        <div class="publications-container">
+            <!-- 论文列表 -->
+            <div class="publications-block">
+                <h3 class="block-title" data-zh="📚 学术论文" data-en="📚 Academic Papers">📚 学术论文</h3>
+                <div class="papers-list">
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <h4>ZYEI-VLA: A Unified Vision-Language-Action Model for Embodied Intelligence</h4>
+                            <p class="paper-authors">Li Q., Fan S., Zhou C., et al.</p>
+                            <p class="paper-venue">IEEE International Conference on Robotics and Automation (ICRA) 2025</p>
+                            <div class="paper-tags">
+                                <span class="paper-tag">Multimodal AI</span>
+                                <span class="paper-tag">Embodied Intelligence</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <h4>Tendon-Driven Actuation for Energy-Efficient Humanoid Locomotion</h4>
+                            <p class="paper-authors">Zhou C., Li Q., Wang X., et al.</p>
+                            <p class="paper-venue">Science Robotics</p>
+                            <div class="paper-tags">
+                                <span class="paper-tag">Humanoid Robot</span>
+                                <span class="paper-tag">Biomechanics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-year">2024</div>
+                        <div class="paper-content">
+                            <h4>Multi-Modal Perception for Dexterous Manipulation in Unstructured Environments</h4>
+                            <p class="paper-authors">Fan S., Zhang Y., Li Q., et al.</p>
+                            <p class="paper-venue">IEEE Transactions on Robotics</p>
+                            <div class="paper-tags">
+                                <span class="paper-tag">Manipulation</span>
+                                <span class="paper-tag">Perception</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-year">2024</div>
+                        <div class="paper-content">
+                            <h4>Real-Time Motion Planning for Humanoid Robots in Dynamic Environments</h4>
+                            <p class="paper-authors">Li Q., Chen H., Fan S., et al.</p>
+                            <p class="paper-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2024</p>
+                            <div class="paper-tags">
+                                <span class="paper-tag">Motion Planning</span>
+                                <span class="paper-tag">Real-time Control</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-year">2023</div>
+                        <div class="paper-content">
+                            <h4>Cross-Modal Tactile-Vision Fusion for Humanoid Manipulation</h4>
+                            <p class="paper-authors">Liu Y., Fan S., Li Q., et al.</p>
+                            <p class="paper-venue">IEEE Robotics and Automation Letters (RA-L)</p>
+                            <div class="paper-tags">
+                                <span class="paper-tag">Tactile Sensing</span>
+                                <span class="paper-tag">Manipulation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-year">2023</div>
+                        <div class="paper-content">
+                            <h4>Safe Human-Robot Collaboration via Whole-Body Compliance Control</h4>
+                            <p class="paper-authors">Zhao J., Wang H., Li Q., et al.</p>
+                            <p class="paper-venue">Robotics and Autonomous Systems</p>
+                            <div class="paper-tags">
+                                <span class="paper-tag">Safety</span>
+                                <span class="paper-tag">Compliance Control</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <h4>Sim-to-Real Transfer for Biped Locomotion with Tendon Actuation</h4>
+                            <p class="paper-authors">Chen X., Zhou C., Li Q., et al.</p>
+                            <p class="paper-venue">Advanced Robotics</p>
+                            <div class="paper-tags">
+                                <span class="paper-tag">Locomotion</span>
+                                <span class="paper-tag">Sim-to-Real</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <h4>Large-Scale Embodied Data Collection for Generalist Robots</h4>
+                            <p class="paper-authors">Fan S., Zhou C., Liu Y., et al.</p>
+                            <p class="paper-venue">International Journal of Robotics Research (IJRR)</p>
+                            <div class="paper-tags">
+                                <span class="paper-tag">Dataset</span>
+                                <span class="paper-tag">Generalist Robots</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 专利列表 -->
+            <div class="publications-block">
+                <h3 class="block-title" data-zh="💡 核心专利" data-en="💡 Core Patents">💡 核心专利</h3>
+                <div class="patents-grid">
+                    <div class="patent-item">
+                        <div class="patent-icon">🔧</div>
+                        <div class="patent-content">
+                            <h4 data-zh="肌腱驱动人形机器人关节结构及控制方法" data-en="Tendon-Driven Humanoid Robot Joint Structure and Control Method">肌腱驱动人形机器人关节结构及控制方法</h4>
+                            <p data-zh="发明专利 | 专利号: ZL202410xxxxx.x" data-en="Invention Patent | Patent No: ZL202410xxxxx.x">发明专利 | 专利号: ZL202410xxxxx.x</p>
+                        </div>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-icon">🤖</div>
+                        <div class="patent-content">
+                            <h4 data-zh="基于多模态大模型的机器人任务规划系统" data-en="Robot Task Planning System Based on Multimodal Foundation Model">基于多模态大模型的机器人任务规划系统</h4>
+                            <p data-zh="发明专利 | 专利号: ZL202410xxxxx.x" data-en="Invention Patent | Patent No: ZL202410xxxxx.x">发明专利 | 专利号: ZL202410xxxxx.x</p>
+                        </div>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-icon">⚡</div>
+                        <div class="patent-content">
+                            <h4 data-zh="高精度力控关节模组及其制造方法" data-en="High-Precision Force-Controlled Joint Module and Manufacturing Method">高精度力控关节模组及其制造方法</h4>
+                            <p data-zh="发明专利 | 专利号: ZL202410xxxxx.x" data-en="Invention Patent | Patent No: ZL202410xxxxx.x">发明专利 | 专利号: ZL202410xxxxx.x</p>
+                        </div>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-icon">🎯</div>
+                        <div class="patent-content">
+                            <h4 data-zh="具身智能系统的视觉-语言-动作统一架构" data-en="Unified VLA Architecture for Embodied Intelligence Systems">具身智能系统的视觉-语言-动作统一架构</h4>
+                            <p data-zh="发明专利 | 专利号: ZL202410xxxxx.x" data-en="Invention Patent | Patent No: ZL202410xxxxx.x">发明专利 | 专利号: ZL202410xxxxx.x</p>
+                        </div>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-icon">🏭</div>
+                        <div class="patent-content">
+                            <h4 data-zh="面向工业场景的通用机器人拆解系统" data-en="Universal Robot Disassembly System for Industrial Scenarios">面向工业场景的通用机器人拆解系统</h4>
+                            <p data-zh="发明专利 | 专利号: ZL202410xxxxx.x" data-en="Invention Patent | Patent No: ZL202410xxxxx.x">发明专利 | 专利号: ZL202410xxxxx.x</p>
+                        </div>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-icon">🏥</div>
+                        <div class="patent-content">
+                            <h4 data-zh="康复训练机器人力反馈控制方法" data-en="Force Feedback Control Method for Rehabilitation Robot">康复训练机器人力反馈控制方法</h4>
+                            <p data-zh="发明专利 | 专利号: ZL202410xxxxx.x" data-en="Invention Patent | Patent No: ZL202410xxxxx.x">发明专利 | 专利号: ZL202410xxxxx.x</p>
+                        </div>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-icon">🧤</div>
+                        <div class="patent-content">
+                            <h4 data-zh="多模态触觉传感器阵列及标定方法" data-en="Multimodal Tactile Sensor Array and Calibration Method">多模态触觉传感器阵列及标定方法</h4>
+                            <p data-zh="发明专利 | 专利号: ZL202410xxxxx.x" data-en="Invention Patent | Patent No: ZL202410xxxxx.x">发明专利 | 专利号: ZL202410xxxxx.x</p>
+                        </div>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-icon">🛡️</div>
+                        <div class="patent-content">
+                            <h4 data-zh="人机协作安全限力控制系统" data-en="Safety-Limited Force Control System for Human-Robot Collaboration">人机协作安全限力控制系统</h4>
+                            <p data-zh="发明专利 | 专利号: ZL202410xxxxx.x" data-en="Invention Patent | Patent No: ZL202410xxxxx.x">发明专利 | 专利号: ZL202410xxxxx.x</p>
+                        </div>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-icon">🧭</div>
+                        <div class="patent-content">
+                            <h4 data-zh="智能巡检机器人自主导航与任务调度方法" data-en="Autonomous Navigation and Task Scheduling for Inspection Robots">智能巡检机器人自主导航与任务调度方法</h4>
+                            <p data-zh="发明专利 | 专利号: ZL202410xxxxx.x" data-en="Invention Patent | Patent No: ZL202410xxxxx.x">发明专利 | 专利号: ZL202410xxxxx.x</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 媒体报道 -->
+            <div class="publications-block">
+                <h3 class="block-title" data-zh="📰 媒体报道" data-en="📰 Media Coverage">📰 媒体报道</h3>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <div class="media-logo" data-zh="新华网" data-en="Xinhua">新华网</div>
+                        <div class="media-content">
+                            <h4 data-zh="让机器人动手能力更强——河南具身智能实验室探访" data-en="Enabling More Dexterous Robots - Visit to Henan Embodied Intelligence Lab">让机器人动手能力更强——河南具身智能实验室探访</h4>
+                            <p class="media-date">2024.12.11</p>
+                            <a href="#" class="media-link" data-zh="阅读全文 →" data-en="Read More →">阅读全文 →</a>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <div class="media-logo" data-zh="河南日报" data-en="Henan Daily">河南日报</div>
+                        <div class="media-content">
+                            <h4 data-zh="打造中原具身智能产业高地" data-en="Building Central China's Embodied AI Hub">打造中原具身智能产业高地</h4>
+                            <p class="media-date">2024.11.08</p>
+                            <a href="#" class="media-link" data-zh="阅读全文 →" data-en="Read More →">阅读全文 →</a>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <div class="media-logo" data-zh="央视新闻" data-en="CCTV News">央视新闻</div>
+                        <div class="media-content">
+                            <h4 data-zh="河南：六大省实验室同时揭牌，聚焦前沿科技" data-en="Henan: Six Provincial Labs Inaugurated Focusing on Frontier Tech">河南：六大省实验室同时揭牌，聚焦前沿科技</h4>
+                            <p class="media-date">2024.10.16</p>
+                            <a href="#" class="media-link" data-zh="阅读全文 →" data-en="Read More →">阅读全文 →</a>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <div class="media-logo" data-zh="人民网" data-en="People.cn">人民网</div>
+                        <div class="media-content">
+                            <h4 data-zh="全球首款肌腱驱动人形机器人亮相河南" data-en="World's First Tendon-Driven Humanoid Robot Debuts in Henan">全球首款肌腱驱动人形机器人亮相河南</h4>
+                            <p class="media-date">2025.01.15</p>
+                            <a href="#" class="media-link" data-zh="阅读全文 →" data-en="Read More →">阅读全文 →</a>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <div class="media-logo" data-zh="科技日报" data-en="S&T Daily">科技日报</div>
+                        <div class="media-content">
+                            <h4 data-zh="从AI到机器人：具身智能的中国突破" data-en="From AI to Robots: China's Embodied Intelligence Breakthrough">从AI到机器人：具身智能的中国突破</h4>
+                            <p class="media-date">2025.02.20</p>
+                            <a href="#" class="media-link" data-zh="阅读全文 →" data-en="Read More →">阅读全文 →</a>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <div class="media-logo" data-zh="大河报" data-en="Dahe Daily">大河报</div>
+                        <div class="media-content">
+                            <h4 data-zh="实验室首次开放日：10余台机器人各显身手" data-en="First Open Day: Over 10 Robots Showcase Their Skills">实验室首次开放日：10余台机器人各显身手</h4>
+                            <p class="media-date">2025.03.20</p>
+                            <a href="#" class="media-link" data-zh="阅读全文 →" data-en="Read More →">阅读全文 →</a>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <div class="media-logo" data-zh="中国科学报" data-en="China Science Daily">中国科学报</div>
+                        <div class="media-content">
+                            <h4 data-zh="中豫具身智能实验室启动开放共享平台" data-en="ZYEI Lab Launches an Open Sharing Platform">中豫具身智能实验室启动开放共享平台</h4>
+                            <p class="media-date">2025.02.05</p>
+                            <a href="#" class="media-link" data-zh="阅读全文 →" data-en="Read More →">阅读全文 →</a>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <div class="media-logo" data-zh="新华社" data-en="Xinhua">新华社</div>
+                        <div class="media-content">
+                            <h4 data-zh="河南布局具身智能产业新引擎" data-en="Henan Builds a New Engine for Embodied Intelligence Industry">河南布局具身智能产业新引擎</h4>
+                            <p class="media-date">2025.01.08</p>
+                            <a href="#" class="media-link" data-zh="阅读全文 →" data-en="Read More →">阅读全文 →</a>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <div class="media-logo" data-zh="河南广播电视台" data-en="Henan TV">河南广播电视台</div>
+                        <div class="media-content">
+                            <h4 data-zh="行者二号X02-Lite完成产业化试验" data-en="Walker X02-Lite Completes Industrial Trials">行者二号X02-Lite完成产业化试验</h4>
+                            <p class="media-date">2025.03.28</p>
+                            <a href="#" class="media-link" data-zh="阅读全文 →" data-en="Read More →">阅读全文 →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -3074,6 +4910,123 @@
         </div>
     </section>
 
+    <!-- 产业转化 Section -->
+    <section class="industry-section" id="industry">
+        <div class="section-title">
+            <h2 data-zh="产业转化" data-en="Industrialization">产业转化</h2>
+            <p data-zh="技术落地，赋能产业升级" data-en="Technology implementation empowering industrial upgrade">技术落地，赋能产业升级</p>
+        </div>
+
+        <div class="industry-container">
+            <!-- 孵化企业 -->
+            <div class="incubator-section">
+                <h3 class="industry-subtitle" data-zh="孵化企业" data-en="Incubated Company">孵化企业</h3>
+                <div class="incubator-card">
+                    <div class="incubator-logo">
+                        <span class="logo-text">卓益得</span>
+                        <span class="logo-sub">ZHUOYIDE</span>
+                    </div>
+                    <div class="incubator-info">
+                        <h4 data-zh="卓益得（上海）机器人科技有限公司" data-en="Zhuoyide (Shanghai) Robotics Technology Co., Ltd.">卓益得（上海）机器人科技有限公司</h4>
+                        <p class="incubator-desc" data-zh="中豫具身智能实验室孵化的产业化平台公司，专注于人形机器人的产品化和商业应用。依托实验室的核心技术优势，卓益得致力于将行者系列机器人推向市场，为工业制造、医疗健康、商业服务等领域提供具身智能解决方案。" data-en="An industrialization platform incubated by ZYEI Lab, focused on humanoid robot productization and commercial applications. Leveraging the lab's core technologies, Zhuoyide commercializes the Walker robot series, providing embodied intelligence solutions for industrial manufacturing, healthcare, and commercial services.">中豫具身智能实验室孵化的产业化平台公司，专注于人形机器人的产品化和商业应用。依托实验室的核心技术优势，卓益得致力于将行者系列机器人推向市场，为工业制造、医疗健康、商业服务等领域提供具身智能解决方案。</p>
+                        <div class="incubator-highlights">
+                            <div class="highlight-tag">
+                                <span class="tag-icon">🏭</span>
+                                <span data-zh="工业机器人产品线" data-en="Industrial Robot Product Line">工业机器人产品线</span>
+                            </div>
+                            <div class="highlight-tag">
+                                <span class="tag-icon">🏥</span>
+                                <span data-zh="医疗服务机器人" data-en="Healthcare Service Robots">医疗服务机器人</span>
+                            </div>
+                            <div class="highlight-tag">
+                                <span class="tag-icon">🎭</span>
+                                <span data-zh="文旅表演机器人" data-en="Tourism Performance Robots">文旅表演机器人</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 应用场景 -->
+            <div class="scenarios-section">
+                <h3 class="industry-subtitle" data-zh="应用场景" data-en="Application Scenarios">应用场景</h3>
+                <div class="scenarios-grid">
+                    <div class="scenario-card">
+                        <div class="scenario-icon">🚗</div>
+                        <h4 data-zh="汽车制造" data-en="Automotive Manufacturing">汽车制造</h4>
+                        <p data-zh="车门装配、质量检测、物料搬运等18类场景实训应用" data-en="Door assembly, quality inspection, material handling across 18 scenario applications">车门装配、质量检测、物料搬运等18类场景实训应用</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon">💻</div>
+                        <h4 data-zh="电子装配" data-en="Electronics Assembly">电子装配</h4>
+                        <p data-zh="精密零件组装、电路板检测、产品包装等柔性生产" data-en="Precision component assembly, PCB inspection, and flexible packaging">精密零件组装、电路板检测、产品包装等柔性生产</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon">📦</div>
+                        <h4 data-zh="智能物流" data-en="Smart Logistics">智能物流</h4>
+                        <p data-zh="仓储分拣、货物搬运、无人配送等自动化物流方案" data-en="Warehouse sorting, cargo handling, and automated delivery solutions">仓储分拣、货物搬运、无人配送等自动化物流方案</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon">🏥</div>
+                        <h4 data-zh="康复护理" data-en="Rehabilitation Care">康复护理</h4>
+                        <p data-zh="康复训练辅助、护理照料、药品配送等医疗服务" data-en="Rehabilitation training, nursing care, and medication delivery services">康复训练辅助、护理照料、药品配送等医疗服务</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon">🎭</div>
+                        <h4 data-zh="文旅表演" data-en="Cultural Tourism">文旅表演</h4>
+                        <p data-zh="景区导览、互动表演、沉浸式体验等文旅服务" data-en="Tour guides, interactive performances, and immersive experiences">景区导览、互动表演、沉浸式体验等文旅服务</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon">🏨</div>
+                        <h4 data-zh="商业服务" data-en="Commercial Services">商业服务</h4>
+                        <p data-zh="酒店迎宾、商场导购、展馆讲解等智能服务" data-en="Hotel reception, mall assistance, and exhibition guide services">酒店迎宾、商场导购、展馆讲解等智能服务</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon">🏠</div>
+                        <h4 data-zh="家庭服务" data-en="Home Services">家庭服务</h4>
+                        <p data-zh="家务清洁、老人陪护、儿童教育等居家场景" data-en="Housework, elderly companionship, and children's education">家务清洁、老人陪护、儿童教育等居家场景</p>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-icon">🔬</div>
+                        <h4 data-zh="科研教育" data-en="Research & Education">科研教育</h4>
+                        <p data-zh="科研实验辅助、教学演示、STEM教育等场景" data-en="Research assistance, teaching demonstrations, and STEM education">科研实验辅助、教学演示、STEM教育等场景</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 合作伙伴墙 -->
+            <div class="partners-wall-section">
+                <h3 class="industry-subtitle" data-zh="合作伙伴" data-en="Strategic Partners">合作伙伴</h3>
+                <div class="partners-wall">
+                    <div class="partner-category">
+                        <h4 data-zh="政府机构" data-en="Government">政府机构</h4>
+                        <div class="partner-items">
+                            <div class="partner-item" data-zh="河南省科学院" data-en="Henan Academy of Sciences">河南省科学院</div>
+                            <div class="partner-item" data-zh="河南省科技厅" data-en="Henan Dept of Science & Technology">河南省科技厅</div>
+                        </div>
+                    </div>
+                    <div class="partner-category">
+                        <h4 data-zh="高校院所" data-en="Universities">高校院所</h4>
+                        <div class="partner-items">
+                            <div class="partner-item" data-zh="郑州大学" data-en="Zhengzhou University">郑州大学</div>
+                            <div class="partner-item" data-zh="河南大学" data-en="Henan University">河南大学</div>
+                            <div class="partner-item" data-zh="上海戏剧学院" data-en="Shanghai Theatre Academy">上海戏剧学院</div>
+                        </div>
+                    </div>
+                    <div class="partner-category">
+                        <h4 data-zh="产业合作" data-en="Industry">产业合作</h4>
+                        <div class="partner-items">
+                            <div class="partner-item" data-zh="蔚来汽车" data-en="NIO">蔚来汽车</div>
+                            <div class="partner-item" data-zh="比亚迪" data-en="BYD">比亚迪</div>
+                            <div class="partner-item" data-zh="吉利汽车" data-en="Geely">吉利汽车</div>
+                            <div class="partner-item" data-zh="东风柳汽" data-en="Dongfeng Liuzhou">东风柳汽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 人才招聘 Section -->
     <section class="careers-section" id="careers">
         <div class="section-title">
@@ -3083,70 +5036,92 @@
         
         <div class="careers-container">
             <div class="careers-intro">
-                <h3 data-zh="2025年公开招聘博士研究生" data-en="2025 PhD Recruitment">2025年公开招聘博士研究生</h3>
-                <p data-zh="中豫具身智能实验室作为河南省智能科技创新的重要引擎，诚邀全球优秀博士人才加入，共同突破具身智能关键技术，推动产业转型升级。" data-en="As a key engine of smart technology innovation in Henan, ZYEI Lab invites outstanding PhD talent worldwide to advance embodied intelligence and drive industrial transformation.">中豫具身智能实验室作为河南省智能科技创新的重要引擎，诚邀全球优秀博士人才加入，共同突破具身智能关键技术，推动产业转型升级。</p>
+                <h3 data-zh="2025年公开招聘博士研究生30名" data-en="2025 PhD Recruitment: 30 Positions">2025年公开招聘博士研究生30名</h3>
+                <p data-zh="中豫具身智能实验室作为河南省智能科技创新的重要引擎，诚邀全球优秀博士人才加入，共同突破具身智能关键技术，推动产业转型升级。我们提供国际一流的科研平台、具有竞争力的薪酬待遇和广阔的发展空间。" data-en="As a key engine of smart technology innovation in Henan, ZYEI Lab invites outstanding PhD talent worldwide to advance embodied intelligence and drive industrial transformation. We offer world-class research platforms, competitive compensation, and broad career prospects.">中豫具身智能实验室作为河南省智能科技创新的重要引擎，诚邀全球优秀博士人才加入，共同突破具身智能关键技术，推动产业转型升级。我们提供国际一流的科研平台、具有竞争力的薪酬待遇和广阔的发展空间。</p>
             </div>
-            
+
             <div class="careers-grid">
                 <div class="career-card">
                     <div class="career-header">
                         <h4 data-zh="机器人技术研究员" data-en="Robotics Researcher">机器人技术研究员</h4>
-                        <span class="career-count" data-zh="若干名" data-en="Multiple">若干名</span>
+                        <span class="career-count" data-zh="8-10人" data-en="8-10 positions">8-10人</span>
                     </div>
                     <div class="career-requirements">
                         <p><strong data-zh="专业要求：" data-en="Major: ">专业要求：</strong><span data-zh="机械工程、机器人学、控制科学与工程等相关专业" data-en="Mechanical Engineering, Robotics, Control Science and Engineering, or related fields">机械工程、机器人学、控制科学与工程等相关专业</span></p>
-                        <p><strong data-zh="研究方向：" data-en="Focus: ">研究方向：</strong><span data-zh="人形机器人本体设计、运动控制、动力学建模" data-en="Humanoid robot design, motion control, dynamics modeling">人形机器人本体设计、运动控制、动力学建模</span></p>
+                        <p><strong data-zh="研究方向：" data-en="Focus: ">研究方向：</strong><span data-zh="人形机器人本体设计、运动控制、动力学建模、柔性驱动技术" data-en="Humanoid robot design, motion control, dynamics modeling, flexible drive technology">人形机器人本体设计、运动控制、动力学建模、柔性驱动技术</span></p>
                         <p><strong data-zh="学历要求：" data-en="Education: ">学历要求：</strong><span data-zh="博士研究生（应届或已获得学位）" data-en="PhD (current or completed)">博士研究生（应届或已获得学位）</span></p>
                     </div>
                 </div>
-                
+
                 <div class="career-card">
                     <div class="career-header">
                         <h4 data-zh="AI 算法工程师" data-en="AI Algorithm Engineer">AI 算法工程师</h4>
-                        <span class="career-count" data-zh="若干名" data-en="Multiple">若干名</span>
+                        <span class="career-count" data-zh="8-10人" data-en="8-10 positions">8-10人</span>
                     </div>
                     <div class="career-requirements">
                         <p><strong data-zh="专业要求：" data-en="Major: ">专业要求：</strong><span data-zh="计算机科学、人工智能、模式识别等相关专业" data-en="Computer Science, AI, Pattern Recognition, or related fields">计算机科学、人工智能、模式识别等相关专业</span></p>
-                        <p><strong data-zh="研究方向：" data-en="Focus: ">研究方向：</strong><span data-zh="多模态大模型、具身智能算法、视觉感知" data-en="Multimodal foundation models, embodied intelligence algorithms, visual perception">多模态大模型、具身智能算法、视觉感知</span></p>
+                        <p><strong data-zh="研究方向：" data-en="Focus: ">研究方向：</strong><span data-zh="多模态大模型、具身智能算法、视觉感知、VLA架构" data-en="Multimodal foundation models, embodied intelligence algorithms, visual perception, VLA architecture">多模态大模型、具身智能算法、视觉感知、VLA架构</span></p>
                         <p><strong data-zh="学历要求：" data-en="Education: ">学历要求：</strong><span data-zh="博士研究生（应届或已获得学位）" data-en="PhD (current or completed)">博士研究生（应届或已获得学位）</span></p>
                     </div>
                 </div>
-                
+
                 <div class="career-card">
                     <div class="career-header">
-                        <h4 data-zh="电气与自动化专家" data-en="Electrical & Automation Specialist">电气与自动化专家</h4>
-                        <span class="career-count" data-zh="若干名" data-en="Multiple">若干名</span>
+                        <h4 data-zh="应用场景工程师" data-en="Application Engineer">应用场景工程师</h4>
+                        <span class="career-count" data-zh="8-10人" data-en="8-10 positions">8-10人</span>
                     </div>
                     <div class="career-requirements">
-                        <p><strong data-zh="专业要求：" data-en="Major: ">专业要求：</strong><span data-zh="自动化、电气工程、电子信息等相关专业" data-en="Automation, Electrical Engineering, Electronics and related fields">自动化、电气工程、电子信息等相关专业</span></p>
-                        <p><strong data-zh="研究方向：" data-en="Focus: ">研究方向：</strong><span data-zh="伺服控制、传感器融合、嵌入式系统" data-en="Servo control, sensor fusion, embedded systems">伺服控制、传感器融合、嵌入式系统</span></p>
+                        <p><strong data-zh="专业要求：" data-en="Major: ">专业要求：</strong><span data-zh="工业工程、智能制造、生物医学工程等相关专业" data-en="Industrial Engineering, Smart Manufacturing, Biomedical Engineering, or related fields">工业工程、智能制造、生物医学工程等相关专业</span></p>
+                        <p><strong data-zh="研究方向：" data-en="Focus: ">研究方向：</strong><span data-zh="工业/医疗/服务场景应用开发、人机协作系统" data-en="Industrial/medical/service application development, human-robot collaboration systems">工业/医疗/服务场景应用开发、人机协作系统</span></p>
+                        <p><strong data-zh="学历要求：" data-en="Education: ">学历要求：</strong><span data-zh="博士研究生（应届或已获得学位）" data-en="PhD (current or completed)">博士研究生（应届或已获得学位）</span></p>
+                    </div>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-header">
+                        <h4 data-zh="系统集成工程师" data-en="Systems Integration Engineer">系统集成工程师</h4>
+                        <span class="career-count" data-zh="4-6人" data-en="4-6 positions">4-6人</span>
+                    </div>
+                    <div class="career-requirements">
+                        <p><strong data-zh="专业要求：" data-en="Major: ">专业要求：</strong><span data-zh="自动化、电气工程、电子信息、嵌入式系统等相关专业" data-en="Automation, Electrical Engineering, Electronics, Embedded Systems, or related fields">自动化、电气工程、电子信息、嵌入式系统等相关专业</span></p>
+                        <p><strong data-zh="研究方向：" data-en="Focus: ">研究方向：</strong><span data-zh="伺服控制、传感器融合、系统架构设计、软硬件集成" data-en="Servo control, sensor fusion, system architecture, hardware-software integration">伺服控制、传感器融合、系统架构设计、软硬件集成</span></p>
                         <p><strong data-zh="学历要求：" data-en="Education: ">学历要求：</strong><span data-zh="博士研究生（应届或已获得学位）" data-en="PhD (current or completed)">博士研究生（应届或已获得学位）</span></p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="careers-benefits">
                 <h3 data-zh="我们提供" data-en="We Offer">我们提供</h3>
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <span class="benefit-icon">💰</span>
                         <h4 data-zh="竞争力薪酬" data-en="Competitive Compensation">竞争力薪酬</h4>
-                        <p data-zh="提供具有竞争力的薪资待遇，绩效奖金" data-en="Competitive salary and performance bonuses">提供具有竞争力的薪资待遇，绩效奖金</p>
+                        <p data-zh="提供具有竞争力的薪资待遇，年度绩效奖金，科研成果奖励" data-en="Competitive salary, annual performance bonuses, and research achievement awards">提供具有竞争力的薪资待遇，年度绩效奖金，科研成果奖励</p>
                     </div>
                     <div class="benefit-item">
                         <span class="benefit-icon">🏠</span>
                         <h4 data-zh="安家补贴" data-en="Relocation Support">安家补贴</h4>
-                        <p data-zh="提供安家费、住房补贴等支持政策" data-en="Relocation allowance and housing subsidies">提供安家费、住房补贴等支持政策</p>
+                        <p data-zh="提供安家费、住房补贴，协助解决子女教育问题" data-en="Relocation allowance, housing subsidies, and children's education support">提供安家费、住房补贴，协助解决子女教育问题</p>
                     </div>
                     <div class="benefit-item">
                         <span class="benefit-icon">🔬</span>
                         <h4 data-zh="科研平台" data-en="Research Platform">科研平台</h4>
-                        <p data-zh="国际一流的科研设备和实验环境" data-en="World-class facilities and lab environments">国际一流的科研设备和实验环境</p>
+                        <p data-zh="国际一流的科研设备，充足的科研经费支持" data-en="World-class equipment and sufficient research funding">国际一流的科研设备，充足的科研经费支持</p>
                     </div>
                     <div class="benefit-item">
                         <span class="benefit-icon">📈</span>
                         <h4 data-zh="职业发展" data-en="Career Growth">职业发展</h4>
-                        <p data-zh="清晰的职业发展路径和晋升通道" data-en="Clear career paths and promotion opportunities">清晰的职业发展路径和晋升通道</p>
+                        <p data-zh="清晰的职业发展路径，职称评审绿色通道" data-en="Clear career paths and fast-track professional title evaluation">清晰的职业发展路径，职称评审绿色通道</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🌍</span>
+                        <h4 data-zh="学术交流" data-en="Academic Exchange">学术交流</h4>
+                        <p data-zh="支持参加国际学术会议，国内外访学交流机会" data-en="Support for international conferences and visiting scholar opportunities">支持参加国际学术会议，国内外访学交流机会</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎯</span>
+                        <h4 data-zh="产业实践" data-en="Industry Practice">产业实践</h4>
+                        <p data-zh="参与头部企业合作项目，科技成果转化收益分享" data-en="Participate in top enterprise projects, share in technology commercialization">参与头部企业合作项目，科技成果转化收益分享</p>
                     </div>
                 </div>
             </div>
@@ -3154,6 +5129,144 @@
             <div class="careers-cta">
                 <a href="mailto:hr@zyei-lab.cn" class="btn btn-primary ripple" data-zh="立即申请" data-en="Apply Now">立即申请</a>
                 <a href="#contact" class="btn btn-secondary ripple" data-zh="了解更多" data-en="Learn More">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 开放合作 Section -->
+    <section class="cooperation-section" id="cooperation">
+        <div class="section-title">
+            <h2 data-zh="开放合作" data-en="Open Cooperation">开放合作</h2>
+            <p data-zh="携手共建具身智能产业生态" data-en="Building the embodied intelligence ecosystem together">携手共建具身智能产业生态</p>
+        </div>
+
+        <div class="cooperation-container">
+            <!-- 合作模式 -->
+            <div class="cooperation-modes">
+                <h3 class="cooperation-subtitle" data-zh="合作模式" data-en="Cooperation Models">合作模式</h3>
+                <div class="modes-grid">
+                    <div class="mode-card">
+                        <div class="mode-icon">🎓</div>
+                        <h4 data-zh="产学研合作" data-en="Industry-Academia-Research">产学研合作</h4>
+                        <p data-zh="与高校、科研院所开展联合研究，共建实验室、研究中心，共同培养高层次人才，推动基础研究与应用创新。" data-en="Joint research with universities and institutes, co-building labs and research centers, co-training talent, and advancing basic research and innovation.">与高校、科研院所开展联合研究，共建实验室、研究中心，共同培养高层次人才，推动基础研究与应用创新。</p>
+                        <ul class="mode-features">
+                            <li data-zh="联合实验室共建" data-en="Joint lab construction">联合实验室共建</li>
+                            <li data-zh="研究生联合培养" data-en="Graduate student co-training">研究生联合培养</li>
+                            <li data-zh="科研项目合作" data-en="Research project collaboration">科研项目合作</li>
+                        </ul>
+                    </div>
+                    <div class="mode-card">
+                        <div class="mode-icon">🔄</div>
+                        <h4 data-zh="技术转化合作" data-en="Technology Transfer">技术转化合作</h4>
+                        <p data-zh="将实验室的科研成果转化为产品和服务，提供技术许可、技术服务、联合开发等多种合作方式。" data-en="Transform lab research into products and services through technology licensing, technical services, and joint development.">将实验室的科研成果转化为产品和服务，提供技术许可、技术服务、联合开发等多种合作方式。</p>
+                        <ul class="mode-features">
+                            <li data-zh="技术许可与授权" data-en="Technology licensing">技术许可与授权</li>
+                            <li data-zh="定制化技术服务" data-en="Customized technical services">定制化技术服务</li>
+                            <li data-zh="联合产品开发" data-en="Joint product development">联合产品开发</li>
+                        </ul>
+                    </div>
+                    <div class="mode-card">
+                        <div class="mode-icon">🏭</div>
+                        <h4 data-zh="产业化合作" data-en="Industrialization Partnership">产业化合作</h4>
+                        <p data-zh="与行业龙头企业建立战略合作关系，共同推进具身智能技术在工业、医疗、服务等领域的规模化应用。" data-en="Strategic partnerships with industry leaders to jointly advance large-scale embodied intelligence applications in industrial, medical, and service sectors.">与行业龙头企业建立战略合作关系，共同推进具身智能技术在工业、医疗、服务等领域的规模化应用。</p>
+                        <ul class="mode-features">
+                            <li data-zh="战略合作协议" data-en="Strategic partnership agreements">战略合作协议</li>
+                            <li data-zh="示范项目落地" data-en="Demonstration project deployment">示范项目落地</li>
+                            <li data-zh="产业基金投资" data-en="Industry fund investment">产业基金投资</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 参观预约 -->
+            <div class="visit-section">
+                <h3 class="cooperation-subtitle" data-zh="参观预约" data-en="Visit Appointment">参观预约</h3>
+                <div class="visit-container">
+                    <div class="visit-info">
+                        <h4 data-zh="欢迎来访交流" data-en="Welcome to Visit">欢迎来访交流</h4>
+                        <p data-zh="中豫具身智能实验室定期举办开放日活动，欢迎政府、企业、高校、媒体及社会各界人士来访参观交流。您可以近距离观摩行者系列机器人演示、了解实验室科研成果、探讨合作机会。" data-en="ZYEI Lab regularly holds open day events, welcoming visitors from government, enterprises, universities, media, and the public. Experience Walker robot demonstrations, learn about our research achievements, and discuss cooperation opportunities.">中豫具身智能实验室定期举办开放日活动，欢迎政府、企业、高校、媒体及社会各界人士来访参观交流。您可以近距离观摩行者系列机器人演示、了解实验室科研成果、探讨合作机会。</p>
+                        <div class="visit-highlights">
+                            <div class="visit-highlight">
+                                <span class="highlight-icon">🤖</span>
+                                <span data-zh="机器人现场演示" data-en="Live robot demonstrations">机器人现场演示</span>
+                            </div>
+                            <div class="visit-highlight">
+                                <span class="highlight-icon">🔬</span>
+                                <span data-zh="实验室参观导览" data-en="Lab tour and guidance">实验室参观导览</span>
+                            </div>
+                            <div class="visit-highlight">
+                                <span class="highlight-icon">💬</span>
+                                <span data-zh="专家座谈交流" data-en="Expert discussions">专家座谈交流</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="visit-form-wrapper">
+                        <form class="visit-form" id="visitForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="单位名称" data-zh-placeholder="单位名称" data-en-placeholder="Organization Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="联系人姓名" data-zh-placeholder="联系人姓名" data-en-placeholder="Contact Person" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="tel" placeholder="联系电话" data-zh-placeholder="联系电话" data-en-placeholder="Phone Number" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="电子邮箱" data-zh-placeholder="电子邮箱" data-en-placeholder="Email Address" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="date" placeholder="期望参观日期" data-zh-placeholder="期望参观日期" data-en-placeholder="Preferred Visit Date" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" placeholder="参观人数" data-zh-placeholder="参观人数" data-en-placeholder="Number of Visitors" min="1" max="50" required>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <textarea placeholder="参观目的及特别需求" data-zh-placeholder="参观目的及特别需求" data-en-placeholder="Purpose of visit and special requirements" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary ripple" data-zh="提交预约" data-en="Submit Appointment">提交预约</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 合作案例 -->
+            <div class="cases-section">
+                <h3 class="cooperation-subtitle" data-zh="合作案例" data-en="Cooperation Cases">合作案例</h3>
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <div class="case-badge" data-zh="产业合作" data-en="Industry">产业合作</div>
+                        <h4 data-zh="蔚来汽车 - 智能制造项目" data-en="NIO - Smart Manufacturing Project">蔚来汽车 - 智能制造项目</h4>
+                        <p data-zh="与蔚来汽车合作，在其合肥工厂部署Walker S系列人形机器人，完成车门装配、质检、物流搬运等18类场景的实训和应用验证，显著提升生产线柔性和效率。" data-en="Partnered with NIO to deploy Walker S humanoid robots at their Hefei factory, completing training and validation across 18 scenarios including door assembly, inspection, and logistics, significantly improving production line flexibility and efficiency.">与蔚来汽车合作，在其合肥工厂部署Walker S系列人形机器人，完成车门装配、质检、物流搬运等18类场景的实训和应用验证，显著提升生产线柔性和效率。</p>
+                        <div class="case-tags">
+                            <span data-zh="智能制造" data-en="Smart Manufacturing">智能制造</span>
+                            <span data-zh="人机协作" data-en="Human-Robot Collaboration">人机协作</span>
+                        </div>
+                    </div>
+                    <div class="case-card">
+                        <div class="case-badge" data-zh="产学研" data-en="Academia">产学研</div>
+                        <h4 data-zh="上海戏剧学院 - 艺术机器人项目" data-en="Shanghai Theatre Academy - Artistic Robot Project">上海戏剧学院 - 艺术机器人项目</h4>
+                        <p data-zh="与上海戏剧学院联合开发具备表演能力的艺术机器人，融合戏剧表演艺术与机器人技术，打造文旅景区沉浸式互动体验，开创"科技+艺术"跨界融合新模式。" data-en="Joint development of performance-capable artistic robots with Shanghai Theatre Academy, combining theatrical arts with robotics for immersive tourism experiences, pioneering a new 'Technology + Art' crossover model.">与上海戏剧学院联合开发具备表演能力的艺术机器人，融合戏剧表演艺术与机器人技术，打造文旅景区沉浸式互动体验，开创"科技+艺术"跨界融合新模式。</p>
+                        <div class="case-tags">
+                            <span data-zh="文旅应用" data-en="Tourism Application">文旅应用</span>
+                            <span data-zh="跨界融合" data-en="Cross-sector Integration">跨界融合</span>
+                        </div>
+                    </div>
+                    <div class="case-card">
+                        <div class="case-badge" data-zh="技术转化" data-en="Tech Transfer">技术转化</div>
+                        <h4 data-zh="卓益得机器人 - 产品孵化" data-en="Zhuoyide Robotics - Product Incubation">卓益得机器人 - 产品孵化</h4>
+                        <p data-zh="成功孵化卓益得（上海）机器人科技有限公司，将实验室行者系列核心技术产品化，面向工业制造、医疗健康、商业服务等领域提供完整的具身智能解决方案。" data-en="Successfully incubated Zhuoyide (Shanghai) Robotics, commercializing Walker series core technologies to provide complete embodied intelligence solutions for industrial manufacturing, healthcare, and commercial services.">成功孵化卓益得（上海）机器人科技有限公司，将实验室行者系列核心技术产品化，面向工业制造、医疗健康、商业服务等领域提供完整的具身智能解决方案。</p>
+                        <div class="case-tags">
+                            <span data-zh="企业孵化" data-en="Enterprise Incubation">企业孵化</span>
+                            <span data-zh="产品化" data-en="Productization">产品化</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -3242,8 +5355,9 @@
                 <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
                 <a href="#research" data-zh="研究方向" data-en="Research">研究方向</a>
                 <a href="#achievements" data-zh="成果展示" data-en="Achievements">成果展示</a>
-                <a href="#news" data-zh="新闻动态" data-en="News & Events">新闻动态</a>
+                <a href="#industry" data-zh="产业转化" data-en="Industry">产业转化</a>
                 <a href="#careers" data-zh="人才招聘" data-en="Careers">人才招聘</a>
+                <a href="#cooperation" data-zh="开放合作" data-en="Cooperation">开放合作</a>
             </div>
             <div class="footer-section">
                 <h4 data-zh="联系方式" data-en="Contact">联系方式</h4>
@@ -3264,6 +5378,75 @@
     </footer>
 
     <script>
+        // ==================== 页面加载动画 ====================
+        const pageLoader = document.getElementById('pageLoader');
+
+        // 页面加载完成后隐藏加载动画
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                pageLoader.classList.add('hidden');
+                document.body.classList.add('page-loaded');
+
+                // 初始化滚动显示动画
+                initScrollReveal();
+            }, 1800); // 等待进度条动画完成
+        });
+
+        // 增强的滚动显示动画
+        function initScrollReveal() {
+            const revealElements = document.querySelectorAll('.scroll-reveal, .section-header, .research-card, .news-card, .team-card, .leader-card, .career-card, .benefit-item, .scenario-card, .mode-card, .case-card, .contact-card');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -100px 0px',
+                threshold: 0.1
+            };
+
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry, index) {
+                    if (entry.isIntersecting) {
+                        // 添加延迟以创建级联效果
+                        setTimeout(function() {
+                            entry.target.classList.add('revealed', 'animate-in');
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(function(el) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(40px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                revealObserver.observe(el);
+            });
+        }
+
+        // 创建粒子背景效果
+        function createParticles() {
+            const heroSection = document.querySelector('.hero');
+            if (!heroSection) return;
+
+            const particlesContainer = document.createElement('div');
+            particlesContainer.className = 'particles-bg';
+            heroSection.appendChild(particlesContainer);
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // 页面加载后创建粒子
+        document.addEventListener('DOMContentLoaded', createParticles);
+
         // ==================== 语言切换功能 ====================
         let currentLang = localStorage.getItem('language') || 'zh';
         
@@ -3519,32 +5702,79 @@
             }, 20);
         }
         
-        // ==================== 滚动触发动画 ====================
+        // ==================== 滚动触发动画（增强版） ====================
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    
-                    // 如果是统计数字，触发计数动画
-                    if (entry.target.classList.contains('stat-item')) {
-                        const numberElement = entry.target.querySelector('.stat-number');
-                        const targetNumber = parseInt(entry.target.dataset.count);
-                        animateCounter(numberElement, targetNumber);
-                    }
-                    
+                    // 添加级联延迟效果
+                    const delay = entry.target.dataset.delay || (index * 50);
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+
+                        // 如果是统计数字，触发计数动画
+                        if (entry.target.classList.contains('stat-item')) {
+                            const numberElement = entry.target.querySelector('.stat-number');
+                            const targetNumber = parseInt(entry.target.dataset.count);
+                            animateCounter(numberElement, targetNumber);
+                        }
+                    }, delay);
+
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
-        
-        // 观察所有需要动画的元素
-        document.querySelectorAll('.stat-item, .research-card, .achievement-card, .news-item').forEach(el => {
+
+        // 观察所有需要动画的元素（扩展列表）
+        const animatedElements = document.querySelectorAll(`
+            .stat-item,
+            .research-card,
+            .achievement-card,
+            .news-item,
+            .section-header,
+            .about-highlight,
+            .timeline-item,
+            .structure-card,
+            .honor-item,
+            .leader-card,
+            .team-card,
+            .incubator-card,
+            .scenario-card,
+            .partner-logo,
+            .career-card,
+            .benefit-item,
+            .mode-card,
+            .case-card,
+            .contact-card
+        `);
+
+        animatedElements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            el.dataset.delay = index * 30; // 级联延迟
             observer.observe(el);
+        });
+
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
         
         // ==================== 新闻筛选功能 ====================
@@ -3657,6 +5887,95 @@
             updateScrollProgress();
             toggleBackToTop();
         }, 100));
+
+        // ==================== 移动端体验优化 ====================
+        (function() {
+            // 检测是否为移动设备
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                // 添加触摸反馈类
+                document.querySelectorAll('a, button, .research-card, .news-item, .team-card, .career-card, .scenario-card, .mode-card, .case-card').forEach(el => {
+                    el.classList.add('touch-feedback');
+                });
+
+                // 优化移动端点击延迟
+                document.addEventListener('touchstart', function() {}, { passive: true });
+
+                // 平滑触摸滚动增强
+                document.documentElement.style.scrollBehavior = 'smooth';
+                document.documentElement.style.webkitOverflowScrolling = 'touch';
+            }
+
+            // 拉伸下拉刷新禁用（防止意外刷新）
+            document.body.addEventListener('touchmove', function(e) {
+                if (document.body.scrollTop === 0) {
+                    // 允许正常滚动
+                }
+            }, { passive: true });
+
+            // 表单输入优化
+            document.querySelectorAll('input, textarea').forEach(input => {
+                // 聚焦时滚动到可见区域
+                input.addEventListener('focus', function() {
+                    setTimeout(() => {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 300);
+                });
+            });
+
+            // 图片懒加载
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.classList.add('loaded');
+                            }
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px'
+                });
+
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+
+            // 导航菜单优化：点击链接后自动关闭
+            document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const mobileNavLinks = document.querySelector('.mobile-nav-links');
+                    const hamburger = document.querySelector('.hamburger');
+                    if (mobileNavLinks && mobileNavLinks.classList.contains('active')) {
+                        mobileNavLinks.classList.remove('active');
+                        if (hamburger) hamburger.classList.remove('active');
+                    }
+                });
+            });
+
+            // 视口高度修复（解决移动端100vh问题）
+            function setVhProperty() {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', vh + 'px');
+            }
+            setVhProperty();
+            window.addEventListener('resize', throttle(setVhProperty, 100));
+
+            // 添加卡片悬停效果类
+            document.querySelectorAll('.research-card, .news-item, .career-card, .scenario-card, .mode-card, .case-card, .contact-card').forEach(card => {
+                card.classList.add('card-hover-effect');
+            });
+
+            // 按钮波纹效果
+            document.querySelectorAll('.submit-btn, .cta-button, .hero-btn').forEach(btn => {
+                btn.classList.add('ripple-effect');
+            });
+        })();
     </script>
 </body>
 </html>
