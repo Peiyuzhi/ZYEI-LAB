@@ -85,21 +85,21 @@
             --dark-bg: #0A0E1A;
             --light-text: #E8F0FF;
             --gray-text: #8B9DC3;
-            
+
             /* 渐变 */
             --gradient-hero: linear-gradient(135deg, #0A0E1A 0%, #1a237e 50%, #0d47a1 100%);
             --gradient-accent: linear-gradient(90deg, var(--primary-blue), var(--cyber-blue));
-            
+
             /* 间距 */
             --section-padding: 120px;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Noto Sans SC', sans-serif;
             background: var(--dark-bg);
@@ -107,7 +107,7 @@
             overflow-x: hidden;
             line-height: 1.6;
         }
-        
+
         /* ==================== 导航栏 ==================== */
         nav {
             position: fixed;
@@ -120,12 +120,12 @@
             border-bottom: 1px solid rgba(0, 102, 255, 0.2);
             transition: all 0.3s ease;
         }
-        
+
         nav.scrolled {
             background: rgba(10, 14, 26, 0.95);
             box-shadow: 0 4px 30px rgba(0, 102, 255, 0.1);
         }
-        
+
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -134,7 +134,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-family: 'Orbitron', sans-serif;
             font-size: 24px;
@@ -144,22 +144,34 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: 2px;
+            text-decoration: none;
         }
-        
+
+        a.logo:hover {
+            opacity: 0.9;
+        }
+
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 24px;
             list-style: none;
+            flex-wrap: nowrap;
         }
-        
+
+        .nav-links li {
+            flex: 0 0 auto;
+        }
+
         .nav-links a {
             color: var(--light-text);
             text-decoration: none;
             font-weight: 500;
+            font-size: 14px;
+            white-space: nowrap;
             position: relative;
             transition: color 0.3s ease;
         }
-        
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -170,15 +182,23 @@
             background: var(--gradient-accent);
             transition: width 0.3s ease;
         }
-        
+
         .nav-links a:hover {
             color: var(--cyber-blue);
         }
-        
+
         .nav-links a:hover::after {
             width: 100%;
         }
-        
+
+        .nav-links a.active {
+            color: var(--cyber-blue);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
         /* 汉堡菜单按钮 */
         .menu-toggle {
             display: none;
@@ -187,7 +207,7 @@
             cursor: pointer;
             z-index: 1001;
         }
-        
+
         .menu-toggle span {
             width: 28px;
             height: 3px;
@@ -195,19 +215,19 @@
             border-radius: 2px;
             transition: all 0.3s ease;
         }
-        
+
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(8px, 8px);
         }
-        
+
         .menu-toggle.active span:nth-child(2) {
             opacity: 0;
         }
-        
+
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(8px, -8px);
         }
-        
+
         /* 移动端菜单 */
         .nav-links.mobile-menu {
             position: fixed;
@@ -224,11 +244,11 @@
             border-left: 1px solid rgba(0, 102, 255, 0.3);
             box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
         }
-        
+
         .nav-links.mobile-menu.active {
             right: 0;
         }
-        
+
         .nav-links.mobile-menu a {
             font-size: 20px;
             padding: 10px 0;
@@ -236,19 +256,19 @@
             transform: translateX(30px);
             transition: all 0.3s ease;
         }
-        
+
         .nav-links.mobile-menu.active a {
             opacity: 1;
             transform: translateX(0);
         }
-        
+
         .nav-links.mobile-menu.active a:nth-child(1) { transition-delay: 0.1s; }
         .nav-links.mobile-menu.active a:nth-child(2) { transition-delay: 0.15s; }
         .nav-links.mobile-menu.active a:nth-child(3) { transition-delay: 0.2s; }
         .nav-links.mobile-menu.active a:nth-child(4) { transition-delay: 0.25s; }
         .nav-links.mobile-menu.active a:nth-child(5) { transition-delay: 0.3s; }
         .nav-links.mobile-menu.active a:nth-child(6) { transition-delay: 0.35s; }
-        
+
         /* 语言切换器 */
         .lang-switcher {
             display: flex;
@@ -258,7 +278,7 @@
             border-radius: 20px;
             border: 1px solid rgba(0, 102, 255, 0.3);
         }
-        
+
         .lang-btn {
             padding: 6px 16px;
             border: none;
@@ -271,11 +291,11 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+
         .lang-btn:hover {
             color: var(--light-text);
         }
-        
+
         .lang-btn.active {
             background: var(--gradient-accent);
             color: white;
@@ -288,13 +308,49 @@
         /* ==================== Hero Section ==================== */
         .hero {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            background: #050816;
+            padding: 120px 0 100px;
         }
-        
+
+        .hero-media {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.65) saturate(1.1);
+        }
+
+        .hero-poster {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.7);
+            display: none;
+        }
+
         /* 轮播容器 */
         .hero-slider {
             position: absolute;
@@ -305,7 +361,7 @@
             display: flex;
             transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .hero-slide {
             min-width: 100%;
             height: 100%;
@@ -314,7 +370,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         /* 背景图片 */
         .hero-bg {
             position: absolute;
@@ -325,7 +381,7 @@
             object-fit: cover;
             filter: brightness(0.7);
         }
-        
+
         /* 渐变遮罩 */
         .hero-overlay {
             position: absolute;
@@ -333,14 +389,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                135deg,
-                rgba(10, 14, 26, 0.7) 0%,
-                rgba(0, 31, 63, 0.5) 50%,
-                rgba(13, 71, 161, 0.3) 100%
-            );
+            background: linear-gradient(120deg, #050816 0%, #003f7a 45%, #00a7d6 100%);
+            background-size: 200% 200%;
+            animation: heroGradientShift 12s ease infinite;
+            opacity: 0.7;
         }
-        
+
         /* 左右切换按钮 */
         .slider-nav {
             position: absolute;
@@ -359,27 +413,27 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
-        
+
         .slider-nav:hover {
             background: rgba(0, 102, 255, 0.3);
             border-color: var(--cyber-blue);
             transform: translateY(-50%) scale(1.1);
         }
-        
+
         .slider-nav.prev {
             left: 40px;
         }
-        
+
         .slider-nav.next {
             right: 40px;
         }
-        
+
         .slider-nav svg {
             width: 24px;
             height: 24px;
             fill: white;
         }
-        
+
         /* 底部指示器 */
         .slider-dots {
             position: absolute;
@@ -390,7 +444,7 @@
             gap: 12px;
             z-index: 100;
         }
-        
+
         .slider-dot {
             width: 12px;
             height: 12px;
@@ -399,47 +453,48 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .slider-dot.active {
             background: var(--cyber-blue);
             width: 40px;
             border-radius: 6px;
         }
-        
+
         .slider-dot:hover {
             background: rgba(255, 255, 255, 0.5);
         }
-        
+
         .hero-content {
             position: relative;
-            z-index: 10;
+            z-index: 3;
             text-align: center;
-            max-width: 1200px;
-            padding: 0 40px;
+            max-width: 960px;
+            padding: 0 32px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
-        
+
         .hero-subtitle {
             font-family: 'Orbitron', monospace;
-            font-size: 14px;
-            letter-spacing: 4px;
-            color: var(--cyber-blue);
-            margin-bottom: 20px;
+            font-size: 12px;
+            letter-spacing: 6px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
             animation: fadeInUp 1s ease 0.2s both;
         }
-        
+
         .hero-title {
-            font-size: clamp(56px, 10vw, 120px);
-            font-weight: 900;
-            margin-bottom: 30px;
-            line-height: 1.1;
+            font-size: clamp(42px, 6vw, 92px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.05;
             animation: fadeInUp 1s ease 0.4s both;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
         }
-        
+
         .hero-title .highlight {
             color: white;
         }
-        
+
         .hero-title .product-name {
             display: block;
             font-family: 'Orbitron', sans-serif;
@@ -448,22 +503,74 @@
             margin-top: 10px;
             color: var(--cyber-blue);
         }
-        
+
         .hero-description {
-            font-size: 20px;
-            color: var(--gray-text);
-            max-width: 800px;
-            margin: 0 auto 40px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 720px;
+            margin: 0 auto 36px;
             animation: fadeInUp 1s ease 0.6s both;
+            line-height: 1.6;
         }
-        
+
         .hero-cta {
             display: flex;
-            gap: 20px;
+            gap: 16px;
             justify-content: center;
             animation: fadeInUp 1s ease 0.8s both;
         }
-        
+
+        .scroll-indicator {
+            position: absolute;
+            left: 50%;
+            bottom: 32px;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 56px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 999px;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            width: 4px;
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.9);
+            animation: scrollDot 1.6s ease infinite;
+        }
+
+        .scroll-indicator:hover {
+            border-color: rgba(255, 255, 255, 0.9);
+            transform: translate(-50%, -4px);
+        }
+
+        @keyframes heroGradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes scrollDot {
+            0% { transform: translateY(-10px); opacity: 0; }
+            30% { opacity: 1; }
+            70% { transform: translateY(10px); opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-overlay,
+            .scroll-indicator::after {
+                animation: none;
+            }
+        }
+
         .btn {
             padding: 16px 40px;
             font-size: 16px;
@@ -475,23 +582,23 @@
             text-decoration: none;
             display: inline-block;
         }
-        
+
         .btn-primary {
             background: var(--gradient-accent);
             color: white;
             box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 30px rgba(0, 102, 255, 0.6);
         }
-        
+
         .btn-primary:active {
             transform: translateY(0);
             box-shadow: 0 2px 15px rgba(0, 102, 255, 0.4);
         }
-        
+
         .btn-secondary {
             background: transparent;
             color: var(--light-text);
@@ -499,7 +606,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .btn-secondary::before {
             content: '';
             position: absolute;
@@ -511,26 +618,26 @@
             transition: left 0.3s ease;
             z-index: -1;
         }
-        
+
         .btn-secondary:hover::before {
             left: 0;
         }
-        
+
         .btn-secondary:hover {
             border-color: var(--cyber-blue);
             color: white;
         }
-        
+
         .btn-secondary:active {
             transform: scale(0.98);
         }
-        
+
         /* 链接波纹效果 */
         .ripple {
             position: relative;
             overflow: hidden;
         }
-        
+
         .ripple::after {
             content: '';
             position: absolute;
@@ -543,12 +650,12 @@
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
-        
+
         .ripple:active::after {
             width: 300px;
             height: 300px;
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -559,7 +666,7 @@
                 transform: translateY(0);
             }
         }
-        
+
         /* 更多动画效果 */
         @keyframes fadeInLeft {
             from {
@@ -571,7 +678,7 @@
                 transform: translateX(0);
             }
         }
-        
+
         @keyframes fadeInRight {
             from {
                 opacity: 0;
@@ -582,7 +689,7 @@
                 transform: translateX(0);
             }
         }
-        
+
         @keyframes scaleIn {
             from {
                 opacity: 0;
@@ -593,7 +700,7 @@
                 transform: scale(1);
             }
         }
-        
+
         @keyframes slideInUp {
             from {
                 opacity: 0;
@@ -604,7 +711,7 @@
                 transform: translateY(0);
             }
         }
-        
+
         /* 滚动进度条 */
         .scroll-progress {
             position: fixed;
@@ -616,7 +723,7 @@
             z-index: 9999;
             transition: width 0.1s ease;
         }
-        
+
         /* 返回顶部按钮 */
         .back-to-top {
             position: fixed;
@@ -636,23 +743,23 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
         }
-        
+
         .back-to-top.visible {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .back-to-top:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 30px rgba(0, 102, 255, 0.6);
         }
-        
+
         .back-to-top svg {
             width: 24px;
             height: 24px;
             fill: white;
         }
-        
+
         /* 底部提示文字 */
         .hero-footnote {
             position: absolute;
@@ -663,19 +770,19 @@
             z-index: 100;
             animation: fadeIn 2s ease;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
+
         /* ==================== Stats Section ==================== */
         .stats-section {
             padding: var(--section-padding) 40px;
             background: linear-gradient(180deg, var(--dark-bg) 0%, #0d1425 100%);
             border-top: 1px solid rgba(0, 102, 255, 0.2);
         }
-        
+
         .stats-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -683,19 +790,19 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 60px;
         }
-        
+
         .stat-item {
             text-align: center;
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.6s ease;
         }
-        
+
         .stat-item.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .stat-number {
             font-family: 'Orbitron', monospace;
             font-size: 64px;
@@ -707,38 +814,39 @@
             margin-bottom: 10px;
             line-height: 1;
         }
-        
+
         .stat-label {
             font-size: 18px;
             color: var(--gray-text);
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        
+
         /* ==================== Research Directions ==================== */
         .research-section {
             padding: var(--section-padding) 40px;
             background: var(--dark-bg);
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 80px;
         }
-        
+
         .section-title h2 {
-            font-size: 48px;
+            font-size: clamp(32px, 4vw, 44px);
             font-weight: 900;
-            margin-bottom: 20px;
+            line-height: 1.2;
+            margin-bottom: 16px;
         }
-        
+
         .section-title p {
             font-size: 18px;
             color: var(--gray-text);
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         .research-grid {
             max-width: 1400px;
             margin: 0 auto;
@@ -746,7 +854,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .research-card {
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
             border: 1px solid rgba(0, 102, 255, 0.2);
@@ -758,12 +866,12 @@
             opacity: 0;
             transform: translateY(50px);
         }
-        
+
         .research-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .research-card::before {
             content: '';
             position: absolute;
@@ -776,74 +884,74 @@
             transform-origin: left;
             transition: transform 0.3s ease;
         }
-        
+
         .research-card:hover::before {
             transform: scaleX(1);
         }
-        
+
         .research-card:hover {
             transform: translateY(-10px);
             border-color: var(--cyber-blue);
             box-shadow: 0 20px 60px rgba(0, 102, 255, 0.2);
         }
-        
+
         .research-icon {
             font-size: 48px;
             margin-bottom: 20px;
         }
-        
+
         .research-card h3 {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 15px;
             color: var(--light-text);
         }
-        
+
         .research-card p {
             color: var(--gray-text);
             line-height: 1.8;
         }
-        
+
         /* ==================== 关于我们 Section ==================== */
         .about-section {
             padding: var(--section-padding) 40px;
             background: linear-gradient(180deg, var(--dark-bg) 0%, #0d1425 100%);
         }
-        
+
         .about-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .about-grid {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 80px;
             align-items: start;
         }
-        
+
         .about-text h3 {
             font-size: 24px;
             margin: 30px 0 15px 0;
             color: var(--cyber-blue);
         }
-        
+
         .about-text h3:first-child {
             margin-top: 0;
         }
-        
+
         .about-text p {
             color: var(--gray-text);
             line-height: 1.8;
             margin-bottom: 20px;
         }
-        
+
         .about-highlights {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
         }
-        
+
         .highlight-box {
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 255, 255, 0.1) 100%);
             border: 1px solid rgba(0, 102, 255, 0.3);
@@ -852,13 +960,13 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-        
+
         .highlight-box:hover {
             transform: translateY(-5px);
             border-color: var(--cyber-blue);
             box-shadow: 0 10px 40px rgba(0, 102, 255, 0.2);
         }
-        
+
         .highlight-number {
             font-family: 'Orbitron', monospace;
             font-size: 48px;
@@ -869,7 +977,7 @@
             background-clip: text;
             margin-bottom: 10px;
         }
-        
+
         .highlight-label {
             font-size: 16px;
             color: var(--gray-text);
@@ -1137,7 +1245,7 @@
             padding: var(--section-padding) 40px;
             background: var(--dark-bg);
         }
-        
+
         .achievements-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -1145,7 +1253,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .achievement-card {
             background: rgba(10, 14, 26, 0.5);
             border: 1px solid rgba(0, 102, 255, 0.2);
@@ -1155,18 +1263,18 @@
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .achievement-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .achievement-card:hover {
             transform: translateY(-10px);
             border-color: var(--cyber-blue);
             box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
         }
-        
+
         .achievement-image {
             height: 200px;
             display: flex;
@@ -1174,21 +1282,21 @@
             justify-content: center;
             position: relative;
         }
-        
+
         .achievement-icon {
             font-size: 80px;
         }
-        
+
         .achievement-content {
             padding: 30px;
         }
-        
+
         .achievement-content h3 {
             font-size: 22px;
             margin-bottom: 10px;
             color: var(--light-text);
         }
-        
+
         .achievement-tag {
             display: inline-block;
             background: var(--gradient-accent);
@@ -1199,12 +1307,12 @@
             font-weight: 600;
             margin-bottom: 15px;
         }
-        
+
         .achievement-content p {
             color: var(--gray-text);
             line-height: 1.7;
         }
-        
+
         .achievement-link {
             display: inline-block;
             margin-top: 15px;
@@ -1213,23 +1321,23 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+
         .achievement-link:hover {
             color: var(--light-text);
             transform: translateX(5px);
         }
-        
+
         /* ==================== 新闻动态 Section ==================== */
         .news-section {
             padding: var(--section-padding) 40px;
             background: linear-gradient(180deg, var(--dark-bg) 0%, #0d1425 100%);
         }
-        
+
         .news-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         /* 头条新闻 */
         .news-featured {
             display: grid;
@@ -1242,25 +1350,25 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .news-featured:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
             border-color: var(--cyber-blue);
         }
-        
+
         .news-featured-image {
             height: 400px;
             position: relative;
         }
-        
+
         .news-featured-content {
             padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        
+
         .news-tag {
             display: inline-block;
             padding: 6px 16px;
@@ -1272,27 +1380,27 @@
             margin-bottom: 20px;
             width: fit-content;
         }
-        
+
         .news-featured-content h3 {
             font-size: 28px;
             margin-bottom: 15px;
             color: var(--light-text);
             line-height: 1.4;
         }
-        
+
         .news-date {
             color: var(--gray-text);
             font-size: 14px;
             margin-bottom: 15px;
             font-family: 'Orbitron', monospace;
         }
-        
+
         .news-excerpt {
             color: var(--gray-text);
             line-height: 1.8;
             margin-bottom: 20px;
         }
-        
+
         .news-read-more {
             color: var(--cyber-blue);
             text-decoration: none;
@@ -1300,12 +1408,12 @@
             transition: all 0.3s ease;
             display: inline-block;
         }
-        
+
         .news-read-more:hover {
             color: var(--light-text);
             transform: translateX(5px);
         }
-        
+
         /* 新闻网格 */
         .news-grid {
             display: grid;
@@ -1313,7 +1421,7 @@
             gap: 30px;
             margin-bottom: 60px;
         }
-        
+
         .news-card {
             background: rgba(10, 14, 26, 0.5);
             border: 1px solid rgba(0, 102, 255, 0.2);
@@ -1322,80 +1430,80 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .news-card:hover {
             transform: translateY(-10px);
             border-color: var(--cyber-blue);
             box-shadow: 0 15px 50px rgba(0, 102, 255, 0.2);
         }
-        
+
         .news-card-image {
             height: 200px;
             transition: transform 0.3s ease;
         }
-        
+
         .news-card:hover .news-card-image {
             transform: scale(1.05);
         }
-        
+
         .news-card-content {
             padding: 25px;
         }
-        
+
         .news-card-content h4 {
             font-size: 18px;
             margin-bottom: 10px;
             color: var(--light-text);
             line-height: 1.4;
         }
-        
+
         .news-card-content p {
             color: var(--gray-text);
             font-size: 14px;
             line-height: 1.6;
             margin-top: 10px;
         }
-        
+
         .news-cta {
             text-align: center;
         }
-        
+
         /* ==================== 团队展示 Section ==================== */
         .team-section {
             padding: var(--section-padding) 40px;
             background: var(--dark-bg);
         }
-        
+
         .team-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .team-container > h3 {
             font-size: 32px;
             margin-bottom: 40px;
             text-align: center;
             color: var(--light-text);
         }
-        
+
         /* 领导团队 */
         .team-leadership {
             margin-bottom: 80px;
         }
-        
+
         .team-leadership h3 {
             font-size: 28px;
             margin-bottom: 40px;
             color: var(--cyber-blue);
             text-align: center;
         }
-        
+
         .leadership-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 40px;
         }
-        
+
         .leader-card {
             display: flex;
             gap: 30px;
@@ -1405,13 +1513,13 @@
             padding: 40px;
             transition: all 0.3s ease;
         }
-        
+
         .leader-card:hover {
             transform: translateY(-10px);
             border-color: var(--cyber-blue);
             box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
         }
-        
+
         .leader-avatar {
             width: 120px;
             height: 120px;
@@ -1422,50 +1530,50 @@
             flex-shrink: 0;
             border: 3px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .leader-initial {
             font-size: 48px;
             font-weight: 900;
             color: white;
         }
-        
+
         .leader-info h4 {
             font-size: 24px;
             margin-bottom: 8px;
             color: var(--light-text);
         }
-        
+
         .leader-title {
             color: var(--cyber-blue);
             font-weight: 600;
             margin-bottom: 15px;
             font-size: 16px;
         }
-        
+
         .leader-bio {
             color: var(--gray-text);
             line-height: 1.7;
             font-size: 14px;
         }
-        
+
         /* 研究团队 */
         .team-researchers {
             margin-bottom: 80px;
         }
-        
+
         .team-researchers h3 {
             font-size: 28px;
             margin-bottom: 40px;
             color: var(--cyber-blue);
             text-align: center;
         }
-        
+
         .researchers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
-        
+
         .researcher-card {
             background: rgba(10, 14, 26, 0.5);
             border: 1px solid rgba(0, 102, 255, 0.2);
@@ -1474,13 +1582,13 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-        
+
         .researcher-card:hover {
             transform: translateY(-10px);
             border-color: var(--cyber-blue);
             box-shadow: 0 15px 50px rgba(0, 102, 255, 0.2);
         }
-        
+
         .researcher-avatar {
             width: 100px;
             height: 100px;
@@ -1491,26 +1599,26 @@
             margin: 0 auto 20px;
             font-size: 48px;
         }
-        
+
         .researcher-card h4 {
             font-size: 20px;
             margin-bottom: 10px;
             color: var(--light-text);
         }
-        
+
         .researcher-card p {
             color: var(--gray-text);
             line-height: 1.7;
             font-size: 14px;
             margin: 8px 0;
         }
-        
+
         .researcher-card p:first-of-type {
             color: var(--cyber-blue);
             font-weight: 600;
             font-size: 13px;
         }
-        
+
         /* 合作伙伴 */
         .team-partners h3 {
             font-size: 28px;
@@ -1518,13 +1626,13 @@
             color: var(--cyber-blue);
             text-align: center;
         }
-        
+
         .partners-logos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
         }
-        
+
         .partner-logo {
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
             border: 1px solid rgba(0, 102, 255, 0.2);
@@ -1536,7 +1644,7 @@
             font-size: 16px;
             transition: all 0.3s ease;
         }
-        
+
         .partner-logo:hover {
             transform: translateY(-5px);
             border-color: var(--cyber-blue);
@@ -1744,36 +1852,36 @@
             padding: var(--section-padding) 40px;
             background: linear-gradient(180deg, #0d1425 0%, var(--dark-bg) 100%);
         }
-        
+
         .careers-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .careers-intro {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 60px;
         }
-        
+
         .careers-intro h3 {
             font-size: 28px;
             margin-bottom: 20px;
             color: var(--cyber-blue);
         }
-        
+
         .careers-intro p {
             color: var(--gray-text);
             line-height: 1.8;
         }
-        
+
         .careers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-bottom: 60px;
         }
-        
+
         .career-card {
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
             border: 1px solid rgba(0, 102, 255, 0.2);
@@ -1781,13 +1889,13 @@
             padding: 30px;
             transition: all 0.3s ease;
         }
-        
+
         .career-card:hover {
             transform: translateY(-5px);
             border-color: var(--cyber-blue);
             box-shadow: 0 15px 50px rgba(0, 102, 255, 0.2);
         }
-        
+
         .career-header {
             display: flex;
             justify-content: space-between;
@@ -1796,12 +1904,12 @@
             padding-bottom: 20px;
             border-bottom: 1px solid rgba(0, 102, 255, 0.2);
         }
-        
+
         .career-header h4 {
             font-size: 20px;
             color: var(--light-text);
         }
-        
+
         .career-count {
             background: var(--gradient-accent);
             color: white;
@@ -1810,34 +1918,34 @@
             font-size: 14px;
             font-weight: 600;
         }
-        
+
         .career-requirements p {
             color: var(--gray-text);
             line-height: 1.8;
             margin-bottom: 12px;
         }
-        
+
         .career-requirements strong {
             color: var(--light-text);
         }
-        
+
         .careers-benefits {
             margin-bottom: 60px;
         }
-        
+
         .careers-benefits h3 {
             font-size: 28px;
             text-align: center;
             margin-bottom: 40px;
             color: var(--light-text);
         }
-        
+
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
-        
+
         .benefit-item {
             text-align: center;
             padding: 30px;
@@ -1845,29 +1953,29 @@
             border-radius: 16px;
             transition: all 0.3s ease;
         }
-        
+
         .benefit-item:hover {
             background: rgba(0, 102, 255, 0.1);
             transform: translateY(-5px);
         }
-        
+
         .benefit-icon {
             font-size: 48px;
             display: block;
             margin-bottom: 20px;
         }
-        
+
         .benefit-item h4 {
             font-size: 18px;
             margin-bottom: 10px;
             color: var(--light-text);
         }
-        
+
         .benefit-item p {
             color: var(--gray-text);
             font-size: 14px;
         }
-        
+
         .careers-cta {
             text-align: center;
             display: flex;
@@ -2116,7 +2224,7 @@
             padding: var(--section-padding) 40px;
             background: var(--dark-bg);
         }
-        
+
         .contact-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -2124,13 +2232,13 @@
             grid-template-columns: 1fr 1.5fr;
             gap: 80px;
         }
-        
+
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
-        
+
         .contact-item {
             display: flex;
             gap: 20px;
@@ -2140,46 +2248,46 @@
             border-radius: 12px;
             transition: all 0.3s ease;
         }
-        
+
         .contact-item:hover {
             border-color: var(--cyber-blue);
             background: rgba(0, 102, 255, 0.1);
         }
-        
+
         .contact-icon {
             font-size: 32px;
             line-height: 1;
         }
-        
+
         .contact-details h4 {
             font-size: 18px;
             margin-bottom: 8px;
             color: var(--light-text);
         }
-        
+
         .contact-details p {
             color: var(--gray-text);
             line-height: 1.6;
             margin: 4px 0;
         }
-        
+
         .contact-form {
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
             border: 1px solid rgba(0, 102, 255, 0.2);
             border-radius: 16px;
             padding: 40px;
         }
-        
+
         .contact-form h3 {
             font-size: 24px;
             margin-bottom: 30px;
             color: var(--light-text);
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -2193,7 +2301,7 @@
             font-family: 'Noto Sans SC', sans-serif;
             transition: all 0.3s ease;
         }
-        
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
@@ -2201,36 +2309,36 @@
             border-color: var(--cyber-blue);
             box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
         }
-        
+
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: var(--gray-text);
         }
-        
+
         .form-group select {
             cursor: pointer;
         }
-        
+
         .form-group textarea {
             resize: vertical;
             min-height: 120px;
         }
-        
+
         .contact-form button {
             width: 100%;
         }
-        
+
         /* ==================== 新闻动态 Section ==================== */
         .news-section {
             padding: var(--section-padding) 40px;
             background: linear-gradient(180deg, #0d1425 0%, var(--dark-bg) 100%);
         }
-        
+
         .news-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         /* 新闻筛选 */
         .news-filters {
             display: flex;
@@ -2239,7 +2347,7 @@
             margin-bottom: 60px;
             flex-wrap: wrap;
         }
-        
+
         .filter-btn {
             padding: 10px 24px;
             background: transparent;
@@ -2252,178 +2360,297 @@
             transition: all 0.3s ease;
             font-family: 'Noto Sans SC', sans-serif;
         }
-        
+
         .filter-btn:hover {
             border-color: var(--primary-blue);
             color: var(--light-text);
         }
-        
+
         .filter-btn.active {
             background: var(--gradient-accent);
             border-color: var(--cyber-blue);
             color: white;
         }
-        
-        /* 新闻时间轴 */
-        .news-timeline {
+
+        /* 新闻左右分栏布局 */
+        .news-layout {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            gap: 30px;
+        }
+
+        /* 左侧大卡片 */
+        .news-featured {
             position: relative;
-            padding-left: 0;
+            height: 560px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
         }
-        
-        .news-timeline::before {
-            content: '';
+
+        .news-featured:hover {
+            transform: translateY(-8px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
+        }
+
+        .news-featured-bg {
             position: absolute;
-            left: 140px;
             top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.4s ease;
+        }
+
+        .news-featured:hover .news-featured-bg {
+            transform: scale(1.05);
+        }
+
+        .news-featured-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                rgba(10, 15, 30, 0.3) 0%,
+                rgba(10, 15, 30, 0.6) 50%,
+                rgba(10, 15, 30, 0.95) 100%);
+        }
+
+        .news-featured-content {
+            position: absolute;
             bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--primary-blue), transparent);
+            left: 0;
+            right: 0;
+            padding: 40px;
+            z-index: 2;
         }
-        
-        .news-item {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 50px;
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.6s ease;
+
+        .news-featured .news-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
-        
-        .news-item.visible {
-            opacity: 1;
-            transform: translateX(0);
+
+        .news-featured h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light-text);
+            margin-bottom: 16px;
+            line-height: 1.4;
         }
-        
-        .news-item.hidden {
-            display: none;
+
+        .news-featured p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
-        
-        .news-date {
-            flex-shrink: 0;
-            width: 100px;
+
+        .news-featured .news-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: var(--gradient-accent);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .news-featured .news-btn:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.4);
+        }
+
+        .news-featured-date {
+            position: absolute;
+            top: 30px;
+            right: 30px;
             text-align: right;
-            padding-top: 5px;
+            z-index: 2;
         }
-        
-        .date-day {
-            display: block;
+
+        .news-featured-date .date-day {
             font-family: 'Orbitron', monospace;
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 900;
-            line-height: 1;
             background: var(--gradient-accent);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1;
         }
-        
-        .date-month {
-            display: block;
-            font-size: 12px;
-            color: var(--gray-text);
+
+        .news-featured-date .date-month {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
             margin-top: 5px;
         }
-        
-        .news-content {
-            flex: 1;
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+
+        /* 右侧小卡片列表 */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 16px;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.03) 100%);
             border: 1px solid rgba(0, 102, 255, 0.2);
             border-radius: 16px;
-            padding: 30px;
-            position: relative;
+            overflow: hidden;
             transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateX(20px);
         }
-        
-        .news-content::before {
+
+        .news-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .news-item.hidden {
+            display: none;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+        }
+
+        .news-item-thumb {
+            flex-shrink: 0;
+            width: 120px;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .news-item-thumb::after {
             content: '';
             position: absolute;
-            left: -20px;
-            top: 30px;
-            width: 12px;
-            height: 12px;
-            background: var(--cyber-blue);
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--dark-bg), 0 0 0 6px var(--primary-blue);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 60%, rgba(10, 15, 30, 0.8) 100%);
         }
-        
-        .news-content:hover {
-            border-color: var(--cyber-blue);
-            transform: translateX(10px);
-            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.2);
+
+        .news-item-content {
+            flex: 1;
+            padding: 18px 20px 18px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        
+
+        .news-item-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .news-item .news-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .news-item-date {
+            font-family: 'Orbitron', monospace;
+            font-size: 12px;
+            color: var(--gray-text);
+        }
+
+        .news-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--light-text);
+            line-height: 1.4;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-item:hover h4 {
+            color: var(--cyber-blue);
+        }
+
         .news-badge {
             display: inline-block;
             padding: 4px 12px;
             border-radius: 12px;
             font-size: 12px;
             font-weight: 600;
-            margin-bottom: 15px;
         }
-        
+
         .news-badge.research {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
-        
+
         .news-badge.event {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
         }
-        
+
         .news-badge.media {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
         }
-        
+
         .news-badge.cooperation {
             background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
             color: white;
         }
-        
-        .news-content h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            color: var(--light-text);
-        }
-        
-        .news-content p {
-            color: var(--gray-text);
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-        
-        .news-link {
-            color: var(--cyber-blue);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .news-link:hover {
-            gap: 10px;
-            color: var(--primary-blue);
-        }
-        
+
         .news-more {
             text-align: center;
             margin-top: 60px;
         }
-        
+
         /* ==================== 产品详情页 Section ==================== */
         .product-detail-section {
             padding: var(--section-padding) 40px;
             background: var(--dark-bg);
         }
-        
+
         .product-detail-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         /* 产品头部 */
         .product-hero {
             display: grid;
@@ -2432,20 +2659,20 @@
             margin-bottom: 80px;
             align-items: center;
         }
-        
+
         .product-hero-image {
             position: relative;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
         }
-        
+
         .product-hero-image img {
             width: 100%;
             height: auto;
             display: block;
         }
-        
+
         .product-badge {
             display: inline-block;
             background: var(--gradient-accent);
@@ -2456,14 +2683,14 @@
             font-weight: 600;
             margin-bottom: 20px;
         }
-        
+
         .product-hero-content h2 {
             font-size: 48px;
             font-weight: 900;
             margin-bottom: 15px;
             line-height: 1.2;
         }
-        
+
         .product-subtitle {
             font-size: 24px;
             color: var(--cyber-blue);
@@ -2471,19 +2698,19 @@
             font-family: 'Orbitron', monospace;
             letter-spacing: 1px;
         }
-        
+
         .product-intro {
             font-size: 18px;
             color: var(--gray-text);
             line-height: 1.8;
             margin-bottom: 30px;
         }
-        
+
         .product-cta {
             display: flex;
             gap: 20px;
         }
-        
+
         /* 技术参数 */
         .product-specs {
             margin-bottom: 80px;
@@ -2492,20 +2719,20 @@
             border-radius: 20px;
             padding: 50px;
         }
-        
+
         .product-specs h3 {
             font-size: 32px;
             text-align: center;
             margin-bottom: 40px;
             color: var(--light-text);
         }
-        
+
         .specs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
         }
-        
+
         .spec-item {
             text-align: center;
             padding: 25px;
@@ -2513,48 +2740,48 @@
             border-radius: 12px;
             transition: all 0.3s ease;
         }
-        
+
         .spec-item:hover {
             transform: translateY(-5px);
             background: rgba(0, 102, 255, 0.1);
         }
-        
+
         .spec-icon {
             font-size: 36px;
             margin-bottom: 15px;
         }
-        
+
         .spec-label {
             font-size: 14px;
             color: var(--gray-text);
             margin-bottom: 8px;
         }
-        
+
         .spec-value {
             font-family: 'Orbitron', monospace;
             font-size: 20px;
             font-weight: 700;
             color: var(--cyber-blue);
         }
-        
+
         /* 核心技术 */
         .product-features {
             margin-bottom: 80px;
         }
-        
+
         .product-features h3 {
             font-size: 32px;
             text-align: center;
             margin-bottom: 50px;
             color: var(--light-text);
         }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
-        
+
         .feature-card {
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
             border: 1px solid rgba(0, 102, 255, 0.2);
@@ -2562,29 +2789,29 @@
             padding: 35px;
             transition: all 0.3s ease;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-10px);
             border-color: var(--cyber-blue);
             box-shadow: 0 15px 50px rgba(0, 102, 255, 0.2);
         }
-        
+
         .feature-icon {
             font-size: 48px;
             margin-bottom: 20px;
         }
-        
+
         .feature-card h4 {
             font-size: 20px;
             margin-bottom: 12px;
             color: var(--light-text);
         }
-        
+
         .feature-card p {
             color: var(--gray-text);
             line-height: 1.7;
         }
-        
+
         /* 应用场景 */
         .product-applications h3 {
             font-size: 32px;
@@ -2592,17 +2819,17 @@
             margin-bottom: 50px;
             color: var(--light-text);
         }
-        
+
         .applications-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
-        
+
         .application-item {
             text-align: center;
         }
-        
+
         .application-image {
             height: 200px;
             border-radius: 16px;
@@ -2612,56 +2839,56 @@
             margin-bottom: 20px;
             transition: all 0.3s ease;
         }
-        
+
         .application-image:hover {
             transform: scale(1.05);
             box-shadow: 0 15px 50px rgba(0, 102, 255, 0.3);
         }
-        
+
         .application-emoji {
             font-size: 80px;
         }
-        
+
         .application-item h4 {
             font-size: 20px;
             margin-bottom: 8px;
             color: var(--light-text);
         }
-        
+
         .application-item p {
             color: var(--gray-text);
             font-size: 14px;
         }
-        
+
         /* ==================== 团队展示 Section ==================== */
         .team-section {
             padding: var(--section-padding) 40px;
             background: linear-gradient(180deg, var(--dark-bg) 0%, #0d1425 100%);
         }
-        
+
         .team-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .team-subtitle {
             font-size: 28px;
             text-align: center;
             margin-bottom: 50px;
             color: var(--cyber-blue);
         }
-        
+
         /* 领导团队 */
         .team-leadership {
             margin-bottom: 80px;
         }
-        
+
         .leadership-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
         }
-        
+
         .team-member {
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
             border: 1px solid rgba(0, 102, 255, 0.2);
@@ -2670,13 +2897,13 @@
             transition: all 0.3s ease;
             text-align: center;
         }
-        
+
         .team-member:hover {
             transform: translateY(-10px);
             border-color: var(--cyber-blue);
             box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
         }
-        
+
         .member-photo {
             position: relative;
             width: 180px;
@@ -2686,18 +2913,18 @@
             overflow: hidden;
             border: 4px solid var(--primary-blue);
         }
-        
+
         .team-member.leadership .member-photo {
             width: 220px;
             height: 220px;
         }
-        
+
         .member-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .member-overlay {
             position: absolute;
             top: 0;
@@ -2712,30 +2939,30 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .member-photo:hover .member-overlay {
             opacity: 1;
         }
-        
+
         .member-bio {
             color: white;
             font-size: 14px;
             line-height: 1.6;
         }
-        
+
         .member-info h4 {
             font-size: 22px;
             margin-bottom: 8px;
             color: var(--light-text);
         }
-        
+
         .member-role {
             font-size: 16px;
             color: var(--cyber-blue);
             font-weight: 600;
             margin-bottom: 5px;
         }
-        
+
         .member-title {
             font-size: 14px;
             color: var(--gray-text);
@@ -2749,14 +2976,14 @@
             margin-bottom: 15px;
             opacity: 0.9;
         }
-        
+
         .member-tags {
             display: flex;
             gap: 8px;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .member-tags .tag {
             background: rgba(0, 102, 255, 0.2);
             color: var(--cyan-blue);
@@ -2764,25 +2991,25 @@
             border-radius: 12px;
             font-size: 12px;
         }
-        
+
         /* 核心研究团队 */
         .team-researchers {
             margin-bottom: 80px;
         }
-        
+
         .researchers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px;
         }
-        
+
         /* 合作伙伴 */
         .partners-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
         }
-        
+
         .partner-logo {
             background: rgba(0, 102, 255, 0.05);
             border: 1px solid rgba(0, 102, 255, 0.2);
@@ -2793,13 +3020,13 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
-        
+
         .partner-logo:hover {
             background: rgba(0, 102, 255, 0.1);
             border-color: var(--cyber-blue);
             transform: translateY(-5px);
         }
-        
+
         .partner-placeholder {
             color: var(--gray-text);
             font-size: 16px;
@@ -2807,14 +3034,14 @@
             text-align: center;
             padding: 20px;
         }
-        
+
         /* ==================== Footer ==================== */
         footer {
             background: #000;
             padding: 60px 40px 30px;
             border-top: 1px solid rgba(0, 102, 255, 0.2);
         }
-        
+
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
@@ -2823,14 +3050,14 @@
             gap: 60px;
             margin-bottom: 40px;
         }
-        
+
         .footer-section h4 {
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 20px;
             color: var(--cyber-blue);
         }
-        
+
         .footer-section p,
         .footer-section a {
             color: var(--gray-text);
@@ -2839,11 +3066,11 @@
             display: block;
             transition: color 0.3s ease;
         }
-        
+
         .footer-section a:hover {
             color: var(--cyber-blue);
         }
-        
+
         .footer-bottom {
             max-width: 1400px;
             margin: 0 auto;
@@ -2853,187 +3080,249 @@
             color: var(--gray-text);
             font-size: 14px;
         }
-        
+
         /* ==================== 响应式设计 ==================== */
         @media (max-width: 768px) {
             :root {
                 --section-padding: 60px;
             }
-            
+
             .nav-container {
                 padding: 15px 20px;
             }
-            
+
             .nav-links {
                 display: none;
             }
-            
+
             .menu-toggle {
                 display: flex;
             }
-            
+
             .lang-switcher {
                 position: fixed;
                 bottom: 80px;
                 right: 20px;
                 z-index: 999;
             }
-            
+
             .back-to-top {
                 bottom: 20px;
                 right: 20px;
                 width: 45px;
                 height: 45px;
             }
-            
+
             /* 新闻动态 */
             .news-featured {
                 grid-template-columns: 1fr;
             }
-            
+
             .news-featured-image {
                 height: 250px;
             }
-            
+
             .news-featured-content {
                 padding: 30px 20px;
             }
-            
+
             .news-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             /* 团队展示 */
             .leadership-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .leader-card {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .researchers-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .partners-logos {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .hero-title {
-                font-size: 48px;
+
+            .hero {
+                min-height: 90vh;
+                padding: 110px 0 80px;
             }
-            
+
+            .hero-video {
+                display: none;
+            }
+
+            .hero-poster {
+                display: block;
+            }
+
+            .hero-overlay {
+                animation: none;
+                opacity: 0.65;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
             .hero-title .product-name {
                 font-size: 16px;
                 letter-spacing: 4px;
             }
-            
+
             .hero-description {
                 font-size: 16px;
             }
-            
+
             .hero-cta {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .btn {
                 width: 100%;
                 max-width: 300px;
             }
-            
+
+            .scroll-indicator {
+                bottom: 24px;
+                width: 32px;
+                height: 48px;
+            }
+
             /* 轮播按钮在移动端缩小 */
             .slider-nav {
                 width: 40px;
                 height: 40px;
             }
-            
+
             .slider-nav.prev {
                 left: 20px;
             }
-            
+
             .slider-nav.next {
                 right: 20px;
             }
-            
+
             .slider-nav svg {
                 width: 16px;
                 height: 16px;
             }
-            
+
             .hero-footnote {
                 left: 20px;
                 bottom: 80px;
             }
-            
+
             .stats-container {
                 gap: 40px;
             }
-            
+
             .stat-number {
                 font-size: 48px;
             }
-            
+
             .research-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             /* 关于我们 */
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
+
             .about-highlights {
                 grid-template-columns: 1fr;
             }
-            
+
             /* 成果展示 */
             .achievements-container {
                 grid-template-columns: 1fr;
             }
-            
+
             /* 人才招聘 */
             .careers-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .careers-cta {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             /* 联系我们 */
             .contact-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
-            /* 新闻动态 */
-            .news-timeline::before {
-                display: none;
+
+            /* 新闻动态响应式 */
+            .news-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
             }
-            
+
+            .news-featured {
+                height: 420px;
+            }
+
+            .news-featured h3 {
+                font-size: 22px;
+            }
+
+            .news-featured p {
+                font-size: 14px;
+                -webkit-line-clamp: 2;
+            }
+
+            .news-featured-content {
+                padding: 24px;
+            }
+
+            .news-featured-date {
+                top: 20px;
+                right: 20px;
+            }
+
+            .news-featured-date .date-day {
+                font-size: 32px;
+            }
+
             .news-item {
-                flex-direction: column;
-                gap: 20px;
+                height: 130px;
             }
-            
-            .news-date {
-                text-align: left;
-                width: auto;
+
+            .news-item-thumb {
+                width: 100px;
             }
-            
-            .news-content::before {
-                display: none;
+
+            .news-item-content {
+                padding: 14px 16px 14px 0;
             }
-            
+
+            .news-item h4 {
+                font-size: 14px;
+            }
+
+            .news-item .news-badge {
+                font-size: 10px;
+                padding: 2px 8px;
+            }
+
+            .news-item-date {
+                font-size: 11px;
+            }
+
             .filter-btn {
                 font-size: 12px;
                 padding: 8px 16px;
@@ -3122,44 +3411,44 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
+
             .product-hero-content h2 {
                 font-size: 36px;
             }
-            
+
             .product-subtitle {
                 font-size: 18px;
             }
-            
+
             .product-cta {
                 flex-direction: column;
             }
-            
+
             .specs-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .applications-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             /* 团队展示 */
             .leadership-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .researchers-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -3419,6 +3708,7 @@
             height: 100%;
             overflow: hidden;
             pointer-events: none;
+            z-index: 2;
         }
 
         .particle {
@@ -3700,15 +3990,14 @@
     <!-- 导航栏 -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">ZYEI LAB</div>
-            
+            <a href="index.html" class="logo">ZYEI LAB</a>
+
             <!-- 桌面端导航 -->
             <ul class="nav-links">
                 <li><a href="#home" data-zh="首页" data-en="Home">首页</a></li>
                 <li><a href="#news" data-zh="新闻动态" data-en="News & Events">新闻动态</a></li>
-                <li><a href="#research" data-zh="研究方向" data-en="Research">研究方向</a></li>
-                <li><a href="#about" data-zh="关于我们" data-en="About Us">关于我们</a></li>
-                <li><a href="#team" data-zh="团队展示" data-en="Team">团队展示</a></li>
+                <li><a href="about.html" data-zh="关于实验室" data-en="About Lab">关于实验室</a></li>
+                <li><a href="team.html" data-zh="团队展示" data-en="Team">团队展示</a></li>
                 <li><a href="#achievements" data-zh="成果展示" data-en="Achievements">成果展示</a></li>
                 <li><a href="#publications" data-zh="研究成果" data-en="Publications">研究成果</a></li>
                 <li><a href="#industry" data-zh="产业转化" data-en="Industry">产业转化</a></li>
@@ -3716,28 +4005,27 @@
                 <li><a href="#cooperation" data-zh="开放合作" data-en="Cooperation">开放合作</a></li>
                 <li><a href="#contact" data-zh="联系我们" data-en="Contact">联系我们</a></li>
             </ul>
-            
+
             <!-- 汉堡菜单按钮 -->
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            
+
             <!-- 语言切换器 -->
             <div class="lang-switcher">
                 <button class="lang-btn active" data-lang="zh" data-zh="中文" data-en="中文">中文</button>
                 <button class="lang-btn" data-lang="en" data-zh="EN" data-en="EN">EN</button>
             </div>
         </div>
-        
+
         <!-- 移动端菜单 -->
         <ul class="nav-links mobile-menu" id="mobileMenu">
             <li><a href="#home" data-zh="首页" data-en="Home">首页</a></li>
             <li><a href="#news" data-zh="新闻动态" data-en="News & Events">新闻动态</a></li>
-            <li><a href="#research" data-zh="研究方向" data-en="Research">研究方向</a></li>
-            <li><a href="#about" data-zh="关于我们" data-en="About Us">关于我们</a></li>
-            <li><a href="#team" data-zh="团队展示" data-en="Team">团队展示</a></li>
+            <li><a href="about.html" data-zh="关于实验室" data-en="About Lab">关于实验室</a></li>
+            <li><a href="team.html" data-zh="团队展示" data-en="Team">团队展示</a></li>
             <li><a href="#achievements" data-zh="成果展示" data-en="Achievements">成果展示</a></li>
             <li><a href="#industry" data-zh="产业转化" data-en="Industry">产业转化</a></li>
             <li><a href="#careers" data-zh="人才招聘" data-en="Careers">人才招聘</a></li>
@@ -3745,10 +4033,10 @@
             <li><a href="#contact" data-zh="联系我们" data-en="Contact">联系我们</a></li>
         </ul>
     </nav>
-    
+
     <!-- 滚动进度条 -->
     <div class="scroll-progress" id="scrollProgress"></div>
-    
+
     <!-- 返回顶部按钮 -->
     <div class="back-to-top" id="backToTop">
         <svg viewBox="0 0 24 24">
@@ -3758,86 +4046,27 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- 轮播容器 -->
-        <div class="hero-slider" id="heroSlider">
-            <!-- Slide 1: 行者二号 -->
-            <div class="hero-slide">
-                <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&h=1080&fit=crop" alt="行者二号机器人" class="hero-bg" data-zh-alt="行者二号机器人" data-en-alt="Walker X02-Lite Robot" width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="hero-subtitle" data-zh="WALKER X02-LITE" data-en="WALKER X02-LITE">WALKER X02-LITE</div>
-                    <h1 class="hero-title">
-                        <span class="highlight" data-zh="行者二号" data-en="Walker X02-Lite">行者二号</span>
-                        <span class="product-name" data-zh="全球首款肌腱驱动人形机器人" data-en="World's First Tendon-Driven Humanoid Robot">全球首款肌腱驱动人形机器人</span>
-                    </h1>
-                    <p class="hero-description" data-zh="突破性的仿生驱动技术，实现更自然、更高效的运动控制" data-en="Breakthrough biomimetic drive enables more natural and efficient motion control.">
-                        突破性的仿生驱动技术，实现更自然、更高效的运动控制
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#research" class="btn btn-primary ripple" data-zh="了解技术" data-en="Explore Tech">了解技术</a>
-                        <a href="#contact" class="btn btn-secondary ripple" data-zh="预约演示" data-en="Book a Demo">预约演示</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Slide 2: 工业应用 -->
-            <div class="hero-slide">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920&h=1080&fit=crop" alt="工业机器人应用" class="hero-bg" data-zh-alt="工业机器人应用" data-en-alt="Industrial Robot Applications" width="1920" height="1080" loading="lazy" decoding="async">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="hero-subtitle" data-zh="INDUSTRIAL APPLICATION" data-en="INDUSTRIAL APPLICATION">INDUSTRIAL APPLICATION</div>
-                    <h1 class="hero-title">
-                        <span class="highlight" data-zh="智能制造" data-en="Smart Manufacturing">智能制造</span>
-                        <span class="product-name" data-zh="赋能产业升级" data-en="Powering Industrial Upgrades">赋能产业升级</span>
-                    </h1>
-                    <p class="hero-description" data-zh="在汽车制造、电子装配等场景实现人形机器人批量应用" data-en="Deploy humanoid robots at scale in automotive manufacturing, electronics assembly, and more.">
-                        在汽车制造、电子装配等场景实现人形机器人批量应用
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#research" class="btn btn-primary ripple" data-zh="应用案例" data-en="Use Cases">应用案例</a>
-                        <a href="#about" class="btn btn-secondary ripple" data-zh="合作咨询" data-en="Partner Inquiry">合作咨询</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Slide 3: 研究方向 -->
-            <div class="hero-slide">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920&h=1080&fit=crop" alt="AI 大脑技术" class="hero-bg" data-zh-alt="AI 大脑技术" data-en-alt="AI Brain Technology" width="1920" height="1080" loading="lazy" decoding="async">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="hero-subtitle" data-zh="MULTIMODAL AI" data-en="MULTIMODAL AI">MULTIMODAL AI</div>
-                    <h1 class="hero-title">
-                        <span class="highlight" data-zh="多模态大模型" data-en="Multimodal Foundation Models">多模态大模型</span>
-                        <span class="product-name" data-zh="机器人的智慧大脑" data-en="The Brain of Robots">机器人的智慧大脑</span>
-                    </h1>
-                    <p class="hero-description" data-zh="融合视觉、语言、触觉，赋予机器人理解与决策能力" data-en="Integrating vision, language, and touch to enable understanding and decision-making.">
-                        融合视觉、语言、触觉，赋予机器人理解与决策能力
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#research" class="btn btn-primary ripple" data-zh="研究方向" data-en="Research Areas">研究方向</a>
-                        <a href="#careers" class="btn btn-secondary ripple" data-zh="加入我们" data-en="Join Us">加入我们</a>
-                    </div>
-                </div>
+        <div class="hero-media" aria-hidden="true">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&h=1080&fit=crop">
+                <source src="Robot.mp4" type="video/mp4">
+            </video>
+            <div class="hero-poster"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-subtitle" data-zh="ZYEI LAB" data-en="ZYEI LAB">ZYEI LAB</div>
+            <h1 class="hero-title" data-zh="中豫具身智能实验室" data-en="Zhongyuan Embodied Intelligence Laboratory">
+                中豫具身智能实验室
+            </h1>
+            <p class="hero-description" data-zh="以多模态大模型与人形机器人推动具身智能创新" data-en="Advancing embodied intelligence with multimodal models and humanoid robotics.">
+                以多模态大模型与人形机器人推动具身智能创新
+            </p>
+            <div class="hero-cta">
+                <a href="about.html" class="btn btn-primary ripple" data-zh="了解实验室" data-en="Explore the Lab">了解实验室</a>
+                <a href="#cooperation" class="btn btn-secondary ripple" data-zh="开放合作" data-en="Partner with Us">开放合作</a>
             </div>
         </div>
-        
-        <!-- 左右切换按钮 -->
-        <div class="slider-nav prev" onclick="changeSlide(-1)">
-            <svg viewBox="0 0 24 24">
-                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-            </svg>
-        </div>
-        <div class="slider-nav next" onclick="changeSlide(1)">
-            <svg viewBox="0 0 24 24">
-                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-            </svg>
-        </div>
-        
-        <!-- 底部指示器 -->
-        <div class="slider-dots" id="sliderDots"></div>
-        
-        <!-- 底部提示文字 -->
-        <div class="hero-footnote" data-zh="* 以机器人科技赋能生活" data-en="* Empowering life with robotics">* 以机器人科技赋能生活</div>
+        <a href="#news" class="scroll-indicator" aria-label="Scroll down"></a>
     </section>
 
     <!-- 数据统计 Section -->
@@ -3868,7 +4097,7 @@
             <h2 data-zh="新闻动态" data-en="News & Events">新闻动态</h2>
             <p data-zh="关注实验室最新研究进展与行业动态" data-en="Follow the lab's latest research and industry updates">关注实验室最新研究进展与行业动态</p>
         </div>
-        
+
         <div class="news-container">
             <!-- 新闻筛选 -->
             <div class="news-filters">
@@ -3878,558 +4107,76 @@
                 <button class="filter-btn" data-filter="media" data-zh="媒体报道" data-en="Media">媒体报道</button>
                 <button class="filter-btn" data-filter="cooperation" data-zh="合作交流" data-en="Partnerships">合作交流</button>
             </div>
-            
-            <!-- 新闻时间轴 -->
-            <div class="news-timeline">
-                <div class="news-item" data-category="event">
-                    <div class="news-date">
-                        <span class="date-day">16</span>
-                        <span class="date-month">2024.10</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-badge event" data-zh="活动公告" data-en="Event">活动公告</div>
-                        <h3 data-zh="中豫具身智能实验室正式揭牌" data-en="ZYEI Lab Officially Inaugurated">中豫具身智能实验室正式揭牌</h3>
-                        <p data-zh="2024年10月16日，中豫具身智能实验室等6家省实验室集中揭牌仪式在郑州举行。实验室将聚焦多模态大模型、机器人技术等五大科学任务，打通从AI到具身智能的完整链条。" data-en="On October 16, 2024, the inauguration of Zhongyuan Embodied Intelligence Laboratory and five other provincial labs was held in Zhengzhou. The lab focuses on five missions including multimodal foundation models and robotics, building a complete chain from AI to embodied intelligence.">2024年10月16日，中豫具身智能实验室等6家省实验室集中揭牌仪式在郑州举行。实验室将聚焦多模态大模型、机器人技术等五大科学任务，打通从AI到具身智能的完整链条。</p>
-                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
-                    </div>
-                </div>
-                
-                <div class="news-item" data-category="research">
-                    <div class="news-date">
+
+            <!-- 新闻左右分栏布局 -->
+            <div class="news-layout">
+                <!-- 左侧大卡片 -->
+                <div class="news-featured" data-category="research">
+                    <div class="news-featured-bg" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80');"></div>
+                    <div class="news-featured-overlay"></div>
+                    <div class="news-featured-date">
                         <span class="date-day">20</span>
-                        <span class="date-month">2025.03</span>
+                        <span class="date-month" data-zh="2025.03" data-en="Mar 2025">2025.03</span>
                     </div>
-                    <div class="news-content">
+                    <div class="news-featured-content">
                         <div class="news-badge research" data-zh="研究进展" data-en="Research">研究进展</div>
                         <h3 data-zh="实验室首次开放日成功举办" data-en="First Open Day Successfully Held">实验室首次开放日成功举办</h3>
                         <p data-zh="河南省科学院8楼，成立不足半年的中豫具身智能实验室首次开放日活动现场，10余台不同形态的机器人各显身手，展示了实验室在仿生驱动控制、多模态大模型等关键技术上的突破。" data-en="At the first open day event on the 8th floor of Henan Academy of Sciences, more than 10 robots of various forms showcased breakthroughs in biomimetic drive control and multimodal foundation models.">河南省科学院8楼，成立不足半年的中豫具身智能实验室首次开放日活动现场，10余台不同形态的机器人各显身手，展示了实验室在仿生驱动控制、多模态大模型等关键技术上的突破。</p>
-                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
-                    </div>
-                </div>
-                
-                <div class="news-item" data-category="research">
-                    <div class="news-date">
-                        <span class="date-day">15</span>
-                        <span class="date-month">2025.01</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-badge research" data-zh="研究进展" data-en="Research">研究进展</div>
-                        <h3 data-zh="行者二号 X02-Lite 人形机器人发布" data-en="Walker X02-Lite Humanoid Robot Released">行者二号 X02-Lite 人形机器人发布</h3>
-                        <p data-zh="实验室成功研发全球首款肌腱驱动人形机器人&quot;行者二号&quot;X02-Lite，在能效比、轻量化、安全性上已具备全球领先优势。该机器人已进入产业化应用阶段。" data-en="The lab developed the world's first tendon-driven humanoid robot, Walker X02-Lite, leading globally in energy efficiency, lightweight design, and safety. The robot has entered industrial deployment.">实验室成功研发全球首款肌腱驱动人形机器人"行者二号"X02-Lite，在能效比、轻量化、安全性上已具备全球领先优势。该机器人已进入产业化应用阶段。</p>
-                        <a href="#product-walker" class="news-link" data-zh="查看产品详情 →" data-en="View Product →">查看产品详情 →</a>
-                    </div>
-                </div>
-                
-                <div class="news-item" data-category="cooperation">
-                    <div class="news-date">
-                        <span class="date-day">05</span>
-                        <span class="date-month">2024.12</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-badge cooperation" data-zh="合作交流" data-en="Partnerships">合作交流</div>
-                        <h3 data-zh="与多家车企达成战略合作" data-en="Strategic Partnerships with Multiple Automakers">与多家车企达成战略合作</h3>
-                        <p data-zh="实验室与蔚来、东风柳汽、吉利等10余家车企工厂达成合作，Walker S系列人形机器人完成车门装配、质检、物流搬运等18类场景的实训。" data-en="The lab partnered with NIO, Dongfeng Liuzhou Motor, Geely and more than 10 automakers. Walker S humanoid robots completed training across 18 scenarios including door assembly, inspection, and logistics handling.">实验室与蔚来、东风柳汽、吉利等10余家车企工厂达成合作，Walker S系列人形机器人完成车门装配、质检、物流搬运等18类场景的实训。</p>
-                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
-                    </div>
-                </div>
-                
-                <div class="news-item" data-category="media">
-                    <div class="news-date">
-                        <span class="date-day">11</span>
-                        <span class="date-month">2024.12</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-badge media" data-zh="媒体报道" data-en="Media">媒体报道</div>
-                        <h3 data-zh="新华网专题报道：让机器人动手能力更强" data-en="Xinhua Feature: Enabling More Dexterous Robots">新华网专题报道：让机器人动手能力更强</h3>
-                        <p data-zh="新华网河南频道对实验室进行专题报道，重点介绍了实验室在多模态大模型、机器人技术、工业医疗和服务具身智能方面的研究进展。" data-en="Xinhua Net Henan featured the lab's progress in multimodal foundation models, robotics, industrial healthcare, and service embodied intelligence.">新华网河南频道对实验室进行专题报道，重点介绍了实验室在多模态大模型、机器人技术、工业医疗和服务具身智能方面的研究进展。</p>
-                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
-                    </div>
-                </div>
-                
-                <div class="news-item" data-category="event">
-                    <div class="news-date">
-                        <span class="date-day">01</span>
-                        <span class="date-month">2025.01</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-badge event" data-zh="活动公告" data-en="Event">活动公告</div>
-                        <h3 data-zh="2025年博士研究生招聘启动" data-en="2025 PhD Recruitment Launched">2025年博士研究生招聘启动</h3>
-                        <p data-zh="实验室面向社会公开招聘博士研究生30名，涵盖机械工程、自动化、机器人学、计算机科学、人工智能等多个专业方向。" data-en="The lab is recruiting 30 PhD researchers across mechanical engineering, automation, robotics, computer science, AI, and more.">实验室面向社会公开招聘博士研究生30名，涵盖机械工程、自动化、机器人学、计算机科学、人工智能等多个专业方向。</p>
-                        <a href="#careers" class="news-link" data-zh="查看招聘详情 →" data-en="View Recruitment →">查看招聘详情 →</a>
+                        <a href="#" class="news-btn" data-zh="查看更多" data-en="View More">查看更多 →</a>
                     </div>
                 </div>
 
-                <div class="news-item" data-category="research">
-                    <div class="news-date">
-                        <span class="date-day">28</span>
-                        <span class="date-month">2024.11</span>
+                <!-- 右侧小卡片列表 -->
+                <div class="news-list">
+                    <div class="news-item visible" data-category="research">
+                        <div class="news-item-thumb" style="background-image: url('https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&q=80');"></div>
+                        <div class="news-item-content">
+                            <div class="news-item-header">
+                                <span class="news-badge research" data-zh="研究进展" data-en="Research">研究进展</span>
+                                <span class="news-item-date">2025.01.15</span>
+                            </div>
+                            <h4 data-zh="行者二号 X02-Lite 人形机器人发布" data-en="Walker X02-Lite Humanoid Robot Released">行者二号 X02-Lite 人形机器人发布</h4>
+                        </div>
                     </div>
-                    <div class="news-content">
-                        <div class="news-badge research" data-zh="研究进展" data-en="Research">研究进展</div>
-                        <h3 data-zh="多模态大模型ZYEI-VLA取得突破" data-en="Breakthrough in Multimodal Model ZYEI-VLA">多模态大模型ZYEI-VLA取得突破</h3>
-                        <p data-zh="实验室自主研发的视觉-语言-动作统一模型ZYEI-VLA在机器人任务规划基准测试中取得领先成绩，模型在复杂场景理解和多步骤任务规划能力上展现出显著优势。" data-en="The lab's proprietary Vision-Language-Action unified model ZYEI-VLA achieved leading results in robot task planning benchmarks, demonstrating significant advantages in complex scene understanding and multi-step task planning.">实验室自主研发的视觉-语言-动作统一模型ZYEI-VLA在机器人任务规划基准测试中取得领先成绩，模型在复杂场景理解和多步骤任务规划能力上展现出显著优势。</p>
-                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
-                    </div>
-                </div>
 
-                <div class="news-item" data-category="cooperation">
-                    <div class="news-date">
-                        <span class="date-day">15</span>
-                        <span class="date-month">2024.11</span>
+                    <div class="news-item visible" data-category="event">
+                        <div class="news-item-thumb" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80');"></div>
+                        <div class="news-item-content">
+                            <div class="news-item-header">
+                                <span class="news-badge event" data-zh="活动公告" data-en="Event">活动公告</span>
+                                <span class="news-item-date">2024.10.16</span>
+                            </div>
+                            <h4 data-zh="中豫具身智能实验室正式揭牌" data-en="ZYEI Lab Officially Inaugurated">中豫具身智能实验室正式揭牌</h4>
+                        </div>
                     </div>
-                    <div class="news-content">
-                        <div class="news-badge cooperation" data-zh="合作交流" data-en="Partnerships">合作交流</div>
-                        <h3 data-zh="与上海戏剧学院签署战略合作协议" data-en="Strategic Partnership with Shanghai Theatre Academy">与上海戏剧学院签署战略合作协议</h3>
-                        <p data-zh="实验室与上海戏剧学院签署战略合作协议，共同开发具备表演能力的艺术机器人，探索机器人在文化艺术领域的创新应用，推动科技与艺术的深度融合。" data-en="The lab signed a strategic partnership with Shanghai Theatre Academy to jointly develop artistic robots with performance capabilities, exploring innovative applications in cultural arts and promoting deep integration of technology and art.">实验室与上海戏剧学院签署战略合作协议，共同开发具备表演能力的艺术机器人，探索机器人在文化艺术领域的创新应用，推动科技与艺术的深度融合。</p>
-                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
-                    </div>
-                </div>
 
-                <div class="news-item" data-category="media">
-                    <div class="news-date">
-                        <span class="date-day">08</span>
-                        <span class="date-month">2024.11</span>
+                    <div class="news-item visible" data-category="cooperation">
+                        <div class="news-item-thumb" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80');"></div>
+                        <div class="news-item-content">
+                            <div class="news-item-header">
+                                <span class="news-badge cooperation" data-zh="合作交流" data-en="Partnerships">合作交流</span>
+                                <span class="news-item-date">2024.12.05</span>
+                            </div>
+                            <h4 data-zh="与多家车企达成战略合作" data-en="Strategic Partnerships with Multiple Automakers">与多家车企达成战略合作</h4>
+                        </div>
                     </div>
-                    <div class="news-content">
-                        <div class="news-badge media" data-zh="媒体报道" data-en="Media">媒体报道</div>
-                        <h3 data-zh="河南日报专访：打造具身智能产业高地" data-en="Henan Daily Interview: Building an Embodied AI Hub">河南日报专访：打造具身智能产业高地</h3>
-                        <p data-zh="河南日报对实验室执行主任李清都进行专访，深入报道实验室如何推动河南省具身智能产业发展，打造从基础研究到产业应用的完整创新链条。" data-en="Henan Daily interviewed Executive Director Li Qingdu on how the lab drives Henan's embodied intelligence industry development, building a complete innovation chain from fundamental research to industrial application.">河南日报对实验室执行主任李清都进行专访，深入报道实验室如何推动河南省具身智能产业发展，打造从基础研究到产业应用的完整创新链条。</p>
-                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
-                    </div>
-                </div>
 
-                <div class="news-item" data-category="research">
-                    <div class="news-date">
-                        <span class="date-day">25</span>
-                        <span class="date-month">2024.10</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-badge research" data-zh="研究进展" data-en="Research">研究进展</div>
-                        <h3 data-zh="高精度力控关节模组研发成功" data-en="High-Precision Force-Controlled Joint Module Developed">高精度力控关节模组研发成功</h3>
-                        <p data-zh="实验室成功研发新一代高精度力控关节模组，采用国产化核心部件，实现了力控精度和响应速度的双重突破，为人形机器人的灵巧操作提供关键技术支撑。" data-en="The lab developed a new generation high-precision force-controlled joint module using domestically produced core components, achieving breakthroughs in both force control accuracy and response speed, providing key technical support for humanoid robot dexterous manipulation.">实验室成功研发新一代高精度力控关节模组，采用国产化核心部件，实现了力控精度和响应速度的双重突破，为人形机器人的灵巧操作提供关键技术支撑。</p>
-                        <a href="#" class="news-link" data-zh="查看详情 →" data-en="View Details →">查看详情 →</a>
-                    </div>
-                </div>
-
-                <div class="news-item" data-category="event">
-                    <div class="news-date">
-                        <span class="date-day">20</span>
-                        <span class="date-month">2024.10</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-badge event" data-zh="活动公告" data-en="Event">活动公告</div>
-                        <h3 data-zh="首批研究人员正式入驻" data-en="First Batch of Researchers Officially Onboarded">首批研究人员正式入驻</h3>
-                        <p data-zh="实验室首批研究人员正式入驻河南省科学院，团队成员来自清华大学、中国科学院、重庆大学等国内顶尖高校和研究机构，涵盖机器人学、人工智能、机械工程等多个学科领域。" data-en="The first batch of researchers officially joined the Henan Academy of Sciences, with team members from top domestic institutions including Tsinghua University, Chinese Academy of Sciences, and Chongqing University, covering robotics, AI, and mechanical engineering.">实验室首批研究人员正式入驻河南省科学院，团队成员来自清华大学、中国科学院、重庆大学等国内顶尖高校和研究机构，涵盖机器人学、人工智能、机械工程等多个学科领域。</p>
-                        <a href="#team" class="news-link" data-zh="查看团队详情 →" data-en="View Team →">查看团队详情 →</a>
+                    <div class="news-item visible" data-category="media">
+                        <div class="news-item-thumb" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=80');"></div>
+                        <div class="news-item-content">
+                            <div class="news-item-header">
+                                <span class="news-badge media" data-zh="媒体报道" data-en="Media">媒体报道</span>
+                                <span class="news-item-date">2024.12.11</span>
+                            </div>
+                            <h4 data-zh="新华网专题报道：让机器人动手能力更强" data-en="Xinhua Feature: Enabling More Dexterous Robots">新华网专题报道：让机器人动手能力更强</h4>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- 加载更多按钮 -->
             <div class="news-more">
                 <button class="btn btn-secondary ripple" data-zh="加载更多新闻" data-en="Load More News">加载更多新闻</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- 研究方向 Section -->
-    <section class="research-section" id="research">
-        <div class="section-title">
-            <h2 data-zh="五大研究方向" data-en="Five Research Areas">五大研究方向</h2>
-            <p data-zh="聚焦具身智能全产业链，突破&quot;大脑、小脑、肢体&quot;关键技术" data-en="Covering the full embodied intelligence stack, tackling key 'brain, cerebellum, body' technologies.">聚焦具身智能全产业链，突破"大脑、小脑、肢体"关键技术</p>
-        </div>
-        <div class="research-grid">
-            <div class="research-card">
-                <div class="research-icon">🧠</div>
-                <h3 data-zh="多模态大模型" data-en="Multimodal Foundation Models">多模态大模型</h3>
-                <p data-zh="研发具身智能系统的"大脑"，实现视觉、语言、触觉等多模态信息的深度融合与协同处理。通过自研的视觉-语言-动作（VLA）统一架构，构建端到端的感知-理解-决策系统，让机器人能够像人类一样理解复杂场景、进行逻辑推理，并做出合理的行为决策。目前已在场景理解、任务规划、人机对话等核心能力上取得突破性进展。" data-en="Developing the 'brain' of embodied intelligence systems through deep fusion of vision, language, and tactile multimodal information. Our proprietary Vision-Language-Action (VLA) unified architecture enables end-to-end perception-understanding-decision systems, allowing robots to comprehend complex scenarios, perform logical reasoning, and make rational behavioral decisions like humans. Breakthrough progress has been made in scene understanding, task planning, and human-robot dialogue.">研发具身智能系统的"大脑"，实现视觉、语言、触觉等多模态信息的深度融合与协同处理。通过自研的视觉-语言-动作（VLA）统一架构，构建端到端的感知-理解-决策系统，让机器人能够像人类一样理解复杂场景、进行逻辑推理，并做出合理的行为决策。目前已在场景理解、任务规划、人机对话等核心能力上取得突破性进展。</p>
-            </div>
-            <div class="research-card">
-                <div class="research-icon">🤖</div>
-                <h3 data-zh="机器人技术" data-en="Robotics Technology">机器人技术</h3>
-                <p data-zh="专注人形机器人核心技术研发，突破运动控制、动态平衡、灵巧操作等"小脑"功能关键技术。自主研发了全球首款肌腱驱动人形机器人"行者二号X02-Lite"，采用创新的柔性驱动技术，实现了高度仿人的运动能力。同步推进高精度关节模组、力控传感系统、实时控制算法等核心部件的国产化替代，构建完整的人形机器人技术自主可控体系。" data-en="Focusing on core humanoid robotics R&D, breaking through key 'cerebellum' technologies including motion control, dynamic balance, and dexterous manipulation. We independently developed the world's first tendon-driven humanoid robot 'Walker X02-Lite' with innovative flexible drive technology for highly human-like movement. Simultaneously advancing domestic substitution of precision joint modules, force-controlled sensing systems, and real-time control algorithms.">专注人形机器人核心技术研发，突破运动控制、动态平衡、灵巧操作等"小脑"功能关键技术。自主研发了全球首款肌腱驱动人形机器人"行者二号X02-Lite"，采用创新的柔性驱动技术，实现了高度仿人的运动能力。同步推进高精度关节模组、力控传感系统、实时控制算法等核心部件的国产化替代，构建完整的人形机器人技术自主可控体系。</p>
-            </div>
-            <div class="research-card">
-                <div class="research-icon">🏭</div>
-                <h3 data-zh="工业具身智能" data-en="Industrial Embodied Intelligence">工业具身智能</h3>
-                <p data-zh="推动智能制造全面升级，聚焦汽车制造、电子装配、物流仓储等重点场景，实现人形机器人的规模化产业应用。与蔚来、比亚迪、吉利、东风柳汽等头部车企深度合作，在柔性生产线、精密装配、智能质检等环节部署具身智能解决方案。通过"机器人+AI"的融合创新，帮助制造企业实现降本增效、柔性生产，推动河南省制造业智能化转型。" data-en="Driving comprehensive smart manufacturing upgrades, focusing on automotive manufacturing, electronics assembly, and logistics scenarios for large-scale humanoid robot deployment. Deep collaboration with leading automakers including NIO, BYD, Geely, and Dongfeng Liuzhou Motor, deploying embodied intelligence solutions in flexible production lines, precision assembly, and intelligent quality inspection to help manufacturers achieve cost reduction and flexible production.">推动智能制造全面升级，聚焦汽车制造、电子装配、物流仓储等重点场景，实现人形机器人的规模化产业应用。与蔚来、比亚迪、吉利、东风柳汽等头部车企深度合作，在柔性生产线、精密装配、智能质检等环节部署具身智能解决方案。通过"机器人+AI"的融合创新，帮助制造企业实现降本增效、柔性生产，推动河南省制造业智能化转型。</p>
-            </div>
-            <div class="research-card">
-                <div class="research-icon">⚕️</div>
-                <h3 data-zh="医疗具身智能" data-en="Healthcare Embodied Intelligence">医疗具身智能</h3>
-                <p data-zh="开发新一代医疗辅助机器人，在康复训练、手术辅助、护理照料、药品配送等领域提供全流程智能化解决方案。研发的康复训练机器人可精准模拟专业理疗师的手法，为患者提供个性化康复方案；护理机器人具备24小时不间断服务能力，可协助完成翻身、喂食、生命体征监测等照护任务，有效缓解医护人员短缺问题，提升医疗服务质量与可及性。" data-en="Developing next-generation medical assistive robots providing full-process intelligent solutions for rehabilitation, surgical assistance, nursing care, and medication delivery. Our rehabilitation robots precisely simulate professional therapist techniques for personalized recovery plans; nursing robots offer 24/7 service capability for turning, feeding, and vital sign monitoring, effectively addressing healthcare staffing shortages and improving service quality.">开发新一代医疗辅助机器人，在康复训练、手术辅助、护理照料、药品配送等领域提供全流程智能化解决方案。研发的康复训练机器人可精准模拟专业理疗师的手法，为患者提供个性化康复方案；护理机器人具备24小时不间断服务能力，可协助完成翻身、喂食、生命体征监测等照护任务，有效缓解医护人员短缺问题，提升医疗服务质量与可及性。</p>
-            </div>
-            <div class="research-card">
-                <div class="research-icon">🏡</div>
-                <h3 data-zh="服务具身智能" data-en="Service Embodied Intelligence">服务具身智能</h3>
-                <p data-zh="面向文旅、家庭、商业等多元化服务场景，研发具有情感交互和个性化服务能力的智能服务机器人。与上海戏剧学院等文化机构合作，开发具备表演能力的艺术机器人，在文旅景区提供导览讲解、互动表演等沉浸式体验；家庭服务机器人可承担家务清洁、老人陪护、儿童教育等任务；商业服务机器人则在酒店、商场、展馆等场所提供智能迎宾、信息咨询、物品递送等服务。" data-en="Developing intelligent service robots with emotional interaction and personalized service capabilities for diverse scenarios including tourism, home, and commercial settings. Collaborating with Shanghai Theatre Academy to create artistic robots with performance capabilities for immersive tour guide and interactive show experiences; home service robots handle housework, elderly care, and children's education; commercial robots provide smart reception and delivery services at hotels, malls, and exhibition halls.">面向文旅、家庭、商业等多元化服务场景，研发具有情感交互和个性化服务能力的智能服务机器人。与上海戏剧学院等文化机构合作，开发具备表演能力的艺术机器人，在文旅景区提供导览讲解、互动表演等沉浸式体验；家庭服务机器人可承担家务清洁、老人陪护、儿童教育等任务；商业服务机器人则在酒店、商场、展馆等场所提供智能迎宾、信息咨询、物品递送等服务。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 关于我们 Section -->
-    <section class="about-section" id="about">
-        <div class="about-container">
-            <div class="about-content">
-                <div class="section-title" style="text-align: left; margin-bottom: 60px;">
-                    <h2 data-zh="关于我们" data-en="About Us">关于我们</h2>
-                    <p data-zh="河南省级重点实验室，引领具身智能产业发展" data-en="A provincial key lab in Henan leading embodied intelligence development">河南省级重点实验室，引领具身智能产业发展</p>
-                </div>
-
-                <div class="about-grid">
-                    <div class="about-text">
-                        <h3 data-zh="实验室简介" data-en="Lab Overview">实验室简介</h3>
-                        <p data-zh="中豫具身智能实验室是河南省科学院举办、河南省委省政府批准设立的公益二类事业单位。实验室于2024年10月16日正式揭牌，是围绕具身智能系统展开研究与应用的高能级创新平台。" data-en="Zhongyuan Embodied Intelligence Laboratory is a public institution established by Henan Academy of Sciences with approval from the Henan provincial government. Inaugurated on October 16, 2024, it is a high-level innovation platform for research and application of embodied intelligence systems.">中豫具身智能实验室是河南省科学院举办、河南省委省政府批准设立的公益二类事业单位。实验室于2024年10月16日正式揭牌，是围绕具身智能系统展开研究与应用的高能级创新平台。</p>
-
-                        <h3 data-zh="发展使命" data-en="Mission">发展使命</h3>
-                        <p data-zh="实验室瞄准具身智能产业需求，以智能机器人为载体，致力于突破"大脑、小脑、肢体"关键技术，建设覆盖具身智能全产业链的科研与应用体系。通过引入顶级科研力量和资源，力争在智能机器人领域实现重大原创性技术突破。" data-en="The lab targets industry needs in embodied intelligence, using intelligent robots as the carrier to break through key 'brain, cerebellum, body' technologies and build a full-chain R&D and application system. By bringing in top research talent and resources, it aims for major original breakthroughs in robotics.">实验室瞄准具身智能产业需求，以智能机器人为载体，致力于突破"大脑、小脑、肢体"关键技术，建设覆盖具身智能全产业链的科研与应用体系。通过引入顶级科研力量和资源，力争在智能机器人领域实现重大原创性技术突破。</p>
-
-                        <h3 data-zh="战略定位" data-en="Strategic Positioning">战略定位</h3>
-                        <p data-zh="对标国家级科研平台，以前沿布局、产业需求为导向，推动河南成为具身智能技术与产业发展的核心高地，助力国家智能科技战略实施。" data-en="Benchmarking national research platforms, the lab focuses on frontier layout and industry needs, positioning Henan as a core hub for embodied intelligence technology and industrial development.">对标国家级科研平台，以前沿布局、产业需求为导向，推动河南成为具身智能技术与产业发展的核心高地，助力国家智能科技战略实施。</p>
-                    </div>
-
-                    <div class="about-highlights">
-                        <div class="highlight-box">
-                            <div class="highlight-number">2024</div>
-                            <div class="highlight-label" data-zh="年正式成立" data-en="Founded">年正式成立</div>
-                        </div>
-                        <div class="highlight-box">
-                            <div class="highlight-number">5</div>
-                            <div class="highlight-label" data-zh="大研究方向" data-en="Research Areas">大研究方向</div>
-                        </div>
-                        <div class="highlight-box">
-                            <div class="highlight-number">100+</div>
-                            <div class="highlight-label" data-zh="科研人员" data-en="Researchers">科研人员</div>
-                        </div>
-                        <div class="highlight-box">
-                            <div class="highlight-number" data-zh="省级" data-en="Provincial">省级</div>
-                            <div class="highlight-label" data-zh="重点实验室" data-en="Key Lab">重点实验室</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 发展历程时间轴 -->
-                <div class="about-timeline">
-                    <h3 class="timeline-title" data-zh="发展历程" data-en="Milestones">发展历程</h3>
-                    <div class="timeline-container">
-                        <div class="timeline-item">
-                            <div class="timeline-date">
-                                <span class="timeline-year">2024</span>
-                                <span class="timeline-month" data-zh="10月" data-en="Oct">10月</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4 data-zh="实验室正式揭牌" data-en="Official Inauguration">实验室正式揭牌</h4>
-                                <p data-zh="2024年10月16日，中豫具身智能实验室在河南省科学院正式揭牌成立，标志着河南省具身智能产业发展进入新阶段。" data-en="On October 16, 2024, ZYEI Lab was officially inaugurated at Henan Academy of Sciences, marking a new phase in Henan's embodied intelligence industry.">2024年10月16日，中豫具身智能实验室在河南省科学院正式揭牌成立，标志着河南省具身智能产业发展进入新阶段。</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">
-                                <span class="timeline-year">2024</span>
-                                <span class="timeline-month" data-zh="11月" data-en="Nov">11月</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4 data-zh="核心团队组建" data-en="Core Team Formation">核心团队组建</h4>
-                                <p data-zh="完成执行主任李清都教授领衔的核心科研团队组建，汇聚机器人技术、人工智能、控制工程等领域顶尖人才。" data-en="Completed the formation of core research team led by Executive Director Prof. Li Qingdu, gathering top talent in robotics, AI, and control engineering.">完成执行主任李清都教授领衔的核心科研团队组建，汇聚机器人技术、人工智能、控制工程等领域顶尖人才。</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">
-                                <span class="timeline-year">2024</span>
-                                <span class="timeline-month" data-zh="12月" data-en="Dec">12月</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4 data-zh="行者二号X02-Lite发布" data-en="Walker X02-Lite Launch">行者二号X02-Lite发布</h4>
-                                <p data-zh="发布全球首款肌腱驱动人形机器人"行者二号X02-Lite"，采用创新柔性驱动技术，引领人形机器人技术新方向。" data-en="Launched the world's first tendon-driven humanoid robot 'Walker X02-Lite' with innovative flexible drive technology, leading new directions in humanoid robotics.">发布全球首款肌腱驱动人形机器人"行者二号X02-Lite"，采用创新柔性驱动技术，引领人形机器人技术新方向。</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">
-                                <span class="timeline-year">2025</span>
-                                <span class="timeline-month" data-zh="1月" data-en="Jan">1月</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4 data-zh="产业合作启动" data-en="Industry Partnerships Launch">产业合作启动</h4>
-                                <p data-zh="与蔚来、比亚迪、吉利、东风柳汽等头部车企建立深度合作关系，孵化企业卓益得（上海）机器人正式运营。" data-en="Established deep partnerships with leading automakers including NIO, BYD, Geely, and Dongfeng Liuzhou Motor. Incubated company Zhuoyide (Shanghai) Robotics began operations.">与蔚来、比亚迪、吉利、东风柳汽等头部车企建立深度合作关系，孵化企业卓益得（上海）机器人正式运营。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 组织架构 -->
-                <div class="about-structure">
-                    <h3 class="structure-title" data-zh="组织架构" data-en="Organization Structure">组织架构</h3>
-                    <div class="structure-grid">
-                        <div class="structure-card main">
-                            <div class="structure-icon">👨‍💼</div>
-                            <h4 data-zh="执行主任" data-en="Executive Director">执行主任</h4>
-                            <p data-zh="李清都 教授" data-en="Prof. Li Qingdu">李清都 教授</p>
-                        </div>
-                        <div class="structure-branches">
-                            <div class="structure-card">
-                                <div class="structure-icon">🔬</div>
-                                <h4 data-zh="研究部门" data-en="Research Division">研究部门</h4>
-                                <ul>
-                                    <li data-zh="多模态AI研究组" data-en="Multimodal AI Group">多模态AI研究组</li>
-                                    <li data-zh="机器人本体研究组" data-en="Robot Platform Group">机器人本体研究组</li>
-                                    <li data-zh="运动控制研究组" data-en="Motion Control Group">运动控制研究组</li>
-                                    <li data-zh="应用场景研究组" data-en="Application Scenarios Group">应用场景研究组</li>
-                                </ul>
-                            </div>
-                            <div class="structure-card">
-                                <div class="structure-icon">🏭</div>
-                                <h4 data-zh="产业转化部" data-en="Industrialization Dept">产业转化部</h4>
-                                <p class="structure-lead" data-zh="负责人：樊锁钟 博士" data-en="Head: Dr. Fan Suozhong">负责人：樊锁钟 博士</p>
-                                <ul>
-                                    <li data-zh="技术转化中心" data-en="Tech Transfer Center">技术转化中心</li>
-                                    <li data-zh="企业孵化中心" data-en="Incubation Center">企业孵化中心</li>
-                                    <li data-zh="产业合作中心" data-en="Industry Cooperation">产业合作中心</li>
-                                </ul>
-                            </div>
-                            <div class="structure-card">
-                                <div class="structure-icon">📋</div>
-                                <h4 data-zh="综合管理部" data-en="General Management">综合管理部</h4>
-                                <p class="structure-lead" data-zh="主任助理：周闯闯" data-en="Director's Assistant: Zhou Chuangchuang">主任助理：周闯闯</p>
-                                <ul>
-                                    <li data-zh="人才招聘与培养" data-en="Talent Recruitment">人才招聘与培养</li>
-                                    <li data-zh="行政与后勤保障" data-en="Administration">行政与后勤保障</li>
-                                    <li data-zh="对外交流与合作" data-en="External Affairs">对外交流与合作</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 荣誉资质 -->
-                <div class="about-honors">
-                    <h3 class="honors-title" data-zh="荣誉资质" data-en="Honors & Certifications">荣誉资质</h3>
-                    <div class="honors-grid">
-                        <div class="honor-item">
-                            <div class="honor-icon">🏆</div>
-                            <h4 data-zh="河南省重点实验室" data-en="Henan Provincial Key Laboratory">河南省重点实验室</h4>
-                            <p data-zh="河南省科技厅认定" data-en="Certified by Henan Dept of Science & Technology">河南省科技厅认定</p>
-                        </div>
-                        <div class="honor-item">
-                            <div class="honor-icon">🎖️</div>
-                            <h4 data-zh="省级创新平台" data-en="Provincial Innovation Platform">省级创新平台</h4>
-                            <p data-zh="河南省科学院重点支持单位" data-en="Key unit supported by Henan Academy of Sciences">河南省科学院重点支持单位</p>
-                        </div>
-                        <div class="honor-item">
-                            <div class="honor-icon">🌟</div>
-                            <h4 data-zh="全球首创技术" data-en="World-First Technology">全球首创技术</h4>
-                            <p data-zh="肌腱驱动人形机器人技术" data-en="Tendon-driven humanoid robot technology">肌腱驱动人形机器人技术</p>
-                        </div>
-                        <div class="honor-item">
-                            <div class="honor-icon">🤝</div>
-                            <h4 data-zh="产学研合作示范" data-en="Industry-Academia Cooperation Model">产学研合作示范</h4>
-                            <p data-zh="与多家头部车企建立战略合作" data-en="Strategic partnerships with leading automakers">与多家头部车企建立战略合作</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 团队展示 Section -->
-    <section class="team-section" id="team">
-        <div class="section-title">
-            <h2 data-zh="团队展示" data-en="Team">团队展示</h2>
-            <p data-zh="汇聚全球顶尖人才，打造世界一流研究团队" data-en="Gathering global talent to build a world-class research team">汇聚全球顶尖人才，打造世界一流研究团队</p>
-        </div>
-        
-        <div class="team-container">
-            <!-- 领导团队 -->
-            <div class="team-leadership">
-                <h3 class="team-subtitle" data-zh="领导团队" data-en="Leadership Team">领导团队</h3>
-                <div class="leadership-grid">
-                    <div class="team-member leadership">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="李清都" data-zh-alt="李清都" data-en-alt="Li Qingdu" width="400" height="400" loading="lazy" decoding="async">
-                            <div class="member-overlay">
-                                <p class="member-bio" data-zh="中豫具身智能实验室执行主任，长期从事机器人技术与非线性系统研究，主持研发全球首款肌腱驱动人形机器人"行者二号"，在具身智能领域具有深厚积累和国际影响力。" data-en="Executive Director of ZYEI Lab, long-term focus on robotics and nonlinear systems. Led the development of the world's first tendon-driven humanoid robot 'Walker X02-Lite' with deep expertise and international influence in embodied intelligence.">中豫具身智能实验室执行主任，长期从事机器人技术与非线性系统研究，主持研发全球首款肌腱驱动人形机器人"行者二号"，在具身智能领域具有深厚积累和国际影响力。</p>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4 data-zh="李清都" data-en="Li Qingdu">李清都</h4>
-                            <p class="member-role" data-zh="执行主任" data-en="Executive Director">执行主任</p>
-                            <p class="member-title" data-zh="教授 / 博士生导师" data-en="Professor / PhD Supervisor">教授 / 博士生导师</p>
-                            <p class="member-desc" data-zh="主持国家级科研项目10余项，发表SCI论文100余篇，授权发明专利30余项" data-en="Led 10+ national research projects, published 100+ SCI papers, held 30+ invention patents">主持国家级科研项目10余项，发表SCI论文100余篇，授权发明专利30余项</p>
-                            <div class="member-tags">
-                                <span class="tag" data-zh="机器人技术" data-en="Robotics">机器人技术</span>
-                                <span class="tag" data-zh="具身智能" data-en="Embodied Intelligence">具身智能</span>
-                                <span class="tag" data-zh="非线性系统" data-en="Nonlinear Systems">非线性系统</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member leadership">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="副主任" data-zh-alt="副主任" data-en-alt="Deputy Director" width="400" height="400" loading="lazy" decoding="async">
-                            <div class="member-overlay">
-                                <p class="member-bio" data-zh="人工智能领域专家，专注于多模态大模型研究" data-en="AI expert focused on multimodal foundation models.">人工智能领域专家，专注于多模态大模型研究</p>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4 data-zh="张** 教授" data-en="Prof. Zhang **">张** 教授</h4>
-                            <p class="member-role" data-zh="副主任" data-en="Deputy Director">副主任</p>
-                            <p class="member-title" data-zh="教授 / 博士生导师" data-en="Professor / PhD Supervisor">教授 / 博士生导师</p>
-                            <div class="member-tags">
-                                <span class="tag" data-zh="AI大模型" data-en="AI Models">AI大模型</span>
-                                <span class="tag" data-zh="深度学习" data-en="Deep Learning">深度学习</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member leadership">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" alt="副主任" data-zh-alt="副主任" data-en-alt="Deputy Director" width="400" height="400" loading="lazy" decoding="async">
-                            <div class="member-overlay">
-                                <p class="member-bio" data-zh="控制科学与工程专家，在运动控制领域成果丰硕" data-en="Expert in control science and engineering with extensive results in motion control.">控制科学与工程专家，在运动控制领域成果丰硕</p>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4 data-zh="王** 教授" data-en="Prof. Wang **">王** 教授</h4>
-                            <p class="member-role" data-zh="副主任" data-en="Deputy Director">副主任</p>
-                            <p class="member-title" data-zh="教授 / 博士生导师" data-en="Professor / PhD Supervisor">教授 / 博士生导师</p>
-                            <div class="member-tags">
-                                <span class="tag" data-zh="运动控制" data-en="Motion Control">运动控制</span>
-                                <span class="tag" data-zh="自动化" data-en="Automation">自动化</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 核心研究团队 -->
-            <div class="team-researchers">
-                <h3 class="team-subtitle" data-zh="核心研究团队" data-en="Core Research Team">核心研究团队</h3>
-                <div class="researchers-grid">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="樊锁钟" data-zh-alt="樊锁钟" data-en-alt="Fan Suozhong" width="300" height="300" loading="lazy" decoding="async">
-                            <div class="member-overlay">
-                                <p class="member-bio" data-zh="负责实验室产业转化工作，推动技术成果向产品和应用转化，主导孵化企业卓益得（上海）机器人的运营。" data-en="Oversees lab industrialization, driving technology commercialization and leading incubated company Zhuoyide (Shanghai) Robotics operations.">负责实验室产业转化工作，推动技术成果向产品和应用转化，主导孵化企业卓益得（上海）机器人的运营。</p>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4 data-zh="樊锁钟 博士" data-en="Dr. Fan Suozhong">樊锁钟 博士</h4>
-                            <p class="member-role" data-zh="产业转化负责人" data-en="Head of Industrialization">产业转化负责人</p>
-                            <p class="member-desc" data-zh="主导与蔚来、比亚迪等车企的产业合作，推动人形机器人在制造业的规模化应用" data-en="Leading industry partnerships with NIO, BYD and promoting large-scale humanoid robot deployment in manufacturing">主导与蔚来、比亚迪等车企的产业合作，推动人形机器人在制造业的规模化应用</p>
-                            <div class="member-tags">
-                                <span class="tag" data-zh="产业化" data-en="Commercialization">产业化</span>
-                                <span class="tag" data-zh="技术转化" data-en="Tech Transfer">技术转化</span>
-                                <span class="tag" data-zh="企业孵化" data-en="Incubation">企业孵化</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt="周闯闯" data-zh-alt="周闯闯" data-en-alt="Zhou Chuangchuang" width="300" height="300" loading="lazy" decoding="async">
-                            <div class="member-overlay">
-                                <p class="member-bio" data-zh="协助执行主任统筹实验室日常运营管理，负责人才招聘、行政事务及对外交流合作等工作。" data-en="Assists Executive Director in daily operations, responsible for talent recruitment, administration, and external collaboration.">协助执行主任统筹实验室日常运营管理，负责人才招聘、行政事务及对外交流合作等工作。</p>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4 data-zh="周闯闯" data-en="Zhou Chuangchuang">周闯闯</h4>
-                            <p class="member-role" data-zh="主任助理" data-en="Director's Assistant">主任助理</p>
-                            <p class="member-desc" data-zh="统筹2025年度30名博士招聘计划，协调实验室与高校、企业的合作对接" data-en="Coordinating 2025 recruitment of 30 PhD researchers, facilitating lab partnerships with universities and enterprises">统筹2025年度30名博士招聘计划，协调实验室与高校、企业的合作对接</p>
-                            <div class="member-tags">
-                                <span class="tag" data-zh="项目管理" data-en="Project Management">项目管理</span>
-                                <span class="tag" data-zh="人才招聘" data-en="Recruitment">人才招聘</span>
-                                <span class="tag" data-zh="行政管理" data-en="Administration">行政管理</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop" alt="刘** 博士" data-zh-alt="刘** 博士" data-en-alt="Dr. Liu **" width="300" height="300" loading="lazy" decoding="async">
-                        </div>
-                        <div class="member-info">
-                            <h4 data-zh="刘** 博士" data-en="Dr. Liu **">刘** 博士</h4>
-                            <p class="member-role" data-zh="算法研究员" data-en="Algorithm Researcher">算法研究员</p>
-                            <div class="member-tags">
-                                <span class="tag" data-zh="视觉感知" data-en="Vision Perception">视觉感知</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt="陈** 博士" data-zh-alt="陈** 博士" data-en-alt="Dr. Chen **" width="300" height="300" loading="lazy" decoding="async">
-                        </div>
-                        <div class="member-info">
-                            <h4 data-zh="陈** 博士" data-en="Dr. Chen **">陈** 博士</h4>
-                            <p class="member-role" data-zh="硬件工程师" data-en="Hardware Engineer">硬件工程师</p>
-                            <div class="member-tags">
-                                <span class="tag" data-zh="机械设计" data-en="Mechanical Design">机械设计</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="赵** 博士" data-zh-alt="赵** 博士" data-en-alt="Dr. Zhao **" width="300" height="300" loading="lazy" decoding="async">
-                        </div>
-                        <div class="member-info">
-                            <h4 data-zh="赵** 博士" data-en="Dr. Zhao **">赵** 博士</h4>
-                            <p class="member-role" data-zh="控制工程师" data-en="Control Engineer">控制工程师</p>
-                            <div class="member-tags">
-                                <span class="tag" data-zh="运动控制" data-en="Motion Control">运动控制</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop" alt="孙** 博士" data-zh-alt="孙** 博士" data-en-alt="Dr. Sun **" width="300" height="300" loading="lazy" decoding="async">
-                        </div>
-                        <div class="member-info">
-                            <h4 data-zh="孙** 博士" data-en="Dr. Sun **">孙** 博士</h4>
-                            <p class="member-role" data-zh="AI研究员" data-en="AI Researcher">AI研究员</p>
-                            <div class="member-tags">
-                                <span class="tag" data-zh="深度学习" data-en="Deep Learning">深度学习</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 合作伙伴 -->
-            <div class="team-partners">
-                <h3 class="team-subtitle" data-zh="合作伙伴" data-en="Partners">合作伙伴</h3>
-                <div class="partners-grid">
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="河南省科学院" data-en="Henan Academy of Sciences">河南省科学院</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="河南省科技厅" data-en="Henan Department of Science and Technology">河南省科技厅</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="郑州大学" data-en="Zhengzhou University">郑州大学</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="河南大学" data-en="Henan University">河南大学</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="蔚来汽车" data-en="NIO">蔚来汽车</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="东风柳汽" data-en="Dongfeng Liuzhou Motor">东风柳汽</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="吉利汽车" data-en="Geely">吉利汽车</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="比亚迪" data-en="BYD">比亚迪</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="卓益得机器人" data-en="Zhuoyide Robotics">卓益得机器人</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div class="partner-placeholder" data-zh="上海戏剧学院" data-en="Shanghai Theatre Academy">上海戏剧学院</div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -4440,7 +4187,7 @@
             <h2 data-zh="成果展示" data-en="Achievements">成果展示</h2>
             <p data-zh="突破性技术创新与产业化应用" data-en="Breakthrough innovations and industrial applications">突破性技术创新与产业化应用</p>
         </div>
-        
+
         <div class="achievements-container">
             <div class="achievement-card">
                 <div class="achievement-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
@@ -4453,7 +4200,7 @@
                     <a href="#walker-x02" class="achievement-link" data-zh="了解详情 →" data-en="Learn More →">了解详情 →</a>
                 </div>
             </div>
-            
+
             <div class="achievement-card">
                 <div class="achievement-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                     <div class="achievement-icon">🏭</div>
@@ -4464,7 +4211,7 @@
                     <p data-zh="开发的通用机器人拆解系统已在多个动力电池回收和电子产品自动化拆解领域投入使用，解决环保和资源回收难题。" data-en="Universal robot disassembly system deployed in battery recycling and electronics dismantling, addressing environmental and resource recovery challenges.">开发的通用机器人拆解系统已在多个动力电池回收和电子产品自动化拆解领域投入使用，解决环保和资源回收难题。</p>
                 </div>
             </div>
-            
+
             <div class="achievement-card">
                 <div class="achievement-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                     <div class="achievement-icon">🌾</div>
@@ -4475,7 +4222,7 @@
                     <p data-zh="打造的安全实用农业机器人平台，获得第31届中国杨凌农业高新科技成果博览会"后稷特别奖"，促进农业智能化转型。" data-en="Safe and practical agricultural robot platform awarded 'Houji Special Prize' at the 31st Yangling Agricultural Hi-tech Fair, promoting agricultural intelligence transformation.">打造的安全实用农业机器人平台，获得第31届中国杨凌农业高新科技成果博览会"后稷特别奖"，促进农业智能化转型。</p>
                 </div>
             </div>
-            
+
             <div class="achievement-card">
                 <div class="achievement-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
                     <div class="achievement-icon">🎭</div>
@@ -4798,7 +4545,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- 技术参数 -->
             <div class="product-specs">
                 <h3 data-zh="技术规格" data-en="Technical Specifications">技术规格</h3>
@@ -4845,7 +4592,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- 核心技术 -->
             <div class="product-features">
                 <h3 data-zh="核心技术突破" data-en="Core Technology Breakthroughs">核心技术突破</h3>
@@ -4872,7 +4619,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- 应用场景 -->
             <div class="product-applications">
                 <h3 data-zh="应用场景" data-en="Applications">应用场景</h3>
@@ -5033,7 +4780,7 @@
             <h2 data-zh="人才招聘" data-en="Careers">人才招聘</h2>
             <p data-zh="汇聚全球顶尖人才，共创智能未来" data-en="Gathering global talent to create an intelligent future">汇聚全球顶尖人才，共创智能未来</p>
         </div>
-        
+
         <div class="careers-container">
             <div class="careers-intro">
                 <h3 data-zh="2025年公开招聘博士研究生30名" data-en="2025 PhD Recruitment: 30 Positions">2025年公开招聘博士研究生30名</h3>
@@ -5125,7 +4872,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="careers-cta">
                 <a href="mailto:hr@zyei-lab.cn" class="btn btn-primary ripple" data-zh="立即申请" data-en="Apply Now">立即申请</a>
                 <a href="#contact" class="btn btn-secondary ripple" data-zh="了解更多" data-en="Learn More">了解更多</a>
@@ -5277,7 +5024,7 @@
             <h2 data-zh="联系我们" data-en="Contact Us">联系我们</h2>
             <p data-zh="期待与您携手共创智能未来" data-en="We look forward to building an intelligent future together">期待与您携手共创智能未来</p>
         </div>
-        
+
         <div class="contact-container">
             <div class="contact-info">
                 <div class="contact-item">
@@ -5287,7 +5034,7 @@
                         <p data-zh="河南省郑州市 河南省科学院" data-en="Henan Academy of Sciences, Zhengzhou, Henan">河南省郑州市 河南省科学院</p>
                     </div>
                 </div>
-                
+
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
                     <div class="contact-details">
@@ -5296,7 +5043,7 @@
                         <p data-zh="hr@zyei-lab.cn（人才招聘）" data-en="hr@zyei-lab.cn (Recruitment)">hr@zyei-lab.cn（人才招聘）</p>
                     </div>
                 </div>
-                
+
                 <div class="contact-item">
                     <div class="contact-icon">📞</div>
                     <div class="contact-details">
@@ -5304,7 +5051,7 @@
                         <p data-zh="待更新" data-en="TBD">待更新</p>
                     </div>
                 </div>
-                
+
                 <div class="contact-item">
                     <div class="contact-icon">🤝</div>
                     <div class="contact-details">
@@ -5313,7 +5060,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="contact-form">
                 <h3 data-zh="在线留言" data-en="Message Us">在线留言</h3>
                 <form id="contactForm">
@@ -5353,7 +5100,7 @@
             </div>
             <div class="footer-section">
                 <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
-                <a href="#research" data-zh="研究方向" data-en="Research">研究方向</a>
+                <a href="about.html#research" data-zh="研究方向" data-en="Research">研究方向</a>
                 <a href="#achievements" data-zh="成果展示" data-en="Achievements">成果展示</a>
                 <a href="#industry" data-zh="产业转化" data-en="Industry">产业转化</a>
                 <a href="#careers" data-zh="人才招聘" data-en="Careers">人才招聘</a>
@@ -5449,7 +5196,7 @@
 
         // ==================== 语言切换功能 ====================
         let currentLang = localStorage.getItem('language') || 'zh';
-        
+
         const uiMessages = {
             zh: {
                 formSuccess: '感谢您的留言！我们会尽快与您联系。'
@@ -5458,17 +5205,17 @@
                 formSuccess: 'Thanks for your message! We will get back to you soon.'
             }
         };
-        
+
         // 切换语言
         function switchLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('language', lang);
-            
+
             // 更新按钮状态
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
-            
+
             // 更新所有带 data-zh 和 data-en 属性的元素
             document.querySelectorAll('[data-zh]').forEach(el => {
                 if (lang === 'zh' && el.dataset.zh) {
@@ -5477,7 +5224,7 @@
                     el.textContent = el.dataset.en;
                 }
             });
-            
+
             // 更新占位符
             document.querySelectorAll('[data-zh-placeholder]').forEach(el => {
                 if (lang === 'zh' && el.dataset.zhPlaceholder) {
@@ -5486,7 +5233,7 @@
                     el.placeholder = el.dataset.enPlaceholder;
                 }
             });
-            
+
             // 更新图片 alt 文本
             document.querySelectorAll('[data-zh-alt]').forEach(el => {
                 if (lang === 'zh' && el.dataset.zhAlt) {
@@ -5495,7 +5242,7 @@
                     el.alt = el.dataset.enAlt;
                 }
             });
-            
+
             const titleEl = document.querySelector('title');
             if (titleEl) {
                 if (lang === 'zh' && titleEl.dataset.zh) {
@@ -5516,7 +5263,7 @@
             // 更新 HTML lang 属性
             document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
         }
-        
+
         // 初始化语言
         document.addEventListener('DOMContentLoaded', () => {
             // 设置语言按钮事件
@@ -5525,23 +5272,23 @@
                     switchLanguage(btn.dataset.lang);
                 });
             });
-            
+
             // 应用保存的语言设置
             if (currentLang === 'en') {
                 switchLanguage('en');
             }
         });
-        
-        // ==================== 汉堡菜单 ==================== 
+
+        // ==================== 汉堡菜单 ====================
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
-        
+
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
-        
+
         // 点击菜单项后关闭菜单
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
@@ -5550,7 +5297,7 @@
                 document.body.style.overflow = '';
             });
         });
-        
+
         // 点击菜单外部关闭菜单
         document.addEventListener('click', (e) => {
             if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
@@ -5559,7 +5306,7 @@
                 document.body.style.overflow = '';
             }
         });
-        
+
         // ==================== 滚动进度条 ====================
         function updateScrollProgress() {
             const scrollProgress = document.getElementById('scrollProgress');
@@ -5568,10 +5315,10 @@
             const scrollPercent = (scrollTop / docHeight) * 100;
             scrollProgress.style.width = scrollPercent + '%';
         }
-        
+
         // ==================== 返回顶部按钮 ====================
         const backToTop = document.getElementById('backToTop');
-        
+
         function toggleBackToTop() {
             if (window.scrollY > 500) {
                 backToTop.classList.add('visible');
@@ -5579,23 +5326,25 @@
                 backToTop.classList.remove('visible');
             }
         }
-        
+
         backToTop.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-        
+
         // ==================== 轮播功能 ====================
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slide');
         const totalSlides = slides.length;
+        const heroSlider = document.getElementById('heroSlider');
+        const dotsContainer = document.getElementById('sliderDots');
         let autoplayInterval;
-        
+
         // 创建指示器
         function createDots() {
-            const dotsContainer = document.getElementById('sliderDots');
+            if (!dotsContainer || totalSlides === 0) return;
             for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('div');
                 dot.classList.add('slider-dot');
@@ -5604,64 +5353,69 @@
                 dotsContainer.appendChild(dot);
             }
         }
-        
+
         // 切换到指定幻灯片
         function goToSlide(n) {
+            if (!heroSlider || totalSlides === 0) return;
             currentSlide = n;
             if (currentSlide >= totalSlides) currentSlide = 0;
             if (currentSlide < 0) currentSlide = totalSlides - 1;
-            
-            const slider = document.getElementById('heroSlider');
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
+
+            heroSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
             // 更新指示器
             const dots = document.querySelectorAll('.slider-dot');
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
-            
+
             // 重置自动播放
             resetAutoplay();
         }
-        
+
         // 切换幻灯片
         function changeSlide(direction) {
+            if (!heroSlider || totalSlides === 0) return;
             goToSlide(currentSlide + direction);
         }
-        
+
         // 自动播放
         function startAutoplay() {
+            if (!heroSlider || totalSlides === 0) return;
             autoplayInterval = setInterval(() => {
                 changeSlide(1);
             }, 5000); // 每5秒切换
         }
-        
+
         function resetAutoplay() {
+            if (!heroSlider || totalSlides === 0) return;
             clearInterval(autoplayInterval);
             startAutoplay();
         }
-        
+
         // 键盘控制
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') changeSlide(-1);
-            if (e.key === 'ArrowRight') changeSlide(1);
-        });
-        
+        if (heroSlider && totalSlides > 0) {
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') changeSlide(-1);
+                if (e.key === 'ArrowRight') changeSlide(1);
+            });
+        }
+
         // 触摸滑动支持（移动端）
         let touchStartX = 0;
         let touchEndX = 0;
-        
-        const heroSlider = document.getElementById('heroSlider');
-        
-        heroSlider.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        heroSlider.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-        
+
+        if (heroSlider && totalSlides > 0) {
+            heroSlider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            heroSlider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+        }
+
         function handleSwipe() {
             if (touchEndX < touchStartX - 50) {
                 changeSlide(1); // 向左滑
@@ -5670,7 +5424,7 @@
                 changeSlide(-1); // 向右滑
             }
         }
-        
+
         // ==================== 导航栏滚动效果 ====================
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
@@ -5679,14 +5433,14 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
+
             // 更新滚动进度条
             updateScrollProgress();
-            
+
             // 更新返回顶部按钮
             toggleBackToTop();
         });
-        
+
         // ==================== 数字计数动画 ====================
         function animateCounter(element, target) {
             let current = 0;
@@ -5701,7 +5455,7 @@
                 }
             }, 20);
         }
-        
+
         // ==================== 滚动触发动画（增强版） ====================
         const observerOptions = {
             threshold: 0.1,
@@ -5736,6 +5490,7 @@
             .stat-item,
             .research-card,
             .achievement-card,
+            .news-featured,
             .news-item,
             .section-header,
             .about-highlight,
@@ -5776,20 +5531,30 @@
                 }
             });
         });
-        
+
         // ==================== 新闻筛选功能 ====================
         const filterBtns = document.querySelectorAll('.filter-btn');
         const newsItems = document.querySelectorAll('.news-item');
-        
+        const newsFeatured = document.querySelector('.news-featured');
+
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 // 更新激活状态
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
+
                 const filter = btn.dataset.filter;
-                
-                // 筛选新闻
+
+                // 筛选大卡片
+                if (newsFeatured) {
+                    if (filter === 'all' || newsFeatured.dataset.category === filter) {
+                        newsFeatured.style.display = 'block';
+                    } else {
+                        newsFeatured.style.display = 'none';
+                    }
+                }
+
+                // 筛选小卡片
                 newsItems.forEach(item => {
                     if (filter === 'all') {
                         item.classList.remove('hidden');
@@ -5806,19 +5571,19 @@
                 });
             });
         });
-        
+
         // ==================== 表单提交 ====================
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
+
                 // 显示提交成功消息
                 alert(uiMessages[currentLang].formSuccess);
-                
+
                 // 重置表单
                 contactForm.reset();
-                
+
                 // 实际使用时，这里应该调用 API 发送表单数据
                 // fetch('/api/contact', {
                 //     method: 'POST',
@@ -5826,7 +5591,7 @@
                 // });
             });
         }
-        
+
         // ==================== 平滑滚动 ====================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -5840,35 +5605,38 @@
                 }
             });
         });
-        
+
         // ==================== 视差滚动效果 ====================
         window.addEventListener('scroll', () => {
             const scrolled = window.scrollY;
-            
+
             // 可以为特定元素添加视差效果
-            document.querySelectorAll('.research-card').forEach((card, index) => {
+            document.querySelectorAll('.parallax-card').forEach((card) => {
                 const speed = 0.05;
                 const yPos = -(scrolled * speed);
                 card.style.transform = `translateY(${yPos}px)`;
             });
         });
-        
+
         // ==================== 初始化 ====================
         document.addEventListener('DOMContentLoaded', () => {
-            createDots();
-            startAutoplay();
+            if (heroSlider && totalSlides > 0) {
+                createDots();
+                startAutoplay();
+
+                // 预加载图片
+                slides.forEach(slide => {
+                    const img = slide.querySelector('.hero-bg');
+                    if (img && img.src) {
+                        const preloadImg = new Image();
+                        preloadImg.src = img.src;
+                    }
+                });
+            }
+
             updateScrollProgress();
-            
-            // 预加载图片
-            slides.forEach(slide => {
-                const img = slide.querySelector('.hero-bg');
-                if (img && img.src) {
-                    const preloadImg = new Image();
-                    preloadImg.src = img.src;
-                }
-            });
         });
-        
+
         // ==================== 性能优化：节流函数 ====================
         function throttle(func, wait) {
             let timeout;
@@ -5881,7 +5649,7 @@
                 timeout = setTimeout(later, wait);
             };
         }
-        
+
         // 使用节流优化滚动事件
         window.addEventListener('scroll', throttle(() => {
             updateScrollProgress();

@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-zh="团队展示 | 中豫具身智能实验室" data-en="Team | Zhongyuan Embodied Intelligence Laboratory">团队展示 | 中豫具身智能实验室</title>
+    <meta name="description" content="了解中豫具身智能实验室的领导团队、核心研究人员和合作伙伴。汇聚全球顶尖人才，打造世界一流研究团队。" data-zh-content="了解中豫具身智能实验室的领导团队、核心研究人员和合作伙伴。汇聚全球顶尖人才，打造世界一流研究团队。" data-en-content="Meet the leadership team, core researchers, and partners of ZYEI Lab. Gathering global talent to build a world-class research team.">
+    <meta name="keywords" content="中豫具身智能实验室,团队展示,李清都,研究团队,合作伙伴,ZYEI LAB" data-zh-content="中豫具身智能实验室,团队展示,李清都,研究团队,合作伙伴,ZYEI LAB" data-en-content="ZYEI Lab, team, Li Qingdu, research team, partners, embodied intelligence">
+    <meta name="author" content="ZYEI LAB">
+    <meta name="theme-color" content="#0066FF">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://zyei-lab.vercel.app/team.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="团队展示 | 中豫具身智能实验室" data-zh-content="团队展示 | 中豫具身智能实验室" data-en-content="Team | Zhongyuan Embodied Intelligence Laboratory">
+    <meta property="og:description" content="了解中豫具身智能实验室的领导团队、核心研究人员和合作伙伴。" data-zh-content="了解中豫具身智能实验室的领导团队、核心研究人员和合作伙伴。" data-en-content="Meet the leadership team, core researchers, and partners of ZYEI Lab.">
+    <meta property="og:url" content="https://zyei-lab.vercel.app/team.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&h=1080&fit=crop">
+    <meta property="og:site_name" content="ZYEI LAB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="团队展示 | 中豫具身智能实验室">
+    <meta name="twitter:description" content="了解中豫具身智能实验室的领导团队、核心研究人员和合作伙伴。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"></noscript>
+    <style>
+        :root {
+            --primary-blue: #0066FF;
+            --deep-blue: #001F3F;
+            --cyber-blue: #00FFFF;
+            --accent-red: #FF3366;
+            --dark-bg: #0A0E1A;
+            --light-text: #E8F0FF;
+            --gray-text: #8B9DC3;
+            --gradient-accent: linear-gradient(90deg, var(--primary-blue), var(--cyber-blue));
+            --section-padding: 120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--dark-bg);
+            color: var(--light-text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ==================== 导航栏 ==================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 26, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 102, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(10, 14, 26, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 102, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        a.logo:hover {
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links li {
+            flex: 0 0 auto;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            white-space: nowrap;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyber-blue);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--cyber-blue);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* 汉堡菜单按钮 */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--light-text);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* 移动端菜单 */
+        .nav-links.mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: rgba(10, 14, 26, 0.98);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            padding: 100px 40px 40px;
+            gap: 30px;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 1px solid rgba(0, 102, 255, 0.3);
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links.mobile-menu.active {
+            right: 0;
+        }
+
+        .nav-links.mobile-menu a {
+            font-size: 20px;
+            padding: 10px 0;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links.mobile-menu.active a {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .nav-links.mobile-menu.active a:nth-child(1) { transition-delay: 0.1s; }
+        .nav-links.mobile-menu.active a:nth-child(2) { transition-delay: 0.15s; }
+        .nav-links.mobile-menu.active a:nth-child(3) { transition-delay: 0.2s; }
+        .nav-links.mobile-menu.active a:nth-child(4) { transition-delay: 0.25s; }
+        .nav-links.mobile-menu.active a:nth-child(5) { transition-delay: 0.3s; }
+        .nav-links.mobile-menu.active a:nth-child(6) { transition-delay: 0.35s; }
+        .nav-links.mobile-menu.active a:nth-child(7) { transition-delay: 0.4s; }
+        .nav-links.mobile-menu.active a:nth-child(8) { transition-delay: 0.45s; }
+        .nav-links.mobile-menu.active a:nth-child(9) { transition-delay: 0.5s; }
+
+        /* 语言切换器 */
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+            background: rgba(0, 102, 255, 0.1);
+            padding: 6px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 102, 255, 0.3);
+        }
+
+        .lang-btn {
+            padding: 6px 16px;
+            border: none;
+            background: transparent;
+            color: var(--gray-text);
+            border-radius: 16px;
+            cursor: pointer;
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--light-text);
+        }
+
+        .lang-btn.active {
+            background: var(--gradient-accent);
+            color: white;
+        }
+
+        /* ==================== 页面横幅 ==================== */
+        .page-banner {
+            position: relative;
+            padding: 180px 40px 100px;
+            background: linear-gradient(135deg, #0A0E1A 0%, #1a237e 50%, #0d47a1 100%);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,102,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .page-banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-banner h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-banner p {
+            font-size: 18px;
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--gray-text);
+        }
+
+        .breadcrumb a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--cyber-blue);
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+
+        /* ==================== 滚动进度条 ==================== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--gradient-accent);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* ==================== 返回顶部按钮 ==================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(0, 102, 255, 0.6);
+        }
+
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* ==================== Section 通用样式 ==================== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==================== 团队展示 Section ==================== */
+        .team-section {
+            padding: var(--section-padding) 40px;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #0d1425 100%);
+        }
+
+        .team-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-subtitle {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--cyber-blue);
+        }
+
+        .team-leadership {
+            margin-bottom: 80px;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
+        }
+
+        .member-photo {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary-blue);
+        }
+
+        .team-member.leadership .member-photo {
+            width: 220px;
+            height: 220px;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 102, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .member-photo:hover .member-overlay {
+            opacity: 1;
+        }
+
+        .member-bio {
+            color: white;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .member-info h4 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--light-text);
+        }
+
+        .member-role {
+            font-size: 16px;
+            color: var(--cyber-blue);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .member-title {
+            font-size: 14px;
+            color: var(--gray-text);
+            margin-bottom: 10px;
+        }
+
+        .member-desc {
+            font-size: 13px;
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .member-tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .member-tags .tag {
+            background: rgba(0, 102, 255, 0.2);
+            color: var(--cyber-blue);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .team-researchers {
+            margin-bottom: 80px;
+        }
+
+        .researchers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .partner-logo {
+            background: rgba(0, 102, 255, 0.05);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 12px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            background: rgba(0, 102, 255, 0.1);
+            border-color: var(--cyber-blue);
+            transform: translateY(-5px);
+        }
+
+        .partner-placeholder {
+            color: var(--gray-text);
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ==================== Footer ==================== */
+        footer {
+            background: linear-gradient(180deg, #0d1425 0%, #050816 100%);
+            padding: 80px 40px 30px;
+            border-top: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+
+        .footer-section p {
+            color: var(--gray-text);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--gray-text);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--cyber-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 102, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: var(--gray-text);
+            font-size: 14px;
+        }
+
+        /* ==================== 页面加载动画 ==================== */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+            animation: logoPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .loader-spinner::before,
+        .loader-spinner::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .loader-spinner::before {
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top-color: var(--primary-blue);
+            border-right-color: var(--primary-blue);
+            animation: spinnerRotate 1s linear infinite;
+        }
+
+        .loader-spinner::after {
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            border: 3px solid transparent;
+            border-bottom-color: var(--cyber-blue);
+            border-left-color: var(--cyber-blue);
+            animation: spinnerRotate 0.8s linear infinite reverse;
+        }
+
+        @keyframes spinnerRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--gray-text);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .loader-progress {
+            width: 200px;
+            height: 3px;
+            background: rgba(0, 102, 255, 0.2);
+            border-radius: 3px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .loader-progress-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: 3px;
+            animation: progressLoad 1.5s ease-out forwards;
+        }
+
+        @keyframes progressLoad {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        /* ==================== 响应式设计 ==================== */
+        @media (max-width: 1024px) {
+            .nav-links:not(.mobile-menu) {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-container {
+                padding: 15px 20px;
+            }
+
+            .page-banner {
+                padding: 140px 20px 80px;
+            }
+
+            .team-section {
+                padding: 80px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .researchers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .page-banner h1 {
+                font-size: 32px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+
+            footer {
+                padding: 60px 20px 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .researchers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .member-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .team-member.leadership .member-photo {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-logo">ZYEI LAB</div>
+        <div class="loader-spinner"></div>
+        <div class="loader-text" data-zh="正在加载..." data-en="Loading...">正在加载...</div>
+        <div class="loader-progress">
+            <div class="loader-progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ZYEI LAB</a>
+
+            <!-- 桌面端导航 -->
+            <ul class="nav-links">
+                <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="index.html#news" data-zh="新闻动态" data-en="News & Events">新闻动态</a></li>
+                <li><a href="about.html" data-zh="关于实验室" data-en="About Lab">关于实验室</a></li>
+                <li><a href="team.html" class="active" data-zh="团队展示" data-en="Team">团队展示</a></li>
+                <li><a href="index.html#achievements" data-zh="成果展示" data-en="Achievements">成果展示</a></li>
+                <li><a href="index.html#publications" data-zh="研究成果" data-en="Publications">研究成果</a></li>
+                <li><a href="index.html#industry" data-zh="产业转化" data-en="Industry">产业转化</a></li>
+                <li><a href="index.html#careers" data-zh="人才招聘" data-en="Careers">人才招聘</a></li>
+                <li><a href="index.html#cooperation" data-zh="开放合作" data-en="Cooperation">开放合作</a></li>
+                <li><a href="index.html#contact" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+            </ul>
+
+            <!-- 汉堡菜单按钮 -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- 语言切换器 -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="zh" data-zh="中文" data-en="中文">中文</button>
+                <button class="lang-btn" data-lang="en" data-zh="EN" data-en="EN">EN</button>
+            </div>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <ul class="nav-links mobile-menu" id="mobileMenu">
+            <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+            <li><a href="index.html#news" data-zh="新闻动态" data-en="News & Events">新闻动态</a></li>
+            <li><a href="about.html" data-zh="关于实验室" data-en="About Lab">关于实验室</a></li>
+            <li><a href="team.html" class="active" data-zh="团队展示" data-en="Team">团队展示</a></li>
+            <li><a href="index.html#achievements" data-zh="成果展示" data-en="Achievements">成果展示</a></li>
+            <li><a href="index.html#industry" data-zh="产业转化" data-en="Industry">产业转化</a></li>
+            <li><a href="index.html#careers" data-zh="人才招聘" data-en="Careers">人才招聘</a></li>
+            <li><a href="index.html#cooperation" data-zh="开放合作" data-en="Cooperation">开放合作</a></li>
+            <li><a href="index.html#contact" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- 滚动进度条 -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- 返回顶部按钮 -->
+    <div class="back-to-top" id="backToTop">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </div>
+
+    <!-- 页面横幅 -->
+    <section class="page-banner">
+        <div class="page-banner-content">
+            <h1 data-zh="团队展示" data-en="Our Team">团队展示</h1>
+            <p data-zh="汇聚全球顶尖人才，打造世界一流研究团队" data-en="Gathering global talent to build a world-class research team">汇聚全球顶尖人才，打造世界一流研究团队</p>
+            <div class="breadcrumb">
+                <a href="index.html" data-zh="首页" data-en="Home">首页</a>
+                <span>/</span>
+                <span data-zh="团队展示" data-en="Team">团队展示</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队展示 Section -->
+    <section class="team-section" id="team">
+        <div class="team-container">
+            <!-- 领导团队 -->
+            <div class="team-leadership">
+                <h3 class="team-subtitle" data-zh="领导团队" data-en="Leadership Team">领导团队</h3>
+                <div class="leadership-grid">
+                    <div class="team-member leadership">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="李清都" data-zh-alt="李清都" data-en-alt="Li Qingdu" width="400" height="400" loading="lazy" decoding="async">
+                            <div class="member-overlay">
+                                <p class="member-bio" data-zh="中豫具身智能实验室执行主任，长期从事机器人技术与非线性系统研究，主持研发全球首款肌腱驱动人形机器人"行者二号"，在具身智能领域具有深厚积累和国际影响力。" data-en="Executive Director of ZYEI Lab, long-term focus on robotics and nonlinear systems. Led the development of the world's first tendon-driven humanoid robot 'Walker X02-Lite' with deep expertise and international influence in embodied intelligence.">中豫具身智能实验室执行主任，长期从事机器人技术与非线性系统研究，主持研发全球首款肌腱驱动人形机器人"行者二号"，在具身智能领域具有深厚积累和国际影响力。</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4 data-zh="李清都" data-en="Li Qingdu">李清都</h4>
+                            <p class="member-role" data-zh="执行主任" data-en="Executive Director">执行主任</p>
+                            <p class="member-title" data-zh="教授 / 博士生导师" data-en="Professor / PhD Supervisor">教授 / 博士生导师</p>
+                            <p class="member-desc" data-zh="主持国家级科研项目10余项，发表SCI论文100余篇，授权发明专利30余项" data-en="Led 10+ national research projects, published 100+ SCI papers, held 30+ invention patents">主持国家级科研项目10余项，发表SCI论文100余篇，授权发明专利30余项</p>
+                            <div class="member-tags">
+                                <span class="tag" data-zh="机器人技术" data-en="Robotics">机器人技术</span>
+                                <span class="tag" data-zh="具身智能" data-en="Embodied Intelligence">具身智能</span>
+                                <span class="tag" data-zh="非线性系统" data-en="Nonlinear Systems">非线性系统</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member leadership">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="副主任" data-zh-alt="副主任" data-en-alt="Deputy Director" width="400" height="400" loading="lazy" decoding="async">
+                            <div class="member-overlay">
+                                <p class="member-bio" data-zh="人工智能领域专家，专注于多模态大模型研究" data-en="AI expert focused on multimodal foundation models.">人工智能领域专家，专注于多模态大模型研究</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4 data-zh="张** 教授" data-en="Prof. Zhang **">张** 教授</h4>
+                            <p class="member-role" data-zh="副主任" data-en="Deputy Director">副主任</p>
+                            <p class="member-title" data-zh="教授 / 博士生导师" data-en="Professor / PhD Supervisor">教授 / 博士生导师</p>
+                            <div class="member-tags">
+                                <span class="tag" data-zh="AI大模型" data-en="AI Models">AI大模型</span>
+                                <span class="tag" data-zh="深度学习" data-en="Deep Learning">深度学习</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member leadership">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" alt="副主任" data-zh-alt="副主任" data-en-alt="Deputy Director" width="400" height="400" loading="lazy" decoding="async">
+                            <div class="member-overlay">
+                                <p class="member-bio" data-zh="控制科学与工程专家，在运动控制领域成果丰硕" data-en="Expert in control science and engineering with extensive results in motion control.">控制科学与工程专家，在运动控制领域成果丰硕</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4 data-zh="王** 教授" data-en="Prof. Wang **">王** 教授</h4>
+                            <p class="member-role" data-zh="副主任" data-en="Deputy Director">副主任</p>
+                            <p class="member-title" data-zh="教授 / 博士生导师" data-en="Professor / PhD Supervisor">教授 / 博士生导师</p>
+                            <div class="member-tags">
+                                <span class="tag" data-zh="运动控制" data-en="Motion Control">运动控制</span>
+                                <span class="tag" data-zh="自动化" data-en="Automation">自动化</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 核心研究团队 -->
+            <div class="team-researchers">
+                <h3 class="team-subtitle" data-zh="核心研究团队" data-en="Core Research Team">核心研究团队</h3>
+                <div class="researchers-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="樊锁钟" data-zh-alt="樊锁钟" data-en-alt="Fan Suozhong" width="300" height="300" loading="lazy" decoding="async">
+                            <div class="member-overlay">
+                                <p class="member-bio" data-zh="负责实验室产业转化工作，推动技术成果向产品和应用转化，主导孵化企业卓益得（上海）机器人的运营。" data-en="Oversees lab industrialization, driving technology commercialization and leading incubated company Zhuoyide (Shanghai) Robotics operations.">负责实验室产业转化工作，推动技术成果向产品和应用转化，主导孵化企业卓益得（上海）机器人的运营。</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4 data-zh="樊锁钟 博士" data-en="Dr. Fan Suozhong">樊锁钟 博士</h4>
+                            <p class="member-role" data-zh="产业转化负责人" data-en="Head of Industrialization">产业转化负责人</p>
+                            <p class="member-desc" data-zh="主导与蔚来、比亚迪等车企的产业合作，推动人形机器人在制造业的规模化应用" data-en="Leading industry partnerships with NIO, BYD and promoting large-scale humanoid robot deployment in manufacturing">主导与蔚来、比亚迪等车企的产业合作，推动人形机器人在制造业的规模化应用</p>
+                            <div class="member-tags">
+                                <span class="tag" data-zh="产业化" data-en="Commercialization">产业化</span>
+                                <span class="tag" data-zh="技术转化" data-en="Tech Transfer">技术转化</span>
+                                <span class="tag" data-zh="企业孵化" data-en="Incubation">企业孵化</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt="周闯闯" data-zh-alt="周闯闯" data-en-alt="Zhou Chuangchuang" width="300" height="300" loading="lazy" decoding="async">
+                            <div class="member-overlay">
+                                <p class="member-bio" data-zh="协助执行主任统筹实验室日常运营管理，负责人才招聘、行政事务及对外交流合作等工作。" data-en="Assists Executive Director in daily operations, responsible for talent recruitment, administration, and external collaboration.">协助执行主任统筹实验室日常运营管理，负责人才招聘、行政事务及对外交流合作等工作。</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4 data-zh="周闯闯" data-en="Zhou Chuangchuang">周闯闯</h4>
+                            <p class="member-role" data-zh="主任助理" data-en="Director's Assistant">主任助理</p>
+                            <p class="member-desc" data-zh="统筹2025年度30名博士招聘计划，协调实验室与高校、企业的合作对接" data-en="Coordinating 2025 recruitment of 30 PhD researchers, facilitating lab partnerships with universities and enterprises">统筹2025年度30名博士招聘计划，协调实验室与高校、企业的合作对接</p>
+                            <div class="member-tags">
+                                <span class="tag" data-zh="项目管理" data-en="Project Management">项目管理</span>
+                                <span class="tag" data-zh="人才招聘" data-en="Recruitment">人才招聘</span>
+                                <span class="tag" data-zh="行政管理" data-en="Administration">行政管理</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop" alt="刘** 博士" data-zh-alt="刘** 博士" data-en-alt="Dr. Liu **" width="300" height="300" loading="lazy" decoding="async">
+                        </div>
+                        <div class="member-info">
+                            <h4 data-zh="刘** 博士" data-en="Dr. Liu **">刘** 博士</h4>
+                            <p class="member-role" data-zh="算法研究员" data-en="Algorithm Researcher">算法研究员</p>
+                            <div class="member-tags">
+                                <span class="tag" data-zh="视觉感知" data-en="Vision Perception">视觉感知</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt="陈** 博士" data-zh-alt="陈** 博士" data-en-alt="Dr. Chen **" width="300" height="300" loading="lazy" decoding="async">
+                        </div>
+                        <div class="member-info">
+                            <h4 data-zh="陈** 博士" data-en="Dr. Chen **">陈** 博士</h4>
+                            <p class="member-role" data-zh="硬件工程师" data-en="Hardware Engineer">硬件工程师</p>
+                            <div class="member-tags">
+                                <span class="tag" data-zh="机械设计" data-en="Mechanical Design">机械设计</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="赵** 博士" data-zh-alt="赵** 博士" data-en-alt="Dr. Zhao **" width="300" height="300" loading="lazy" decoding="async">
+                        </div>
+                        <div class="member-info">
+                            <h4 data-zh="赵** 博士" data-en="Dr. Zhao **">赵** 博士</h4>
+                            <p class="member-role" data-zh="控制工程师" data-en="Control Engineer">控制工程师</p>
+                            <div class="member-tags">
+                                <span class="tag" data-zh="运动控制" data-en="Motion Control">运动控制</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop" alt="孙** 博士" data-zh-alt="孙** 博士" data-en-alt="Dr. Sun **" width="300" height="300" loading="lazy" decoding="async">
+                        </div>
+                        <div class="member-info">
+                            <h4 data-zh="孙** 博士" data-en="Dr. Sun **">孙** 博士</h4>
+                            <p class="member-role" data-zh="AI研究员" data-en="AI Researcher">AI研究员</p>
+                            <div class="member-tags">
+                                <span class="tag" data-zh="深度学习" data-en="Deep Learning">深度学习</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 合作伙伴 -->
+            <div class="team-partners">
+                <h3 class="team-subtitle" data-zh="合作伙伴" data-en="Partners">合作伙伴</h3>
+                <div class="partners-grid">
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="河南省科学院" data-en="Henan Academy of Sciences">河南省科学院</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="河南省科技厅" data-en="Henan Department of Science and Technology">河南省科技厅</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="郑州大学" data-en="Zhengzhou University">郑州大学</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="河南大学" data-en="Henan University">河南大学</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="蔚来汽车" data-en="NIO">蔚来汽车</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="东风柳汽" data-en="Dongfeng Liuzhou Motor">东风柳汽</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="吉利汽车" data-en="Geely">吉利汽车</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="比亚迪" data-en="BYD">比亚迪</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="卓益得机器人" data-en="Zhuoyide Robotics">卓益得机器人</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div class="partner-placeholder" data-zh="上海戏剧学院" data-en="Shanghai Theatre Academy">上海戏剧学院</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4 data-zh="关于实验室" data-en="About the Lab">关于实验室</h4>
+                <p data-zh="中豫具身智能实验室是河南省科学院举办、河南省委省政府批准设立的公益二类事业单位，是围绕具身智能系统展开研究与应用的高能级创新平台。" data-en="Zhongyuan Embodied Intelligence Laboratory is a public institution established by Henan Academy of Sciences and approved by the Henan provincial government. It is a high-level innovation platform for embodied intelligence research and application.">中豫具身智能实验室是河南省科学院举办、河南省委省政府批准设立的公益二类事业单位，是围绕具身智能系统展开研究与应用的高能级创新平台。</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+                <a href="about.html" data-zh="关于实验室" data-en="About Lab">关于实验室</a>
+                <a href="index.html#achievements" data-zh="成果展示" data-en="Achievements">成果展示</a>
+                <a href="index.html#industry" data-zh="产业转化" data-en="Industry">产业转化</a>
+                <a href="index.html#careers" data-zh="人才招聘" data-en="Careers">人才招聘</a>
+                <a href="index.html#cooperation" data-zh="开放合作" data-en="Cooperation">开放合作</a>
+            </div>
+            <div class="footer-section">
+                <h4 data-zh="联系方式" data-en="Contact">联系方式</h4>
+                <p data-zh="地址: 河南省郑州市" data-en="Address: Zhengzhou, Henan">地址: 河南省郑州市</p>
+                <p data-zh="电话: 待更新" data-en="Phone: TBD">电话: 待更新</p>
+                <p data-zh="邮箱: info@zyei-lab.cn" data-en="Email: info@zyei-lab.cn">邮箱: info@zyei-lab.cn</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-zh="合作伙伴" data-en="Partners">合作伙伴</h4>
+                <p data-zh="河南省科学院" data-en="Henan Academy of Sciences">河南省科学院</p>
+                <p data-zh="河南省科技厅" data-en="Henan Department of Science and Technology">河南省科技厅</p>
+                <p data-zh="国内外知名高校及科研机构" data-en="Leading universities and research institutes worldwide">国内外知名高校及科研机构</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-zh="© 2024 中豫具身智能实验室 版权所有 | 豫ICP备XXXXXXXX号" data-en="© 2024 Zhongyuan Embodied Intelligence Laboratory. All rights reserved | Henan ICP XXXXXXXX">© 2024 中豫具身智能实验室 版权所有 | 豫ICP备XXXXXXXX号</p>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== 页面加载动画 ====================
+        const pageLoader = document.getElementById('pageLoader');
+
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                pageLoader.classList.add('hidden');
+                document.body.classList.add('page-loaded');
+                initScrollReveal();
+            }, 1800);
+        });
+
+        function initScrollReveal() {
+            const revealElements = document.querySelectorAll('.team-member, .partner-logo');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -100px 0px',
+                threshold: 0.1
+            };
+
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry, index) {
+                    if (entry.isIntersecting) {
+                        setTimeout(function() {
+                            entry.target.classList.add('revealed', 'animate-in', 'visible');
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(function(el) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(40px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                revealObserver.observe(el);
+            });
+        }
+
+        // ==================== 语言切换功能 ====================
+        let currentLang = localStorage.getItem('language') || 'zh';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-zh]').forEach(el => {
+                if (lang === 'zh' && el.dataset.zh) {
+                    el.textContent = el.dataset.zh;
+                } else if (lang === 'en' && el.dataset.en) {
+                    el.textContent = el.dataset.en;
+                }
+            });
+
+            document.querySelectorAll('[data-zh-alt]').forEach(el => {
+                if (lang === 'zh' && el.dataset.zhAlt) {
+                    el.alt = el.dataset.zhAlt;
+                } else if (lang === 'en' && el.dataset.enAlt) {
+                    el.alt = el.dataset.enAlt;
+                }
+            });
+
+            document.querySelectorAll('[data-zh-content]').forEach(el => {
+                if (lang === 'zh' && el.dataset.zhContent) {
+                    el.setAttribute('content', el.dataset.zhContent);
+                } else if (lang === 'en' && el.dataset.enContent) {
+                    el.setAttribute('content', el.dataset.enContent);
+                }
+            });
+
+            const titleEl = document.querySelector('title');
+            if (titleEl) {
+                if (lang === 'zh' && titleEl.dataset.zh) {
+                    document.title = titleEl.dataset.zh;
+                } else if (lang === 'en' && titleEl.dataset.en) {
+                    document.title = titleEl.dataset.en;
+                }
+            }
+
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    switchLanguage(btn.dataset.lang);
+                });
+            });
+
+            if (currentLang === 'en') {
+                switchLanguage('en');
+            }
+        });
+
+        // ==================== 汉堡菜单 ====================
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ==================== 滚动进度条 ====================
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        }
+
+        // ==================== 返回顶部按钮 ====================
+        const backToTop = document.getElementById('backToTop');
+
+        function toggleBackToTop() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ==================== 导航栏滚动效果 ====================
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            updateScrollProgress();
+            toggleBackToTop();
+        });
+
+        // ==================== 平滑滚动 ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ==================== 性能优化：节流函数 ====================
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        window.addEventListener('scroll', throttle(() => {
+            updateScrollProgress();
+            toggleBackToTop();
+        }, 100));
+
+        // ==================== 初始化 ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            updateScrollProgress();
+        });
+    </script>
+</body>
+</html>
